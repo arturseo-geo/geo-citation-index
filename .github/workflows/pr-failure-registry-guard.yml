@@ -1,0 +1,18 @@
+name: PR Failure Registry Guard
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  require-failure-registry-ack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate PR body contains required acknowledgment
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          echo "$PR_BODY" | grep -Fqi "I read knowledge/failure_registry.yml" || {
+            echo "Missing required PR body line: I read knowledge/failure_registry.yml"
+            exit 1
+          }

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!--
+Perplexity Runner via Puter.js
+==============================
+This HTML component runs Perplexity queries using Puter.js (browser-side only).
+
+IMPORTANT LIMITATIONS:
+- Puter.js is a browser-only JavaScript library; it cannot be called from Python
+- This component must be embedded in a Streamlit page via st.components.v1.html()
+- Parameters are injected as JavaScript variables by the parent Streamlit code
+- Results are submitted back to the backend via fetch POST
+
+Expected injected variables (set by parent before embedding):
+- PERPLEXITY_QUERIES: array of query strings
+- PERPLEXITY_RUN_ID: integer run ID
+- PERPLEXITY_API_URL: backend API base URL (e.g., "http://127.0.0.1:8000")
+- PERPLEXITY_TRACKED_DOMAINS: array of domain strings
+- PERPLEXITY_BRAND_NAMES: array of brand name strings
+-->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0e1117;
+            color: #fafafa;
+            padding: 16px;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 100%;
+        }
+        h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: #4da6ff;
+        }
+        .status {
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+        .status.info {
+            background: #1e3a5f;
+            border: 1px solid #4da6ff;
+        }
+        .status.success {
+            background: #1a3d2e;
+            border: 1px solid #4ade80;
+        }
+        .status.error {
+            background: #3d1a1a;
+            border: 1px solid #ef4444;
+        }
+        .status.warning {
+            background: #3d3a1a;
+            border: 1px solid #eab308;
+        }
+        .progress-container {
+            margin-bottom: 16px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #262730;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4da6ff, #818cf8);
+            transition: width 0.3s ease;
+        }
+        .progress-text {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-top: 4px;
+        }
+        .results {
+            margin-top: 16px;
+        }
+        .result-item {
+            background: #1a1d24;
+            border: 1px solid #262730;
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 8px;
+        }
+        .result-item.cited {
+            border-color: #4ade80;
+        }
+        .result-item.mentioned {
+            border-color: #eab308;
+        }
+        .result-query {
+            font-weight: 600;
+            color: #e5e7eb;
+            margin-bottom: 6px;
+        }
+        .result-meta {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .result-meta .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-right: 4px;
+        }
+        .badge.cited {
+            background: #166534;
+            color: #4ade80;
+        }
+        .badge.mentioned {
+            background: #713f12;
+            color: #fbbf24;
+        }
+        .badge.none {
+            background: #374151;
+            color: #9ca3af;
+        }
+        button {
+            background: #4da6ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #3b8ee0;
+        }
+        button:disabled {
+            background: #374151;
+            cursor: not-allowed;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <!-- IMPORTANT: Puter.js is loaded from CDN; requires browser execution -->
+    <script src="https://js.puter.com/v2/"></script>
+</head>
+<body>
+    <div class="container">
+        <h3>Perplexity Query Runner (Puter.js)</h3>
+
+        <div id="init-status" class="status info">
+            Initializing Puter.js...
+        </div>
+
+        <div id="run-section" class="hidden">
+            <button id="run-btn" onclick="runQueries()">Run Perplexity Queries</button>
+        </div>
+
+        <div id="progress-section" class="hidden">
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div id="progress-text" class="progress-text">0 / 0 queries completed</div>
+            </div>
+        </div>
+
+        <div id="results-section" class="results hidden"></div>
+
+        <div id="final-status" class="hidden"></div>
+    </div>
+
+    <script>
+        // Configuration - these are injected by the parent Streamlit code
+        // If not set, use defaults for testing
+        const queries = typeof PERPLEXITY_QUERIES !== 'undefined' ? PERPLEXITY_QUERIES : [];
+        const runId = typeof PERPLEXITY_RUN_ID !== 'undefined' ? PERPLEXITY_RUN_ID : null;
+        const apiUrl = typeof PERPLEXITY_API_URL !== 'undefined' ? PERPLEXITY_API_URL : 'http://127.0.0.1:8000';
+        const trackedDomains = typeof PERPLEXITY_TRACKED_DOMAINS !== 'undefined' ? PERPLEXITY_TRACKED_DOMAINS : [];
+        const brandNames = typeof PERPLEXITY_BRAND_NAMES !== 'undefined' ? PERPLEXITY_BRAND_NAMES : [];
+
+        let completedCount = 0;
+        let results = [];
+
+        // Extract URLs from text using regex
+        function extractUrls(text) {
+            if (!text) return [];
+            const urlRegex = /https?:\/\/[^\s\])"'<>]+/g;
+            const matches = text.match(urlRegex) || [];
+            // Clean trailing punctuation
+            return matches.map(url => url.replace(/[.,;:!?)]+$/, ''));
+        }
+
+        // Check if any tracked domain appears in URL list
+        function detectDomainCitation(urls) {
+            if (!urls.length || !trackedDomains.length) return { cited: false, urls: [] };
+            const matchedUrls = [];
+            for (const url of urls) {
+                const urlLower = url.toLowerCase();
+                for (const domain of trackedDomains) {
+                    if (urlLower.includes(domain.toLowerCase())) {
+                        matchedUrls.push(url);
+                        break;
+                    }
+                }
+            }
+            return { cited: matchedUrls.length > 0, urls: matchedUrls };
+        }
+
+        // Check if any brand name is mentioned in text
+        function detectBrandMention(text) {
+            if (!text || !brandNames.length) return { mentioned: false, brands: [] };
+            const textLower = text.toLowerCase();
+            const mentioned = [];
+            for (const brand of brandNames) {
+                const pattern = new RegExp('\\b' + brand.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+                if (pattern.test(textLower)) {
+                    mentioned.push(brand);
+                }
+            }
+            return { mentioned: mentioned.length > 0, brands: mentioned };
+        }
+
+        // Update UI progress
+        function updateProgress(completed, total) {
+            const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+            document.getElementById('progress-fill').style.width = percent + '%';
+            document.getElementById('progress-text').textContent = `${completed} / ${total} queries completed`;
+        }
+
+        // Add result to UI
+        function addResultToUI(query, cited, mentioned) {
+            const resultsSection = document.getElementById('results-section');
+            resultsSection.classList.remove('hidden');
+
+            let badgeClass = 'none';
+            let badgeText = 'No citation';
+            if (cited) {
+                badgeClass = 'cited';
+                badgeText = 'Cited';
+            } else if (mentioned) {
+                badgeClass = 'mentioned';
+                badgeText = 'Mentioned';
+            }
+
+            const itemClass = cited ? 'cited' : (mentioned ? 'mentioned' : '');
+
+            const item = document.createElement('div');
+            item.className = `result-item ${itemClass}`;
+            item.innerHTML = `
+                <div class="result-query">${escapeHtml(query)}</div>
+                <div class="result-meta">
+                    <span class="badge ${badgeClass}">${badgeText}</span>
+                </div>
+            `;
+            resultsSection.appendChild(item);
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Submit result to backend
+        async function submitResult(queryText, responseText, citedSources, domainCited, domainMentioned, mentionedBrands) {
+            const endpoint = `${apiUrl}/llm/querysets/runs/${runId}/submit-result`;
+
+            const payload = {
+                query_text: queryText,
+                platform: 'perplexity',
+                response_text: responseText,
+                cited_sources: citedSources,
+                model_version: 'sonar',
+                tracked_domain_cited: domainCited,
+                tracked_domain_mentioned: domainMentioned,
+                mentioned_brands: mentionedBrands
+            };
+
+            try {
+                const response = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                return await response.json();
+            } catch (error) {
+                console.error('Error submitting result:', error);
+                throw error;
+            }
+        }
+
+        // Run a single query via Puter.js
+        async function runSingleQuery(query) {
+            try {
+                // IMPORTANT: puter.ai.chat() is browser-only via Puter.js
+                // Model 'perplexity/sonar' routes through Perplexity's API (free tier)
+                const response = await puter.ai.chat(query, {
+                    model: 'perplexity/sonar'
+                });
+
+                // Extract response text (Puter.js returns string or object)
+                const responseText = typeof response === 'string' ? response : (response?.message?.content || response?.content || JSON.stringify(response));
+
+                // Extract URLs and detect citations
+                const urls = extractUrls(responseText);
+                const domainResult = detectDomainCitation(urls);
+                const brandResult = detectBrandMention(responseText);
+
+                return {
+                    success: true,
+                    responseText: responseText,
+                    citedSources: urls,
+                    domainCited: domainResult.cited,
+                    domainUrls: domainResult.urls,
+                    domainMentioned: brandResult.mentioned,
+                    mentionedBrands: brandResult.brands
+                };
+            } catch (error) {
+                console.error(`Error querying Perplexity for "${query}":`, error);
+                return {
+                    success: false,
+                    error: error.message || 'Unknown error',
+                    responseText: '',
+                    citedSources: [],
+                    domainCited: false,
+                    domainMentioned: false,
+                    mentionedBrands: []
+                };
+            }
+        }
+
+        // Main function to run all queries
+        async function runQueries() {
+            if (!runId) {
+                document.getElementById('init-status').className = 'status error';
+                document.getElementById('init-status').textContent = 'Error: No run ID provided';
+                return;
+            }
+
+            if (!queries.length) {
+                document.getElementById('init-status').className = 'status warning';
+                document.getElementById('init-status').textContent = 'No queries to run';
+                return;
+            }
+
+            // Hide run button, show progress
+            document.getElementById('run-section').classList.add('hidden');
+            document.getElementById('progress-section').classList.remove('hidden');
+            document.getElementById('init-status').textContent = 'Running queries...';
+
+            const total = queries.length;
+            let successCount = 0;
+            let errorCount = 0;
+            let citedCount = 0;
+            let mentionedCount = 0;
+
+            for (let i = 0; i < queries.length; i++) {
+                const query = queries[i];
+
+                // Run query via Puter.js
+                const result = await runSingleQuery(query);
+
+                if (result.success) {
+                    successCount++;
+                    if (result.domainCited) citedCount++;
+                    if (result.domainMentioned) mentionedCount++;
+
+                    // Submit to backend for server-side verification
+                    try {
+                        await submitResult(
+                            query,
+                            result.responseText,
+                            result.citedSources,
+                            result.domainCited,
+                            result.domainMentioned,
+                            result.mentionedBrands
+                        );
+                    } catch (submitError) {
+                        console.error('Failed to submit result to backend:', submitError);
+                        // Continue anyway - the query was successful
+                    }
+
+                    // Update UI
+                    addResultToUI(query, result.domainCited, result.domainMentioned);
+                } else {
+                    errorCount++;
+                    addResultToUI(query + ' (ERROR: ' + result.error + ')', false, false);
+                }
+
+                completedCount++;
+                updateProgress(completedCount, total);
+
+                // Small delay between queries to avoid rate limiting
+                if (i < queries.length - 1) {
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                }
+            }
+
+            // Show final status
+            const finalStatus = document.getElementById('final-status');
+            finalStatus.classList.remove('hidden');
+
+            if (errorCount === 0) {
+                finalStatus.className = 'status success';
+                finalStatus.textContent = `Completed: ${successCount} queries | ${citedCount} cited | ${mentionedCount} mentioned`;
+            } else {
+                finalStatus.className = 'status warning';
+                finalStatus.textContent = `Completed: ${successCount} success, ${errorCount} errors | ${citedCount} cited | ${mentionedCount} mentioned`;
+            }
+
+            document.getElementById('init-status').classList.add('hidden');
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if Puter.js loaded
+            if (typeof puter === 'undefined') {
+                document.getElementById('init-status').className = 'status error';
+                document.getElementById('init-status').textContent = 'Error: Puter.js failed to load. Check network/ad-blocker.';
+                return;
+            }
+
+            // Check for required parameters
+            if (!runId) {
+                document.getElementById('init-status').className = 'status error';
+                document.getElementById('init-status').textContent = 'Error: No run ID provided. Cannot submit results.';
+                return;
+            }
+
+            if (!queries.length) {
+                document.getElementById('init-status').className = 'status warning';
+                document.getElementById('init-status').textContent = 'No queries provided.';
+                return;
+            }
+
+            // Ready to run
+            document.getElementById('init-status').className = 'status info';
+            document.getElementById('init-status').textContent = `Ready: ${queries.length} queries to run via Perplexity`;
+            document.getElementById('run-section').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

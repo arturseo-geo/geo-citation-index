@@ -1,0 +1,52 @@
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated outputs (monthly reports, PDFs, JSON)
+outputs/*
+!outputs/.gitkeep
+
+# Environment variables
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+restart_backend_out.log
+restart_backend_err.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if any tooling added later)
+node_modules/

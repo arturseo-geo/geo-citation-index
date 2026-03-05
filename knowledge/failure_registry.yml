@@ -1,0 +1,127 @@
+# Failure Registry
+# Track known failure modes, failed approaches, and validated fixes.
+# All PRs must acknowledge reading this file.
+# Format: each entry has id, description, failed_approaches, validated_fix, and test_anchor.
+
+registry:
+
+  - id: FAIL-001
+    description: >
+      Brand double-counted via alias match.
+      "Salesforce" and "SFDC" both match in same response, producing 2 BrandMention
+      rows for the same brand in one RunResult.
+    failed_approaches:
+      - Matching all aliases independently without deduplication
+    validated_fix: >
+      Track matched_brand_ids set during rule pass.
+      Skip alias match if brand_id already in set.
+      Validated in test_brand_extractor.py::test_alias_deduplication.
+    test_anchor: test_brand_extractor.py::test_alias_deduplication
+
+  - id: FAIL-002
+    description: >
+      Partial brand name match. "SAP" matches inside "SAPSAP" or "SAPLING".
+      Produces false positive BrandMention rows.
+    failed_approaches:
+      - Simple substring match without word boundary check
+    validated_fix: >
+      Use regex word boundary: r"\b" + re.escape(term_lower) + r"\b"
+      Validated in test_brand_extractor.py::test_word_boundary_match.
+    test_anchor: test_brand_extractor.py::test_word_boundary_match
+
+  - id: FAIL-003
+    description: >
+      Shorter alias matches before longer canonical name.
+      "Google" matches before "Google Analytics" when both are in dictionary.
+      Causes wrong brand attribution.
+    failed_approaches:
+      - Iterating dictionary terms in insertion order
+    validated_fix: >
+      Sort dictionary terms by length descending before matching.
+      Longest match wins. Validated in test_brand_extractor.py::test_longest_match_wins.
+    test_anchor: test_brand_extractor.py::test_longest_match_wins
+
+  - id: FAIL-004
+    description: >
+      Archetype classification applied when not all 3 platforms completed.
+      Produces misleading archetypes from 1-2 platform data.
+    failed_approaches:
+      - Classifying on any available platform data
+    validated_fix: >
+      Check run.gap_analysis_valid before classifying. Only set gap_analysis_valid=True
+      when all 3 platform slugs are in run.platforms_run.
+      write_archetype_snapshots() returns early if gap_analysis_valid=False.
+    test_anchor: test_citation_scorer.py::test_archetype_skipped_when_gap_invalid
+
+  - id: FAIL-005
+    description: >
+      Cross-platform delta computed as 0 for brand missing on one platform.
+      Brand scoring 0 on Perplexity treated same as brand not in dataset.
+    failed_approaches:
+      - Excluding brands with no score from delta computation
+      - Using NULL instead of 0.0 for absent platform scores
+    validated_fix: >
+      get_score_or_zero() returns 0.0 when no BrandScore row exists.
+      Absence is valid data — a delta of -60 (chatgpt=60, perplexity=0) IS the finding.
+      Brand with chatgpt=60, perplexity=0 correctly classifies as training_dependent.
+    test_anchor: test_citation_scorer.py::test_zero_score_delta_computation
+
+  - id: FAIL-006
+    description: >
+      Normalised scores not comparable across verticals with different query counts.
+      Raw scores inflated in verticals with more queries.
+    failed_approaches:
+      - Normalising raw scores directly without per-query adjustment
+      - Comparing raw scores across verticals
+    validated_fix: >
+      Two-stage normalisation: (1) divide by query_count, (2) normalise within group to 0-100.
+      Public index always shows normalised scores only.
+    test_anchor: test_citation_scorer.py::test_normalisation_cross_vertical
+
+  - id: FAIL-007
+    description: >
+      LLM extraction run for every response regardless of rule pass results.
+      Adds API cost and latency for responses where rule pass already found brands.
+    failed_approaches:
+      - Always running both passes
+    validated_fix: >
+      LLM pass only runs when rule pass finds < MIN_BRANDS_RULE_PASS brands.
+      Default threshold: 3. Most responses mention 3-7 brands — rule pass covers them.
+    test_anchor: test_brand_extractor.py::test_llm_pass_skipped_when_rule_sufficient
+
+  - id: FAIL-008
+    description: >
+      Bias-flagged queries included in archetype classification.
+      ChatGPT asked "ChatGPT vs Claude" reliably downrates Claude.
+      Including this data skews Claude's archetype toward ghost/training_dependent.
+    failed_approaches:
+      - Including all queries in aggregation regardless of bias_flag
+    validated_fix: >
+      bias_flag=True queries excluded from BrandScore aggregation used for archetype.
+      Still stored in RunResult and BrandMention for raw data transparency.
+      See PanelQuery.bias_flag and citation_scorer.py aggregation filter.
+    test_anchor: test_citation_scorer.py::test_bias_flag_excluded_from_archetype
+
+  - id: FAIL-009
+    description: >
+      Content generator produces generic output when run data is sparse (first run).
+      Blog post references "no movers" and "no archetype changes" in every section.
+    failed_approaches:
+      - Relying on delta/change fields that are null on first run
+    validated_fix: >
+      content_generator prompts explicitly instruct model to handle first-run context.
+      Prompt includes is_baseline field so model writes appropriately for baseline runs.
+      Add context["is_first_run"] flag derived from run.is_baseline.
+    test_anchor: test_content_generator.py::test_first_run_content_generation
+
+  - id: FAIL-010
+    description: >
+      Perplexity results not received before run continues to extraction step.
+      Browser tab closed early by user or timeout reached.
+    failed_approaches:
+      - Proceeding with extraction when perplexity not in platforms_run
+    validated_fix: >
+      run_monthly.py checks that "perplexity" in run.platforms_run before extraction.
+      Logs clear warning if Perplexity results missing.
+      gap_analysis_valid stays False if any platform missing — archetypes not computed.
+    test_anchor: test_query_runner.py::test_run_proceeds_with_perplexity_warning
