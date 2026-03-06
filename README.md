@@ -47,8 +47,6 @@ python scripts/seed_dictionary.py
 python run_monthly.py
 ```
 
-Keep the browser tab open when prompted — Perplexity queries run in the browser via Puter.js.
-
 Output files are written to `outputs/YYYY-MM/`.
 
 ---
@@ -72,7 +70,8 @@ geo-citation-index/
 │       ├── query_runner.py     ← Runs queries against ChatGPT + Gemini
 │       └── report_writer.py    ← PDF generation (ReportLab)
 ├── frontend/
-│   └── perplexity_runner.html  ← Browser-side Perplexity via Puter.js
+│   ├── perplexity_runner.html  ← Legacy browser runner (now uses API)
+│   └── chatgpt_runner.html     ← Browser-side ChatGPT via Puter.js
 ├── scripts/
 │   ├── seed_dictionary.py      ← One-time brand dictionary seed
 │   ├── check_docs_integrity.py ← CI: model coverage check
@@ -92,24 +91,25 @@ geo-citation-index/
 OPENAI_API_KEY=sk-...
 OPENAI_MODEL=gpt-4o-mini
 GOOGLE_API_KEY=AIza...
-GEMINI_MODEL=gemini-1.5-flash
+GEMINI_MODEL=gemini-2.5-flash
+PERPLEXITY_API_KEY=pplx-...
+PERPLEXITY_MODEL=sonar-pro
 ANTHROPIC_API_KEY=sk-ant-...
 ```
 
-Perplexity runs via [Puter.js](https://puter.com/) in the browser — no API key required.
+All three platforms (ChatGPT, Gemini, Perplexity) run server-side via API — no browser required.
 
 ---
 
 ## Monthly routine
 
-1. `python run_monthly.py` — leave running (~40 min, mostly passive)
-2. Keep the browser tab open when Perplexity queries execute
-3. Review `outputs/YYYY-MM/report_YYYY-MM.md` — add one paragraph of commentary
-4. Skim `outputs/YYYY-MM/social_posts_YYYY-MM.txt` — adjust tone if needed
-5. Upload `outputs/YYYY-MM/index_data_YYYY-MM.json` to WordPress
-6. Publish the report, schedule social posts
+1. `python run_monthly.py` — runs all 54 queries across 3 platforms (~20 min)
+2. Review `outputs/YYYY-MM/report_YYYY-MM.md` — add one paragraph of commentary
+3. Skim `outputs/YYYY-MM/social_posts_YYYY-MM.txt` — adjust tone if needed
+4. Upload `outputs/YYYY-MM/index_data_YYYY-MM.json` to WordPress
+5. Publish the report, schedule social posts
 
-Total active time: ~30 minutes.
+Total active time: ~20 minutes.
 
 ---
 
