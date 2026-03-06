@@ -44,19 +44,23 @@ def parse_args():
     p.add_argument("--dry-run",      action="store_true", help="Validate config only")
     p.add_argument("--content-only", action="store_true", help="Regenerate content from last run")
     p.add_argument("--skip-pdf",     action="store_true", help="Skip PDF generation")
+    p.add_argument("--browser-mode", action="store_true", help="Use browser (Puter.js) for ChatGPT instead of API (no API key needed)")
     return p.parse_args()
 
 
-def validate_config():
+def validate_config(browser_mode: bool = False):
     """Check all required env vars and DB connectivity."""
-    from app.core.config import OPENAI_API_KEY, GOOGLE_API_KEY, ANTHROPIC_API_KEY
+    from app.core.config import OPENAI_API_KEY, GOOGLE_API_KEY, ANTHROPIC_API_KEY, PERPLEXITY_API_KEY
     errors = []
+
     if not OPENAI_API_KEY:
         errors.append("OPENAI_API_KEY not set")
     if not GOOGLE_API_KEY:
         errors.append("GOOGLE_API_KEY not set")
     if not ANTHROPIC_API_KEY:
         errors.append("ANTHROPIC_API_KEY not set")
+    if not PERPLEXITY_API_KEY:
+        errors.append("PERPLEXITY_API_KEY not set")
 
     try:
         from app.models.db_engine import init_db, SessionLocal
@@ -73,47 +77,91 @@ def validate_config():
     return errors
 
 
-def wait_for_perplexity(run_id: str, expected_count: int, port: int = 5679, timeout: int = 600):
+def wait_for_browser_queries(run_id: str, queries: list, platform: str, expected_count: int, port: int = 5679, timeout: int = 600):
     """
-    Start a local HTTP server to receive Perplexity results from the browser component.
+    Start a local HTTP server to receive results from browser components (Puter.js).
     Opens the browser automatically with the runner page.
     Blocks until all results are received or timeout is reached.
+
+    Args:
+        platform: 'perplexity' or 'chatgpt'
     """
     from app.models.db_engine import SessionLocal
-    from app.services.query_runner import merge_perplexity_results
+    from app.services.query_runner import merge_perplexity_results, merge_chatgpt_browser_results
 
     results_received = []
     done_event = threading.Event()
 
+    runner_file = f"frontend/{platform}_runner.html"
+    endpoint = f"/{platform}-results"
+    merge_fn = merge_chatgpt_browser_results if platform == "chatgpt" else merge_perplexity_results
+
     class Handler(http.server.BaseHTTPRequestHandler):
+        def do_OPTIONS(self):
+            # Handle CORS preflight
+            self.send_response(200)
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.send_header("Access-Control-Allow-Methods", "POST, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type")
+            self.end_headers()
+
         def do_POST(self):
-            if self.path == "/perplexity-results":
+            # Check path (strip query string if present)
+            path = self.path.split("?")[0]
+            log.info(f"Received POST to {path}")
+
+            if path == endpoint:
                 length = int(self.headers.get("Content-Length", 0))
                 body = self.rfile.read(length)
                 try:
                     data = json.loads(body)
-                    results_received.extend(data.get("results", []))
+                    received = data.get("results", [])
+                    results_received.extend(received)
+                    log.info(f"Received {len(received)} results, total: {len(results_received)}/{expected_count}")
+
                     self.send_response(200)
+                    self.send_header("Access-Control-Allow-Origin", "*")
+                    self.send_header("Content-Type", "application/json")
                     self.end_headers()
                     self.wfile.write(b'{"status":"ok"}')
+
                     if len(results_received) >= expected_count:
                         done_event.set()
-                except Exception:
+                except Exception as e:
+                    log.error(f"Error processing POST: {e}")
                     self.send_response(400)
+                    self.send_header("Access-Control-Allow-Origin", "*")
                     self.end_headers()
             else:
+                log.warning(f"Unknown endpoint: {path}")
                 self.send_response(404)
                 self.end_headers()
 
         def do_GET(self):
-            # Serve the Perplexity runner HTML
-            runner_path = Path("frontend/perplexity_runner.html")
+            # Serve the runner HTML with injected queries
+            runner_path = Path(runner_file)
             if runner_path.exists():
-                content = runner_path.read_bytes()
+                content = runner_path.read_text()
+
+                # Inject queries and config into the HTML - BEFORE other scripts
+                query_json = json.dumps([q.query_text for q in queries])
+                inject_script = f"""
+    <script>
+        // Injected by run_monthly.py
+        window.CHATGPT_QUERIES = {query_json};
+        window.CHATGPT_RUN_ID = "{run_id}";
+        window.CHATGPT_CALLBACK_URL = "http://127.0.0.1:{port}{endpoint}";
+        window.PERPLEXITY_QUERIES = {query_json};
+        window.PERPLEXITY_RUN_ID = "{run_id}";
+    </script>
+"""
+                # Insert right after <head> so it runs first
+                content = content.replace("<head>", "<head>" + inject_script)
+
                 self.send_response(200)
                 self.send_header("Content-Type", "text/html")
                 self.end_headers()
-                self.wfile.write(content)
+                self.wfile.write(content.encode())
             else:
                 self.send_response(404)
                 self.end_headers()
@@ -126,7 +174,7 @@ def wait_for_perplexity(run_id: str, expected_count: int, port: int = 5679, time
     thread.daemon = True
     thread.start()
 
-    log.info(f"Opening Perplexity runner in browser...")
+    log.info(f"Opening {platform.title()} runner in browser...")
     log.info(f"Keep the browser tab open until all {expected_count} queries complete.")
     webbrowser.open(f"http://127.0.0.1:{port}/?run_id={run_id}")
 
@@ -136,12 +184,17 @@ def wait_for_perplexity(run_id: str, expected_count: int, port: int = 5679, time
     if results_received:
         db = SessionLocal()
         try:
-            merged = merge_perplexity_results(run_id, results_received, db)
-            log.info(f"Merged {merged} Perplexity results.")
+            merged = merge_fn(run_id, results_received, db)
+            log.info(f"Merged {merged} {platform.title()} results.")
         finally:
             db.close()
     else:
-        log.warning("No Perplexity results received within timeout.")
+        log.warning(f"No {platform.title()} results received within timeout.")
+
+
+def wait_for_perplexity(run_id: str, queries: list, expected_count: int, port: int = 5679, timeout: int = 600):
+    """Wrapper for backward compatibility."""
+    wait_for_browser_queries(run_id, queries, "perplexity", expected_count, port, timeout)
 
 
 def run_full_pipeline(args):
@@ -154,6 +207,7 @@ def run_full_pipeline(args):
     from app.core.content_generator import generate_monthly_report
     from app.services.report_writer import generate_pdf_report
     from app.core.config import ARCHETYPE_THRESHOLD_VERSION
+    from datetime import timezone
 
     init_db()
     db = SessionLocal()
@@ -165,15 +219,16 @@ def run_full_pipeline(args):
             log.error("No active panel found. Run: python scripts/seed_dictionary.py")
             sys.exit(1)
 
-        query_count = len([q for q in panel.queries if q.is_active])
+        queries = [q for q in panel.queries if q.is_active]
+        query_count = len(queries)
         log.info(f"Panel: {panel.name} | {query_count} queries | 3 platforms")
 
         # Create run record
         run = QueryRun(
             panel_id=panel.id,
-            label=f"Monthly run {datetime.utcnow().strftime('%Y-%m')}",
+            label=f"Monthly run {datetime.now(timezone.utc).strftime('%Y-%m')}",
             status="pending",
-            run_date=datetime.utcnow(),
+            run_date=datetime.now(timezone.utc),
             total_queries=query_count * 3,  # 3 platforms
             archetype_threshold_version=ARCHETYPE_THRESHOLD_VERSION,
         )
@@ -181,15 +236,10 @@ def run_full_pipeline(args):
         db.commit()
         log.info(f"Run created: {run.id}")
 
-        # Step 1: Server-side queries (ChatGPT + Gemini)
+        # Step 1: Run all queries via API (ChatGPT + Gemini + Perplexity)
         log.info("=" * 50)
-        log.info("STEP 1/6: Running ChatGPT + Gemini queries...")
+        log.info("STEP 1/6: Running queries via API (ChatGPT + Gemini + Perplexity)...")
         run_server_side_queries(run, db)
-
-        # Step 1b: Perplexity (browser)
-        log.info("=" * 50)
-        log.info("STEP 1b: Waiting for Perplexity browser queries...")
-        wait_for_perplexity(run.id, expected_count=query_count)
 
         run.status = "complete"
         db.commit()
@@ -293,7 +343,7 @@ def main():
         for e in errors:
             log.error(f"Config error: {e}")
         sys.exit(1)
-    log.info("Config validated.")
+    log.info("Config validated. All API keys present.")
 
     if args.dry_run:
         log.info("Dry run complete. All checks passed.")

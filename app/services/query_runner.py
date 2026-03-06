@@ -21,6 +21,7 @@ from sqlalchemy.orm import Session
 from app.core.config import (
     OPENAI_API_KEY, OPENAI_MODEL,
     GOOGLE_API_KEY, GEMINI_MODEL,
+    PERPLEXITY_API_KEY, PERPLEXITY_MODEL,
     GEMINI_RATE_LIMIT_DELAY_SECONDS,
 )
 from app.models.db import QueryRun, RunResult, PanelQuery, Platform
@@ -69,39 +70,87 @@ def _run_gemini_query(query_text: str) -> tuple[Optional[str], Optional[str]]:
         return None, str(e)
 
 
+# ── Perplexity ────────────────────────────────────────────────────────────────
+
+def _run_perplexity_query(query_text: str) -> tuple[Optional[str], Optional[str]]:
+    """
+    Run a single query against Perplexity API.
+    Returns (response_text, error_message).
+
+    Perplexity uses OpenAI-compatible API format.
+    """
+    try:
+        import requests
+        headers = {
+            "Authorization": f"Bearer {PERPLEXITY_API_KEY}",
+            "Content-Type": "application/json",
+        }
+        payload = {
+            "model": PERPLEXITY_MODEL,
+            "messages": [{"role": "user", "content": query_text}],
+        }
+        response = requests.post(
+            "https://api.perplexity.ai/chat/completions",
+            headers=headers,
+            json=payload,
+            timeout=60,
+        )
+        response.raise_for_status()
+        data = response.json()
+        return data["choices"][0]["message"]["content"], None
+    except Exception as e:
+        return None, str(e)
+
+
 # ── Main runner ───────────────────────────────────────────────────────────────
 
-def run_server_side_queries(run: QueryRun, db: Session) -> None:
+def run_server_side_queries(run: QueryRun, db: Session, skip_chatgpt: bool = False, skip_perplexity: bool = False) -> None:
     """
-    Execute all panel queries for ChatGPT and Gemini.
+    Execute all panel queries for ChatGPT, Gemini, and Perplexity.
     Writes RunResult rows for each (query, platform) pair.
-    Perplexity is handled separately via the browser component.
 
     Gemini queries are rate-limited to GEMINI_RATE_LIMIT_DELAY_SECONDS
     between requests (free tier: 15 req/min).
+
+    Args:
+        skip_chatgpt: If True, skip ChatGPT queries (useful when API quota exceeded)
+        skip_perplexity: If True, skip Perplexity queries (use browser instead)
     """
     panel = run.panel
     queries = [q for q in panel.queries if q.is_active]
 
     chatgpt_platform = db.query(Platform).filter_by(slug="chatgpt").first()
     gemini_platform  = db.query(Platform).filter_by(slug="gemini").first()
+    perplexity_platform = db.query(Platform).filter_by(slug="perplexity").first()
 
-    if not chatgpt_platform or not gemini_platform:
+    if not chatgpt_platform or not gemini_platform or not perplexity_platform:
         raise RuntimeError("Platform records not seeded. Run scripts/seed_dictionary.py first.")
 
     run.status = "running"
     db.commit()
 
-    _run_platform_queries(run, queries, chatgpt_platform, _run_chatgpt_query, db, delay=0)
+    platforms_done = set(run.platforms_run or [])
+
+    if skip_chatgpt:
+        log.info("Skipping ChatGPT queries (--skip-chatgpt flag)")
+    else:
+        _run_platform_queries(run, queries, chatgpt_platform, _run_chatgpt_query, db, delay=0)
+        platforms_done.add("chatgpt")
+
     _run_platform_queries(run, queries, gemini_platform, _run_gemini_query, db,
                           delay=GEMINI_RATE_LIMIT_DELAY_SECONDS)
+    platforms_done.add("gemini")
 
-    # Mark ChatGPT and Gemini as done; Perplexity added when browser submits
-    platforms_done = set(run.platforms_run or [])
-    platforms_done.update(["chatgpt", "gemini"])
+    if skip_perplexity:
+        log.info("Skipping Perplexity queries (browser mode)")
+    else:
+        log.info("Running Perplexity queries via API...")
+        _run_platform_queries(run, queries, perplexity_platform, _run_perplexity_query, db, delay=1)
+        platforms_done.add("perplexity")
+
     run.platforms_run = list(platforms_done)
     db.commit()
-    log.info(f"Server-side queries complete. Waiting for Perplexity browser results.")
+    log.info(f"Server-side queries complete for: {', '.join(platforms_done)}")
 
 
 def _run_platform_queries(
@@ -195,4 +244,65 @@ def merge_perplexity_results(
     run.platforms_run = list(platforms_done)
     db.commit()
     log.info(f"Merged {merged} Perplexity results for run {run_id}.")
+    return merged
+
+
+def merge_chatgpt_browser_results(
+    run_id: str,
+    results: list[dict],
+    db: Session,
+) -> int:
+    """
+    Merge ChatGPT results submitted from the browser component (Puter.js).
+
+    Expected result dict keys:
+        query_text, response_text, latency_ms, error_message
+
+    Returns count of results merged.
+    """
+    run = db.query(QueryRun).get(run_id)
+    if not run:
+        raise ValueError(f"Run {run_id} not found.")
+
+    chatgpt = db.query(Platform).filter_by(slug="chatgpt").first()
+    if not chatgpt:
+        raise RuntimeError("ChatGPT platform not seeded.")
+
+    merged = 0
+    for item in results:
+        # Match to panel query by query_text
+        pq = (
+            db.query(PanelQuery)
+            .filter_by(panel_id=run.panel_id)
+            .filter(PanelQuery.query_text == item.get("query_text", ""))
+            .first()
+        )
+        if not pq:
+            log.warning(f"No matching panel query for: {item.get('query_text', '')[:60]}")
+            continue
+
+        result = RunResult(
+            run_id=run.id,
+            panel_query_id=pq.id,
+            platform_id=chatgpt.id,
+            query_text=item.get("query_text", ""),
+            response_text=item.get("response_text"),
+            status="complete" if item.get("success") else "failed",
+            error_message=item.get("error_message"),
+            latency_ms=item.get("latency_ms"),
+            executed_at=datetime.utcnow(),
+        )
+        db.add(result)
+
+        if item.get("success"):
+            run.completed_queries += 1
+        else:
+            run.failed_queries += 1
+        merged += 1
+
+    platforms_done = set(run.platforms_run or [])
+    platforms_done.add("chatgpt")
+    run.platforms_run = list(platforms_done)
+    db.commit()
+    log.info(f"Merged {merged} ChatGPT (browser) results for run {run_id}.")
     return merged

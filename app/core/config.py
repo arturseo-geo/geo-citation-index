@@ -17,6 +17,8 @@ OPENAI_MODEL     = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 GOOGLE_API_KEY   = os.getenv("GOOGLE_API_KEY", "")
 GEMINI_MODEL     = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+PERPLEXITY_API_KEY = os.getenv("PERPLEXITY_API_KEY", "")
+PERPLEXITY_MODEL   = os.getenv("PERPLEXITY_MODEL", "sonar")
 
 # ── Database ──────────────────────────────────────────────────────────────────
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///citation_index.db")
@@ -107,8 +109,8 @@ PLATFORMS = [
     {
         "slug": "perplexity",
         "display_name": "Perplexity",
-        "model_name": "sonar",
-        "api_type": "browser",
+        "model_name": PERPLEXITY_MODEL,
+        "api_type": "server",
         "retrieval_type": "live_retrieval",
     },
     {
