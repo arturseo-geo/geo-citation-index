@@ -1,6 +1,6 @@
 # GEO Citation Index - Session Memory
 
-Last Updated: 2026-03-05
+Last Updated: 2026-03-06
 
 ---
 
@@ -64,7 +64,7 @@ When you ask AI "what's the best CRM?" it names specific brands and ignores othe
 
 ---
 
-## Monthly Process (30 min/month)
+## Monthly Process (20 min/month)
 
 | Task | Time | What |
 |------|------|------|
@@ -115,9 +115,10 @@ geo-citation-index/
 |---------|---------|
 | `OPENAI_API_KEY` | ChatGPT queries |
 | `GOOGLE_API_KEY` | Gemini queries |
+| `PERPLEXITY_API_KEY` | Perplexity queries (live web) |
 | `ANTHROPIC_API_KEY` | Content generation (Claude) |
 
-Perplexity: Browser-based via `perplexity_runner.html` (no API key)
+All 3 platforms now run via API (no browser needed).
 
 ---
 
@@ -337,5 +338,28 @@ function setPlatform(plat, btn) {
 ```
 
 **File Modified:** `/var/www/thegeolab/wp-content/themes/geolab-theme/page-geo-brand-citation-index.php`
+
+---
+
+### 2026-03-06 — Knowledge Folder & Sync Standardization
+
+**All 4 repos now have standardized knowledge/ folder:**
+
+| Repo | Location | Contents |
+|------|----------|----------|
+| geo-citation-index | PC only | PROJECT_CONTEXT.md, session_memory.md, failure_registry.yml |
+| GEO_OS | PC only | PROJECT_CONTEXT.md, session_memory.md, failure_registry.yml |
+| geo-lab-social | PC + VPS | PROJECT_CONTEXT.md, failure_registry.yml |
+| thegeolab-core | VPS only | PROJECT_CONTEXT.md, failure_registry.yml |
+
+**Sync completed across:**
+- Local PC (Windows)
+- VPS (100.87.191.9)
+- GitHub (all 4 repos)
+
+**Updated documentation:**
+- README.md files updated with Perplexity API info
+- PROJECT_CONTEXT.md added to all repos
+- failure_registry.yml added to all repos
 
 ---
