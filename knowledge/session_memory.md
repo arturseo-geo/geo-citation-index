@@ -349,8 +349,8 @@ function setPlatform(plat, btn) {
 |------|----------|----------|
 | geo-citation-index | PC only | PROJECT_CONTEXT.md, session_memory.md, failure_registry.yml |
 | GEO_OS | PC only | PROJECT_CONTEXT.md, session_memory.md, failure_registry.yml |
-| geo-lab-social | PC + VPS | PROJECT_CONTEXT.md, failure_registry.yml |
-| thegeolab-core | VPS only | PROJECT_CONTEXT.md, failure_registry.yml |
+| geo-lab-social | PC + VPS | PROJECT_CONTEXT.md, session_memory.md, failure_registry.yml |
+| thegeolab-core | VPS only | PROJECT_CONTEXT.md, session_memory.md, failure_registry.yml |
 
 **Sync completed across:**
 - Local PC (Windows)
