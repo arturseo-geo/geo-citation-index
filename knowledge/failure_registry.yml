@@ -117,11 +117,27 @@ registry:
   - id: FAIL-010
     description: >
       Perplexity results not received before run continues to extraction step.
-      Browser tab closed early by user or timeout reached.
+      API timeout or rate limit reached.
     failed_approaches:
       - Proceeding with extraction when perplexity not in platforms_run
+      - Browser-based Perplexity queries (unreliable, replaced with API)
     validated_fix: >
+      Perplexity now runs via API (PERPLEXITY_API_KEY + sonar-pro model).
       run_monthly.py checks that "perplexity" in run.platforms_run before extraction.
       Logs clear warning if Perplexity results missing.
       gap_analysis_valid stays False if any platform missing — archetypes not computed.
     test_anchor: test_query_runner.py::test_run_proceeds_with_perplexity_warning
+    updated: 2026-03-06
+
+  - id: FAIL-011
+    description: >
+      WordPress Citation Index page platform filter buttons not working.
+      Clicking ChatGPT/Perplexity/Gemini buttons doesn't filter the table.
+    failed_approaches:
+      - Only updating button styling without re-rendering table
+    validated_fix: >
+      Add renderTable() call at end of setPlatform() function.
+      Also update sortSelect dropdown value to match selected platform.
+      File: page-geo-brand-citation-index.php on VPS.
+    test_anchor: manual_verification
+    added: 2026-03-06

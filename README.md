@@ -8,7 +8,7 @@ Published at [thegeolab.net/geo-brand-citation-index](https://thegeolab.net/geo-
 
 ## What this is
 
-Every month this system runs 25 questions across three AI platforms (ChatGPT, Perplexity, Gemini), extracts every brand mentioned in the responses, scores each brand by citation prominence, and computes the delta between platforms.
+Every month this system runs 18 queries across three AI platforms (ChatGPT, Perplexity, Gemini) — 54 total API calls — extracts every brand mentioned in the responses, scores each brand by citation prominence, and computes the delta between platforms.
 
 The delta is the finding. ChatGPT answers from training data. Perplexity retrieves from the live web. When a brand scores high on ChatGPT but low on Perplexity, that signals the brand is living on AI memory — known from training, but fading from live relevance.
 
@@ -77,6 +77,8 @@ geo-citation-index/
 │   ├── check_docs_integrity.py ← CI: model coverage check
 │   └── auto_push.ps1           ← Windows auto-commit helper
 ├── knowledge/
+│   ├── PROJECT_CONTEXT.md      ← Single source of truth
+│   ├── session_memory.md       ← Session history
 │   └── failure_registry.yml    ← Known failure modes + validated fixes
 ├── docs/                       ← Specs and methodology
 ├── tests/                      ← Unit tests
@@ -136,10 +138,14 @@ python -m pytest tests/ -v
 ## v1 scope
 
 - 3 verticals: SEO & Marketing, CRM & Sales, AI & LLM Tools
-- 25 queries, 60 brands
+- 18 queries, 38 brands (seeded) + discovered brands each run
 - 3 platforms: ChatGPT, Perplexity, Gemini
 
 Vertical expansion is planned quarterly — each expansion is a content moment.
+
+**March 2026 First Run Results:**
+- 392 brand mentions | 62 new brands discovered
+- Key findings: Claude +50 delta (Live Search Brand), Moz -44 delta (Fading Brand)
 
 ---
 

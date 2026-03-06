@@ -1,7 +1,7 @@
 # GEO Brand Citation Index — Project Context
 
 > **Single source of truth for the project.**
-> Last Updated: 2026-03-06 | Version: 1.0
+> Last Updated: 2026-03-06 | Version: 1.1
 
 ---
 
@@ -146,5 +146,23 @@ First mover with longitudinal data. When someone asks "where do I find AI brand 
 
 ---
 
+## 11. First Run Results (March 2026)
+
+- **Run ID:** 494f9bf0-17ed-4f23-8bbc-13e70dcd4bb8
+- **Queries:** 54 total (18 × 3 platforms)
+- **Brands found:** 392 mentions | 62 new brands discovered
+- **Gap analysis:** Valid (cross-platform deltas computed)
+
+**Key Findings:**
+| Archetype | Brand | Delta |
+|-----------|-------|-------|
+| Dominant | ChatGPT, Salesforce, HubSpot | 100% consistent |
+| Live Search | Claude | +50 (Perplexity > ChatGPT) |
+| Fading | Moz | -44 (ChatGPT > Perplexity) |
+| AI Memory | Ahrefs | -48 |
+| GEO Outlier | Copilot, Zoho CRM | Consistent across all |
+
+---
+
 **Maintained By:** Claude Code
-**Version:** 1.0
+**Version:** 1.1
