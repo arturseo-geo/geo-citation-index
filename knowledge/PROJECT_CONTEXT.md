@@ -1,7 +1,7 @@
 # GEO Brand Citation Index — Project Context
 
 > **Single source of truth for the project.**
-> Last Updated: 2026-03-06 | Version: 1.1
+> Last Updated: 2026-03-07 | Version: 1.2
 
 ---
 
@@ -164,5 +164,19 @@ First mover with longitudinal data. When someone asks "where do I find AI brand 
 
 ---
 
+## 12. CI/CD Workflows
+
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| `docs-integrity.yml` | Push/PR to main | Validates endpoint and model coverage in docs |
+
+**Docs Integrity Check:**
+- Compares routes in `app/backend/main.py` with `docs/appendices/endpoint-index.md`
+- Compares models in `app/models/db.py` with `docs/appendices/model-index.md`
+- Currently: No API layer yet, so endpoint check passes with empty set
+- Model coverage: 13 models tracked
+
+---
+
 **Maintained By:** Claude Code
-**Version:** 1.1
+**Version:** 1.2

@@ -158,6 +158,16 @@ Vertical expansion is planned quarterly — each expansion is a content moment.
 
 ---
 
+## CI/CD
+
+| Workflow | Trigger | What it checks |
+|----------|---------|----------------|
+| Docs Integrity | Push/PR to main | Model and endpoint coverage in docs |
+
+The workflow validates that `docs/appendices/model-index.md` matches the SQLAlchemy models in `app/models/db.py`. When an API layer is added, it will also validate endpoint coverage.
+
+---
+
 ## Research by The GEO Lab
 
 [thegeolab.net](https://thegeolab.net) — dedicated GEO research platform.
