@@ -363,3 +363,23 @@ function setPlatform(plat, btn) {
 - failure_registry.yml added to all repos
 
 ---
+
+### 2026-03-07 — GitHub Actions Docs Integrity Fix
+
+**Problem:** Docs Integrity workflow failing because `scripts/check_docs_integrity.py` required `app/backend/main.py` which doesn't exist (project has no FastAPI API layer yet).
+
+**Fix Applied to `scripts/check_docs_integrity.py`:**
+1. Made `app/backend/main.py` optional — logs note and continues with empty route set
+2. Added HTML comment block skipping in `parse_endpoint_index()` — placeholder routes in `<!-- -->` comments were being parsed
+
+**Result:** Workflow now passes with output:
+```
+Note: app/backend/main.py not found (no API layer yet)
+[Endpoint coverage] OK
+[Model coverage] OK
+Docs integrity check passed.
+```
+
+**Added:** FAIL-012 to failure_registry.yml documenting this fix.
+
+---

@@ -141,3 +141,18 @@ registry:
       File: page-geo-brand-citation-index.php on VPS.
     test_anchor: manual_verification
     added: 2026-03-06
+
+  - id: FAIL-012
+    description: >
+      GitHub Actions Docs Integrity workflow fails on projects without FastAPI backend.
+      check_docs_integrity.py requires app/backend/main.py which doesn't exist yet.
+    failed_approaches:
+      - Requiring main.py to exist (fatal error if missing)
+      - Not handling HTML comments in endpoint-index.md (parses placeholder examples)
+    validated_fix: >
+      Made app/backend/main.py optional — if missing, code_routes is empty set.
+      Added HTML comment block skipping in parse_endpoint_index().
+      Script now logs "Note: app/backend/main.py not found (no API layer yet)" and continues.
+      File: scripts/check_docs_integrity.py
+    test_anchor: ci_workflow_pass
+    added: 2026-03-07
