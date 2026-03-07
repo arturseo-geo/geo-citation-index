@@ -53,7 +53,15 @@ def parse_models(db_py: Path) -> set[str]:
 def parse_endpoint_index(md_path: Path) -> set[str]:
     pattern = re.compile(r"^\s*-\s*`?(GET|POST|PUT|PATCH|DELETE)\s+(/[^`\s]+)`?\s*$")
     found = set()
+    in_comment = False
     for line in md_path.read_text(encoding="utf-8").splitlines():
+        # Skip HTML comment blocks
+        if "<!--" in line:
+            in_comment = True
+        if in_comment:
+            if "-->" in line:
+                in_comment = False
+            continue
         m = pattern.match(line)
         if m:
             found.add(f"{m.group(1)} {m.group(2)}")
@@ -91,12 +99,19 @@ def main() -> int:
     endpoint_index = repo / "docs" / "appendices" / "endpoint-index.md"
     model_index = repo / "docs" / "appendices" / "model-index.md"
 
-    for path in [main_py, db_py, endpoint_index, model_index]:
+    # Required files (db.py and index files must exist)
+    for path in [db_py, endpoint_index, model_index]:
         if not path.exists():
             print(f"Required file missing: {path}")
             return 2
 
-    code_routes = parse_routes(main_py)
+    # main.py is optional (project may not have an API layer yet)
+    if main_py.exists():
+        code_routes = parse_routes(main_py)
+    else:
+        print(f"Note: {main_py.relative_to(repo)} not found (no API layer yet)")
+        code_routes = set()
+
     docs_routes = parse_endpoint_index(endpoint_index)
     code_models = parse_models(db_py)
     docs_models = parse_model_index(model_index)
