@@ -382,4 +382,26 @@ Docs integrity check passed.
 
 **Added:** FAIL-012 to failure_registry.yml documenting this fix.
 
+### 2026-03-07 — Git Push via VPS Workaround
+
+**Problem:** WSL cannot push to GitHub (SSH key permission denied, HTTPS no credential helper).
+
+**Solution:** Push from VPS which has working SSH keys:
+1. Clone repo to VPS `/tmp/`
+2. Copy updated files from PC via SSH pipe
+3. Commit and push from VPS
+4. Sync PC with `git pull --rebase` from Windows CMD
+
+**VPS Git Config Added:**
+```bash
+git config --global user.email "jorge@thegeolab.net"
+git config --global user.name "The GEO Lab"
+```
+
+**All 4 repos use SSH remotes (git@github.com:...):**
+- geo-citation-index: PC only, push via VPS
+- GEO_OS: PC only, push via VPS
+- geo-lab-social: PC + VPS
+- thegeolab-core: VPS only
+
 ---
