@@ -1,6 +1,6 @@
 # GEO Citation Index - Session Memory
 
-Last Updated: 2026-03-06
+Last Updated: 2026-03-07
 
 ---
 
@@ -382,26 +382,34 @@ Docs integrity check passed.
 
 **Added:** FAIL-012 to failure_registry.yml documenting this fix.
 
-### 2026-03-07 — Git Push via VPS Workaround
+### 2026-03-07 — Git Push Solution
 
-**Problem:** WSL cannot push to GitHub (SSH key permission denied, HTTPS no credential helper).
+**Problem:** SSH keys have permission issues on both WSL and Windows CMD (`Load key ... Permission denied`).
 
-**Solution:** Push from VPS which has working SSH keys:
-1. Clone repo to VPS `/tmp/`
-2. Copy updated files from PC via SSH pipe
-3. Commit and push from VPS
-4. Sync PC with `git pull --rebase` from Windows CMD
+**Solution:** Use HTTPS remote from Windows CMD (not WSL):
+```cmd
+git remote set-url origin https://github.com/arturseo-geo/geo-citation-index.git
+git push
+```
 
-**VPS Git Config Added:**
+**Why HTTPS works from Windows:**
+- Windows has Git Credential Manager that handles GitHub authentication
+- WSL doesn't have access to Windows credential store
+- SSH keys have file permission issues on Windows
+
+**Current remote configuration:**
+
+| Repo | Location | Remote Type | Push From |
+|------|----------|-------------|-----------|
+| geo-citation-index | PC | HTTPS | Windows CMD |
+| GEO_OS | PC | SSH | Switch to HTTPS |
+| geo-lab-social | PC + VPS | SSH | VPS |
+| thegeolab-core | VPS | SSH | VPS |
+
+**VPS Git Config:**
 ```bash
 git config --global user.email "jorge@thegeolab.net"
 git config --global user.name "The GEO Lab"
 ```
-
-**All 4 repos use SSH remotes (git@github.com:...):**
-- geo-citation-index: PC only, push via VPS
-- GEO_OS: PC only, push via VPS
-- geo-lab-social: PC + VPS
-- thegeolab-core: VPS only
 
 ---
