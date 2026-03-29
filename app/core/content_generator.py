@@ -35,70 +35,117 @@ def build_prompt_context(run: QueryRun, db: Session) -> dict:
     """
     Assemble all data needed for content generation into a single context dict.
     Passed to both blog post and social post generation prompts.
+
+    CitationIndex stores per-platform, per-vertical rows. This function
+    aggregates across platforms to build cross-platform brand views for the
+    content generation prompts.
     """
+    from sqlalchemy import func
+
     run_month = run.run_date.strftime("%B %Y") if run.run_date else "Unknown"
     run_month_slug = run.run_date.strftime("%Y-%m") if run.run_date else "unknown"
 
-    # Top 10 overall (cross-platform, cross-vertical, all platforms combined)
-    top_rows = (
-        db.query(CitationIndex)
-        .filter_by(run_id=run.id, platform_slug="all", vertical_slug=None)
-        .order_by(CitationIndex.rank)
-        .limit(15)
-        .all()
-    )
-
-    # Biggest platform gap (sorted by abs perplexity_vs_chatgpt_delta)
-    gap_rows = (
+    # ── Aggregate cross-platform brand data from per-platform rows ────────
+    # Get all ChatGPT rows (use as base — every brand scored on ChatGPT)
+    all_rows = (
         db.query(CitationIndex)
         .filter(
             CitationIndex.run_id == run.id,
-            CitationIndex.platform_slug == "all",
-            CitationIndex.perplexity_vs_chatgpt_delta.isnot(None),
+            CitationIndex.vertical_slug.isnot(None),
         )
-        .order_by(CitationIndex.perplexity_vs_chatgpt_delta)  # most negative first
-        .limit(5)
         .all()
     )
 
-    # Archetype changes
+    # Build brand-level aggregated view: best scores, archetype, delta
+    brand_agg = {}  # entity_slug -> aggregated dict
+    for r in all_rows:
+        slug = r.entity_slug
+        if slug not in brand_agg:
+            brand_agg[slug] = {
+                "name": r.entity_name,
+                "slug": slug,
+                "vertical": r.vertical_slug,
+                "chatgpt": None,
+                "perplexity": None,
+                "gemini": None,
+                "archetype": None,
+                "archetype_label": None,
+                "delta_perp_vs_gpt": None,
+                "total_mentions": 0,
+                "delta_rank": r.delta_rank,
+                "trend": r.trend_direction,
+            }
+        agg = brand_agg[slug]
+        # Take platform-specific scores from per-platform rows
+        if r.platform_slug == "chatgpt":
+            agg["chatgpt"] = r.citation_score_normalised
+        elif r.platform_slug == "perplexity":
+            agg["perplexity"] = r.citation_score_normalised
+        elif r.platform_slug == "gemini":
+            agg["gemini"] = r.citation_score_normalised
+        agg["total_mentions"] = (agg["total_mentions"] or 0) + (r.total_mentions or 0)
+        # Use cross-platform scores if available on this row
+        if r.chatgpt_score is not None:
+            agg["chatgpt"] = r.chatgpt_score
+        if r.perplexity_score is not None:
+            agg["perplexity"] = r.perplexity_score
+        if r.gemini_score is not None:
+            agg["gemini"] = r.gemini_score
+        if r.perplexity_vs_chatgpt_delta is not None:
+            agg["delta_perp_vs_gpt"] = r.perplexity_vs_chatgpt_delta
+        if r.citation_archetype:
+            agg["archetype"] = r.citation_archetype
+            agg["archetype_label"] = r.archetype_label_public or "—"
+
+    # Compute average score for ranking
+    for slug, agg in brand_agg.items():
+        scores = [s for s in [agg["chatgpt"], agg["perplexity"], agg["gemini"]] if s is not None]
+        agg["avg_score"] = round(sum(scores) / len(scores), 2) if scores else 0
+
+    # Top 15 by average score
+    sorted_brands = sorted(brand_agg.values(), key=lambda x: x["avg_score"], reverse=True)
+    top_brands = sorted_brands[:15]
+
+    # Biggest gaps (most negative delta = ChatGPT >> Perplexity)
+    brands_with_delta = [b for b in sorted_brands if b["delta_perp_vs_gpt"] is not None]
+    biggest_gaps = sorted(brands_with_delta, key=lambda x: x["delta_perp_vs_gpt"])[:5]
+
+    # Archetype changes with brand names
     archetype_changes = (
         db.query(ArchetypeSnapshot)
         .filter_by(run_id=run.id, archetype_changed=True)
         .all()
     )
+    archetype_change_list = []
+    for c in archetype_changes:
+        brand = db.query(Brand).get(c.brand_id)
+        archetype_change_list.append({
+            "brand_name": brand.canonical_name if brand else c.brand_id,
+            "brand_id": c.brand_id,
+            "from": c.previous_archetype,
+            "to": c.citation_archetype,
+            "from_label": ARCHETYPE_PUBLIC_LABELS.get(c.previous_archetype or "", "—"),
+            "to_label": ARCHETYPE_PUBLIC_LABELS.get(c.citation_archetype, "—"),
+        })
 
-    # Per-vertical top 5
+    # Per-vertical top 5 (aggregate across platforms per vertical)
     verticals_data = {}
-    vertical_slugs = [
-        r[0] for r in db.query(CitationIndex.vertical_slug)
-        .filter(
-            CitationIndex.run_id == run.id,
-            CitationIndex.platform_slug == "all",
-            CitationIndex.vertical_slug.isnot(None),
-        )
-        .distinct()
-        .all()
-    ]
-
-    for vslug in vertical_slugs:
-        v_rows = (
-            db.query(CitationIndex)
-            .filter_by(run_id=run.id, platform_slug="all", vertical_slug=vslug)
-            .order_by(CitationIndex.rank)
-            .limit(5)
-            .all()
-        )
+    vertical_slugs = list({r.vertical_slug for r in all_rows if r.vertical_slug})
+    for vslug in sorted(vertical_slugs):
+        v_brands = [b for b in sorted_brands if b["vertical"] == vslug][:5]
         verticals_data[vslug] = [
             {
-                "rank": r.rank,
-                "name": r.entity_name,
-                "score": r.citation_score_normalised,
-                "archetype_label": r.archetype_label_public or "—",
-                "delta_rank": r.delta_rank,
-                "trend": r.trend_direction,
+                "rank": i + 1,
+                "name": b["name"],
+                "avg_score": b["avg_score"],
+                "chatgpt": b["chatgpt"],
+                "perplexity": b["perplexity"],
+                "gemini": b["gemini"],
+                "archetype_label": b["archetype_label"] or "—",
+                "delta": b["delta_perp_vs_gpt"],
+                "trend": b["trend"],
             }
-            for r in v_rows
+            for i, b in enumerate(v_brands)
         ]
 
     return {
@@ -107,42 +154,35 @@ def build_prompt_context(run: QueryRun, db: Session) -> dict:
         "run_date": run.run_date.strftime("%Y-%m-%d") if run.run_date else "unknown",
         "gap_analysis_valid": run.gap_analysis_valid,
         "platforms_run": run.platforms_run or [],
+        "total_brands_tracked": len(brand_agg),
         "top_brands": [
             {
-                "rank": r.rank,
-                "name": r.entity_name,
-                "score": r.citation_score_normalised,
-                "archetype": r.citation_archetype,
-                "archetype_label": r.archetype_label_public or "—",
-                "chatgpt": r.chatgpt_score,
-                "perplexity": r.perplexity_score,
-                "gemini": r.gemini_score,
-                "delta_perp_vs_gpt": r.perplexity_vs_chatgpt_delta,
-                "delta_rank": r.delta_rank,
-                "trend": r.trend_direction,
+                "rank": i + 1,
+                "name": b["name"],
+                "avg_score": b["avg_score"],
+                "archetype": b["archetype"],
+                "archetype_label": b["archetype_label"] or "—",
+                "chatgpt": b["chatgpt"],
+                "perplexity": b["perplexity"],
+                "gemini": b["gemini"],
+                "delta_perp_vs_gpt": b["delta_perp_vs_gpt"],
+                "delta_rank": b["delta_rank"],
+                "trend": b["trend"],
+                "vertical": b["vertical"],
             }
-            for r in top_rows
+            for i, b in enumerate(top_brands)
         ],
         "biggest_gaps": [
             {
-                "name": r.entity_name,
-                "chatgpt": r.chatgpt_score,
-                "perplexity": r.perplexity_score,
-                "delta": r.perplexity_vs_chatgpt_delta,
-                "archetype_label": r.archetype_label_public or "—",
+                "name": b["name"],
+                "chatgpt": b["chatgpt"],
+                "perplexity": b["perplexity"],
+                "delta": b["delta_perp_vs_gpt"],
+                "archetype_label": b["archetype_label"] or "—",
             }
-            for r in gap_rows
+            for b in biggest_gaps
         ],
-        "archetype_changes": [
-            {
-                "brand_id": c.brand_id,
-                "from": c.previous_archetype,
-                "to": c.citation_archetype,
-                "from_label": ARCHETYPE_PUBLIC_LABELS.get(c.previous_archetype or "", "—"),
-                "to_label": ARCHETYPE_PUBLIC_LABELS.get(c.citation_archetype, "—"),
-            }
-            for c in archetype_changes
-        ],
+        "archetype_changes": archetype_change_list,
         "verticals": verticals_data,
     }
 

@@ -44,35 +44,39 @@ GEMINI_RATE_LIMIT_DELAY_SECONDS = 4  # Free tier: 15 req/min → 4s between requ
 # remains interpretable even after threshold changes.
 ARCHETYPE_THRESHOLD_VERSION = "1.0"
 
+# Thresholds match published methodology at
+# thegeolab.net/geo-brand-citation-index/methodology/ (Section 7)
 ARCHETYPE_THRESHOLDS = {
     "consensus_dominant": {
-        "all_platforms_min": 50,
-        "platform_variance_max": 15,
-    },
-    "ghost": {
-        "chatgpt_min": 35,
-        "perplexity_max": 15,
+        "all_platforms_min": 60,       # High scores (60+) on all three platforms
+        "platform_variance_max": 15,   # Delta within ±15
     },
     "training_dependent": {
-        "chatgpt_min": 50,
-        "perplexity_vs_chatgpt_delta_max": -20,
+        "chatgpt_min": 0,             # Any ChatGPT score
+        "perplexity_vs_chatgpt_delta_max": -20,  # Delta -20 or lower
+    },
+    "ghost": {
+        "chatgpt_min": 10,            # Meaningful ChatGPT presence
+        "perplexity_max": 5,          # Near-zero live web presence
+        "perplexity_vs_chatgpt_delta_max": -10,  # Must have negative delta
     },
     "retrieval_driven": {
-        "perplexity_min": 40,
-        "perplexity_vs_chatgpt_delta_min": 15,
+        "perplexity_min": 0,          # Any Perplexity score
+        "perplexity_vs_chatgpt_delta_min": 15,  # Delta +15 or above
     },
     "consensus_geo": {
-        "all_platforms_min": 25,
+        "all_platforms_min": 25,       # Consistent above prediction
         "all_platforms_max": 60,
         "platform_variance_max": 15,
     },
 }
 
-# Classification priority order — applied when multiple thresholds are met
+# Classification priority order — first match wins
+# training_dependent before ghost: Memory is more actionable than Fading
 ARCHETYPE_PRIORITY = [
     "consensus_dominant",
-    "ghost",
     "training_dependent",
+    "ghost",
     "retrieval_driven",
     "consensus_geo",
 ]

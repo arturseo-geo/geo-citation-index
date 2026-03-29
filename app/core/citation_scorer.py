@@ -173,6 +173,7 @@ def classify_archetype(
     perplexity_vs_chatgpt_delta: float,
     platform_variance: Optional[float],
     thresholds: dict = ARCHETYPE_THRESHOLDS,
+    priority: list = ARCHETYPE_PRIORITY,
 ) -> tuple[str, float, dict]:
     """
     Classify a brand into one of five archetypes.
@@ -202,46 +203,45 @@ def classify_archetype(
 
     t = thresholds
 
-    # 1. consensus_dominant
-    cd = t["consensus_dominant"]
-    if (chatgpt_score >= cd["all_platforms_min"]
-            and perplexity_score >= cd["all_platforms_min"]
-            and gemini_score >= cd["all_platforms_min"]
-            and var <= cd["platform_variance_max"]):
-        conf = round(min(chatgpt_score, perplexity_score, gemini_score) / 100, 2)
-        return "consensus_dominant", conf, signals
+    # Check each archetype in ARCHETYPE_PRIORITY order (first match wins)
+    for archetype in priority:
+        th = t[archetype]
 
-    # 2. ghost
-    gh = t["ghost"]
-    if chatgpt_score >= gh["chatgpt_min"] and perplexity_score <= gh["perplexity_max"]:
-        conf = round((chatgpt_score - perplexity_score) / 100, 2)
-        return "ghost", conf, signals
+        if archetype == "consensus_dominant":
+            if (chatgpt_score >= th["all_platforms_min"]
+                    and perplexity_score >= th["all_platforms_min"]
+                    and gemini_score >= th["all_platforms_min"]
+                    and var <= th["platform_variance_max"]):
+                conf = round(min(chatgpt_score, perplexity_score, gemini_score) / 100, 2)
+                return "consensus_dominant", conf, signals
 
-    # 3. training_dependent
-    td = t["training_dependent"]
-    if (chatgpt_score >= td["chatgpt_min"]
-            and perplexity_vs_chatgpt_delta <= td["perplexity_vs_chatgpt_delta_max"]):
-        conf = round(abs(perplexity_vs_chatgpt_delta) / 100, 2)
-        return "training_dependent", conf, signals
+        elif archetype == "training_dependent":
+            if (chatgpt_score >= th["chatgpt_min"]
+                    and perplexity_vs_chatgpt_delta <= th["perplexity_vs_chatgpt_delta_max"]):
+                conf = round(abs(perplexity_vs_chatgpt_delta) / 100, 2)
+                return "training_dependent", conf, signals
 
-    # 4. retrieval_driven
-    rd = t["retrieval_driven"]
-    if (perplexity_score >= rd["perplexity_min"]
-            and perplexity_vs_chatgpt_delta >= rd["perplexity_vs_chatgpt_delta_min"]):
-        conf = round(perplexity_vs_chatgpt_delta / 100, 2)
-        return "retrieval_driven", conf, signals
+        elif archetype == "ghost":
+            delta_ok = "perplexity_vs_chatgpt_delta_max" not in th or perplexity_vs_chatgpt_delta <= th["perplexity_vs_chatgpt_delta_max"]
+            if chatgpt_score >= th["chatgpt_min"] and perplexity_score <= th["perplexity_max"] and delta_ok:
+                conf = round((chatgpt_score - perplexity_score) / 100, 2)
+                return "ghost", conf, signals
 
-    # 5. consensus_geo
-    cg = t["consensus_geo"]
-    if (chatgpt_score >= cg["all_platforms_min"]
-            and chatgpt_score <= cg["all_platforms_max"]
-            and perplexity_score >= cg["all_platforms_min"]
-            and perplexity_score <= cg["all_platforms_max"]
-            and gemini_score >= cg["all_platforms_min"]
-            and gemini_score <= cg["all_platforms_max"]
-            and var <= cg["platform_variance_max"]):
-        # Always 0.5 — needs manual backlink review to confirm
-        return "consensus_geo", 0.5, signals
+        elif archetype == "retrieval_driven":
+            if (perplexity_score >= th["perplexity_min"]
+                    and perplexity_vs_chatgpt_delta >= th["perplexity_vs_chatgpt_delta_min"]):
+                conf = round(perplexity_vs_chatgpt_delta / 100, 2)
+                return "retrieval_driven", conf, signals
+
+        elif archetype == "consensus_geo":
+            if (chatgpt_score >= th["all_platforms_min"]
+                    and chatgpt_score <= th["all_platforms_max"]
+                    and perplexity_score >= th["all_platforms_min"]
+                    and perplexity_score <= th["all_platforms_max"]
+                    and gemini_score >= th["all_platforms_min"]
+                    and gemini_score <= th["all_platforms_max"]
+                    and var <= th["platform_variance_max"]):
+                return "consensus_geo", 0.5, signals
 
     return "unclassified", 0.0, signals
 
