@@ -1,5 +1,7 @@
 # GEO Brand Citation Index
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19450361.svg)](https://doi.org/10.5281/zenodo.19450361)
+
 Monthly tracker measuring which brands ChatGPT, Perplexity, and Gemini recommend — and why the gap between platforms tells you more than any single ranking.
 
 Published at [thegeolab.net/geo-brand-citation-index](https://thegeolab.net/geo-brand-citation-index/)
@@ -165,6 +167,28 @@ Vertical expansion is planned quarterly — each expansion is a content moment.
 | Docs Integrity | Push/PR to main | Model and endpoint coverage in docs |
 
 The workflow validates that `docs/appendices/model-index.md` matches the SQLAlchemy models in `app/models/db.py`. When an API layer is added, it will also validate endpoint coverage.
+
+---
+
+## Cite this work
+
+If you use this code or reference the Brand Citation Index methodology, please cite:
+
+- March 2026 run — [10.5281/zenodo.19218296](https://doi.org/10.5281/zenodo.19218296)
+- April 2026 run — [10.5281/zenodo.19450361](https://doi.org/10.5281/zenodo.19450361)
+
+BibTeX:
+
+```bibtex
+@software{ferreira_geo_citation_index_2026,
+  author    = {Ferreira, Artur},
+  title     = {GEO Brand Citation Index},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.19450361},
+  url       = {https://github.com/arturseo-geo/geo-citation-index}
+}
+```
 
 ---
 
