@@ -1,0 +1,21 @@
+{
+  "probe_type": "q09_disambiguation",
+  "original_query": "What is System Memory in GEO?",
+  "probe_query": "What is System Memory in Generative Engine Optimisation (GEO)?",
+  "platform": "perplexity",
+  "model": "sonar-pro",
+  "task_id": "04241449-1516-0612-0000-9139e4409714",
+  "timestamp": "2026-04-24T14:49:32Z",
+  "thegeolab_cited": false,
+  "cited_urls": [
+    "https://georeport.ai/learn/generative-engine-optimization-the-reasoning-memory-gap/",
+    "https://a16z.com/geo-over-seo/",
+    "https://www.airfleet.co/blog/guide-to-generative-engine-optimization/",
+    "https://www.meltwater.com/en/blog/what-is-generative-engine-optimization",
+    "https://openreview.net/pdf/0b18ab4d060e6388a1eb081302aff6560eea0296.pdf",
+    "https://ryantronier.com/resources/generative-engine-optimization-geo/",
+    "https://www.evergreen.media/en/guide/generative-engine-optimization/",
+    "https://arxiv.org/pdf/2311.09735"
+  ],
+  "note": "Disambiguation did not recover thegeolab.net citation. Page competes with georeport.ai, a16z, Meltwater for 'System Memory in GEO' framing. DR gap, not query parsing, is the blocker. Separate from the original Q09 GeoSCADA drift — even when Perplexity understood the GEO context, thegeolab.net/system-memory/ was not selected."
+}
