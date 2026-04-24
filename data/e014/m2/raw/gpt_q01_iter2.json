@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "16.1188 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241427-1516-0629-0000-d1c6ea50dc8f",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "16.0528 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "What is GEO (Generative Engine Optimisation)?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "What is GEO (Generative Engine Optimisation)?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=What%20is%20GEO%20%28Generative%20Engine%20Optimisation%29%3F&hints=search",
+          "datetime": "2026-04-24 11:28:03 +00:00",
+          "markdown": "**GEO (Generative Engine Optimization)** is a relatively new term that's typically used in the context of **search engines**, **AI-driven content generation**, or even **algorithm-based digital marketing**. Though it's not universally defined yet, it can be interpreted in several ways depending on the context. Here's an explanation of the different potential meanings:\n\n### 1. **In the Context of Search Engine Optimization (SEO)**\nGEO could refer to optimizing content and algorithms for **generative AI engines** (like GPT models) to improve how they respond to search queries or content generation requests. For example:\n- **Generative AI Engines**: Systems like GPT models (which you're talking to) create content based on input data.\n- **Optimization**: Ensuring that the AI generates more relevant, accurate, and engaging content, while also considering factors like query intent and context.\n- **Search Engine Impact**: As generative AI engines become more involved in search engines (e.g., ChatGPT integrated into Google, Bing, or other platforms), GEO might be about optimizing the way AI can better respond to user searches, pulling in contextual data, and offering more value.\n\nThis version of GEO is aligned with **AI content strategies** and **search engine ranking improvements**, ensuring that generative engines like GPT provide results that are increasingly relevant, natural, and comprehensive.\n\n### 2. **In AI-Generated Content Creation**\nWhen used in AI-based systems, **GEO** could refer to refining the **generation algorithms** for specific tasks:\n- **Refining AI models**: Improving the engine's ability to create more personalized, engaging, and context-specific content.\n- **Personalization**: Using data about user preferences to guide the generation of content that is tailored to specific needs (e.g., optimized social media posts, emails, or marketing content).\n\nIn this case, the optimization would focus on the engine's ability to learn from data and produce better outputs over time, ensuring that the content resonates with specific audiences.\n\n### 3. **In Generative Design (Engineering & Manufacturing)**\nAnother possible meaning of **Generative Engine Optimization** could be tied to **generative design** in industries like architecture, manufacturing, or engineering. Generative design refers to the process of using algorithms to automatically generate multiple design options based on given parameters. In this context, GEO would involve optimizing the AI algorithms used in the generative design process to:\n- Enhance performance\n- Minimize material waste\n- Improve design efficiency\n\nThis version would be more about optimizing design solutions based on specific constraints, like weight limits, material costs, or performance metrics.\n\n---\n\nThe term is still evolving, so depending on the field or company using it, the definition might differ a bit. If you're seeing it in a particular application or platform, the meaning might be more specific to that context. \n\nIs there a particular field or platform you're referring to with GEO?",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "**GEO (Generative Engine Optimization)** is a relatively new term that's typically used in the context of **search engines**, **AI-driven content generation**, or even **algorithm-based digital marketing**. Though it's not universally defined yet, it can be interpreted in several ways depending on the context. Here's an explanation of the different potential meanings:\n\n### 1. **In the Context of Search Engine Optimization (SEO)**\nGEO could refer to optimizing content and algorithms for **generative AI engines** (like GPT models) to improve how they respond to search queries or content generation requests. For example:\n- **Generative AI Engines**: Systems like GPT models (which you're talking to) create content based on input data.\n- **Optimization**: Ensuring that the AI generates more relevant, accurate, and engaging content, while also considering factors like query intent and context.\n- **Search Engine Impact**: As generative AI engines become more involved in search engines (e.g., ChatGPT integrated into Google, Bing, or other platforms), GEO might be about optimizing the way AI can better respond to user searches, pulling in contextual data, and offering more value.\n\nThis version of GEO is aligned with **AI content strategies** and **search engine ranking improvements**, ensuring that generative engines like GPT provide results that are increasingly relevant, natural, and comprehensive.\n\n### 2. **In AI-Generated Content Creation**\nWhen used in AI-based systems, **GEO** could refer to refining the **generation algorithms** for specific tasks:\n- **Refining AI models**: Improving the engine's ability to create more personalized, engaging, and context-specific content.\n- **Personalization**: Using data about user preferences to guide the generation of content that is tailored to specific needs (e.g., optimized social media posts, emails, or marketing content).\n\nIn this case, the optimization would focus on the engine's ability to learn from data and produce better outputs over time, ensuring that the content resonates with specific audiences.\n\n### 3. **In Generative Design (Engineering & Manufacturing)**\nAnother possible meaning of **Generative Engine Optimization** could be tied to **generative design** in industries like architecture, manufacturing, or engineering. Generative design refers to the process of using algorithms to automatically generate multiple design options based on given parameters. In this context, GEO would involve optimizing the AI algorithms used in the generative design process to:\n- Enhance performance\n- Minimize material waste\n- Improve design efficiency\n\nThis version would be more about optimizing design solutions based on specific constraints, like weight limits, material costs, or performance metrics.\n\n---\n\nThe term is still evolving, so depending on the field or company using it, the definition might differ a bit. If you're seeing it in a particular application or platform, the meaning might be more specific to that context. \n\nIs there a particular field or platform you're referring to with GEO?",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

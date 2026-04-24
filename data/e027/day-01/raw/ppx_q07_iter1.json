@@ -1,0 +1,87 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "7.3178 sec.",
+  "cost": 0.014529,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241420-1516-0612-0000-dde503698724",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "7.1958 sec.",
+      "cost": 0.014529,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "Does GEO actually work?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 13,
+          "output_tokens": 526,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.013929,
+          "datetime": "2026-04-24 14:20:44 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**Yes, Generative Engine Optimization (GEO) works as an extension of strong SEO practices to boost brand visibility and citations in AI-generated answers from tools like ChatGPT, Gemini, and Perplexity.** It optimizes content for inclusion in LLM responses rather than just search rankings or clicks, leveraging fundamentals like clear structure, authority signals, and topical expertise.[1][2][3]\n\n### How GEO Works and Why It Succeeds\nGEO builds directly on **SEO foundations**, with experts estimating 80% overlap in tactics such as authoritative content, structured headings, brand mentions, and compliance with spam policies\u2014making high-ranking pages more likely to be cited by LLMs.[1][3] For instance, LLMs prioritize extractable, credible information from top search results, so good SEO naturally enhances AI visibility without \"snake oil\" add-ons.[1]\n\n- **Key tactics beyond basics**: Extend optimization to off-site platforms like Reddit or forums, focus on entity clarity and comparisons for buyer research (e.g., \"best whey protein for moms in their 50s\"), and track metrics like reference rates instead of click-throughs.[2][3][4][6]\n- **Proven outcomes**: Brands see higher-converting exposure in AI answers, especially in complex sales cycles (e.g., SaaS) or growing AI search channels, with early adopters gaining leads before competitors.[4][5][6]\n\n| Aspect | SEO | GEO |\n|--------|-----|-----|\n| **Primary Goal** | Rank in search results for clicks and traffic[1][3] | Citations/summaries in AI responses for branding/influence[1][3][5] |\n| **Core Overlap** | Content quality, authority, structure[1][2] | Same, plus AI-specific retrieval (e.g., RAG)[1] |\n| **Measurement** | Rankings, traffic[3] | Mentions, recommendations[3][6] |\n| **User Experience** | Links to sites[5] | Conversational answers (links optional)[5] |\n\n### Limitations and Volatility\nGEO results can fluctuate across AI models due to evolving behaviors, as seen in tracking 2,500 prompts showing high instability in Google AI and ChatGPT.[3] It's most effective atop existing SEO, not as a standalone fix, and demands holistic strategies including AEO for snippets.[2] While promising amid AI search growth (e.g., integrations like Safari with Perplexity), long-term stability remains an open question.[3][6]",
+                  "annotations": [
+                    {
+                      "title": "GEO hype busted: How it differs (and how it doesn't) from SEO",
+                      "url": "https://digiday.com/media/geo-hype-busted-experts-call-it-more-seo-than-new-discipline/"
+                    },
+                    {
+                      "title": "The Tech Marketer's Guide to GEO: Optimize Content for AI Discovery",
+                      "url": "https://iamondemand.com/blog/the-tech-marketers-guide-to-generative-engine-optimization-geo/"
+                    },
+                    {
+                      "title": "Generative engine optimization (GEO): How to win AI mentions",
+                      "url": "https://searchengineland.com/what-is-generative-engine-optimization-geo-444418"
+                    },
+                    {
+                      "title": "Is Generative Engine Optimization (GEO) Worth It?",
+                      "url": "https://singularity.digital/insights/is-geo-worth-it/"
+                    },
+                    {
+                      "title": "What Is Generative Engine Optimization (GEO) & How Does It ...",
+                      "url": "https://www.seerinteractive.com/insights/what-is-generative-engine-optimization-geo"
+                    },
+                    {
+                      "title": "How Generative Engine Optimization (GEO) Rewrites the Rules of ...",
+                      "url": "https://a16z.com/geo-over-seo/"
+                    },
+                    {
+                      "title": "Is GEO/AEO Worth the Hype? AI Search Expert Reveals the Truth",
+                      "url": "https://www.youtube.com/watch?v=NtbbRvggW4c"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

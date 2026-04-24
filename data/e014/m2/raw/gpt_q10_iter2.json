@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "10.0727 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241430-1516-0629-0000-06ec5deb8fe1",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "10.0424 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "How do AI search engines select content to cite?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "How do AI search engines select content to cite?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=How%20do%20AI%20search%20engines%20select%20content%20to%20cite%3F&hints=search",
+          "datetime": "2026-04-24 11:30:23 +00:00",
+          "markdown": "AI search engines or models like me typically don\u2019t \"cite\" content in the same way academic papers or traditional search engines do. However, I can explain how content selection works for AI-driven systems in general:\n\n### 1. **Training Data**  \nAI models like mine are trained on vast datasets that include a wide variety of publicly available information, such as books, websites, articles, and more. The selection process for these datasets is usually guided by:\n   - **Diversity**: Covering a wide range of sources and perspectives.\n   - **Relevance**: Choosing content that\u2019s directly related to the kind of queries the AI is expected to respond to.\n   - **Quality**: Favoring reliable and authoritative sources over low-quality content.\n\nIt's worth noting that **I don't browse the web in real-time**. Instead, the content I generate or reference is based on patterns and data from training that was completed up until my knowledge cutoff (in this case, September 2021).\n\n### 2. **Model Response Generation**  \nWhen you ask a question or request information, AI generates responses based on the knowledge stored from the training phase. The model doesn't \"look up\" information, but instead:\n   - **Analyzes input**: It breaks down your query into key concepts.\n   - **Generates a response**: Based on patterns in the training data, it selects relevant information and synthesizes it into a coherent answer.\n   - **Avoids citing specific sources**: In most AI models, the output is an aggregate of knowledge rather than a direct reference from a specific article or webpage, and there\u2019s typically no explicit citation in the response (unless specifically programmed to do so, like in research-focused models).\n\n### 3. **Relevance Scoring (In Search Engines)**  \nFor search engines like Google or Bing:\n   - **Ranking Algorithms**: When you search, algorithms use various factors such as keywords, content relevance, freshness, user behavior (click-through rates), and domain authority to rank and select which content gets shown.\n   - **Page Rank and SEO**: In web searches, higher-ranking pages are selected based on factors like domain reputation, backlinks, and optimization for specific keywords.\n   - **Contextuality**: Search engines also focus on providing the most contextually relevant content based on your search query.\n\n### 4. **Citing in Research or Academic Contexts**  \nSome specialized AI models, like those designed for academic research or scholarly writing (e.g., OpenAI\u2019s *Codex* or other research assistants), can be programmed to pull in citations or provide specific references. These models might:\n   - **Use structured databases**: For example, PubMed or ArXiv for science.\n   - **Fetch citations manually or via API**: They can reference sources like Google Scholar, PubMed, or other scholarly databases if integrated.\n\n### 5. **Content Selection Biases**  \nThe sources selected in training data could reflect certain biases based on the types of content used or what was available at the time. This means that some areas of knowledge might be overrepresented, while others could be underrepresented, potentially affecting the neutrality or scope of the content an AI generates.\n\n### 6. **Real-Time Search vs. Static Knowledge**  \n- **Search engines**: Update dynamically and pull data from live webpages.\n- **AI Models like GPT**: Work from pre-existing data stored during training and do not update or access live data.\n\nSo, when it comes to AI content generation, there\u2019s no \u201ccitation\u201d in the traditional sense unless explicitly programmed to do so. The AI is more likely to offer synthesized information based on patterns learned from the training data, rather than specific quotes from articles or sources.\n\nIs there a particular context or platform you're curious about regarding AI and citations? That could help narrow down the explanation!",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "AI search engines or models like me typically don\u2019t \"cite\" content in the same way academic papers or traditional search engines do. However, I can explain how content selection works for AI-driven systems in general:\n\n### 1. **Training Data**  \nAI models like mine are trained on vast datasets that include a wide variety of publicly available information, such as books, websites, articles, and more. The selection process for these datasets is usually guided by:\n   - **Diversity**: Covering a wide range of sources and perspectives.\n   - **Relevance**: Choosing content that\u2019s directly related to the kind of queries the AI is expected to respond to.\n   - **Quality**: Favoring reliable and authoritative sources over low-quality content.\n\nIt's worth noting that **I don't browse the web in real-time**. Instead, the content I generate or reference is based on patterns and data from training that was completed up until my knowledge cutoff (in this case, September 2021).\n\n### 2. **Model Response Generation**  \nWhen you ask a question or request information, AI generates responses based on the knowledge stored from the training phase. The model doesn't \"look up\" information, but instead:\n   - **Analyzes input**: It breaks down your query into key concepts.\n   - **Generates a response**: Based on patterns in the training data, it selects relevant information and synthesizes it into a coherent answer.\n   - **Avoids citing specific sources**: In most AI models, the output is an aggregate of knowledge rather than a direct reference from a specific article or webpage, and there\u2019s typically no explicit citation in the response (unless specifically programmed to do so, like in research-focused models).\n\n### 3. **Relevance Scoring (In Search Engines)**  \nFor search engines like Google or Bing:\n   - **Ranking Algorithms**: When you search, algorithms use various factors such as keywords, content relevance, freshness, user behavior (click-through rates), and domain authority to rank and select which content gets shown.\n   - **Page Rank and SEO**: In web searches, higher-ranking pages are selected based on factors like domain reputation, backlinks, and optimization for specific keywords.\n   - **Contextuality**: Search engines also focus on providing the most contextually relevant content based on your search query.\n\n### 4. **Citing in Research or Academic Contexts**  \nSome specialized AI models, like those designed for academic research or scholarly writing (e.g., OpenAI\u2019s *Codex* or other research assistants), can be programmed to pull in citations or provide specific references. These models might:\n   - **Use structured databases**: For example, PubMed or ArXiv for science.\n   - **Fetch citations manually or via API**: They can reference sources like Google Scholar, PubMed, or other scholarly databases if integrated.\n\n### 5. **Content Selection Biases**  \nThe sources selected in training data could reflect certain biases based on the types of content used or what was available at the time. This means that some areas of knowledge might be overrepresented, while others could be underrepresented, potentially affecting the neutrality or scope of the content an AI generates.\n\n### 6. **Real-Time Search vs. Static Knowledge**  \n- **Search engines**: Update dynamically and pull data from live webpages.\n- **AI Models like GPT**: Work from pre-existing data stored during training and do not update or access live data.\n\nSo, when it comes to AI content generation, there\u2019s no \u201ccitation\u201d in the traditional sense unless explicitly programmed to do so. The AI is more likely to offer synthesized information based on patterns learned from the training data, rather than specific quotes from articles or sources.\n\nIs there a particular context or platform you're curious about regarding AI and citations? That could help narrow down the explanation!",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

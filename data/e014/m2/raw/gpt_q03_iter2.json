@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "16.1118 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241428-1516-0629-0000-344c7a7c01b5",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "16.0570 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "What is LLM readability?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "What is LLM readability?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=What%20is%20LLM%20readability%3F&hints=search",
+          "datetime": "2026-04-24 11:28:34 +00:00",
+          "markdown": "\u201cLLM readability\u201d generally refers to how easily a **Large Language Model (LLM)**\u2014like me\u2014can **produce or understand text** in a way that is clear, coherent, and appropriate for human readers. It\u2019s about assessing **how readable the output of an LLM is**, or sometimes how readable a text is **for an LLM to process effectively**. Let me break it down:  \n\n---\n\n### 1. **Readability of LLM Output**\nThis focuses on the quality of text an LLM generates:\n\n- **Clarity:** Is the text understandable and logically structured?  \n- **Coherence:** Do sentences flow naturally, and is the narrative consistent?  \n- **Grammar & Syntax:** Are there correct sentence constructions?  \n- **Audience Appropriateness:** Does the language match the intended reader\u2019s level?  \n\n**Example:** A simple, concise explanation of photosynthesis is more readable than a dense paragraph full of jargon.\n\n---\n\n### 2. **Readability for LLM Input**\nSometimes \u201cLLM readability\u201d is used to describe **how easy a text is for the model itself to process**:\n\n- Text with **clear grammar and structure** is easier for an LLM to interpret accurately.  \n- Ambiguous sentences, slang, or fragmented ideas reduce model comprehension.  \n- Proper formatting (like bullet points or clear headings) can improve results when the LLM is asked to analyze or summarize text.\n\n---\n\n### 3. **How It\u2019s Measured**\nFor humans, readability is often measured with formulas like Flesch\u2013Kincaid scores. For LLMs, readability might involve:\n\n- **Perplexity:** Lower perplexity means the model finds the text predictable and easier to \u201cunderstand.\u201d  \n- **Human Evaluation:** Humans rate whether the text is easy to read.  \n- **Error Rate:** Fewer grammatical or semantic errors indicate higher readability.\n\n---\n\n\ud83d\udca1 **In short:** LLM readability is about **how easy it is for humans to read the model\u2019s output or for the model to accurately process the input**. Improving it usually means making language clear, concise, and logically structured.  \n\nIf you want, I can give a **practical example comparing high vs low LLM readability text** so you can see the difference immediately. Do you want me to do that?",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "\u201cLLM readability\u201d generally refers to how easily a **Large Language Model (LLM)**\u2014like me\u2014can **produce or understand text** in a way that is clear, coherent, and appropriate for human readers. It\u2019s about assessing **how readable the output of an LLM is**, or sometimes how readable a text is **for an LLM to process effectively**. Let me break it down:  \n\n---\n\n### 1. **Readability of LLM Output**\nThis focuses on the quality of text an LLM generates:\n\n- **Clarity:** Is the text understandable and logically structured?  \n- **Coherence:** Do sentences flow naturally, and is the narrative consistent?  \n- **Grammar & Syntax:** Are there correct sentence constructions?  \n- **Audience Appropriateness:** Does the language match the intended reader\u2019s level?  \n\n**Example:** A simple, concise explanation of photosynthesis is more readable than a dense paragraph full of jargon.\n\n---\n\n### 2. **Readability for LLM Input**\nSometimes \u201cLLM readability\u201d is used to describe **how easy a text is for the model itself to process**:\n\n- Text with **clear grammar and structure** is easier for an LLM to interpret accurately.  \n- Ambiguous sentences, slang, or fragmented ideas reduce model comprehension.  \n- Proper formatting (like bullet points or clear headings) can improve results when the LLM is asked to analyze or summarize text.\n\n---\n\n### 3. **How It\u2019s Measured**\nFor humans, readability is often measured with formulas like Flesch\u2013Kincaid scores. For LLMs, readability might involve:\n\n- **Perplexity:** Lower perplexity means the model finds the text predictable and easier to \u201cunderstand.\u201d  \n- **Human Evaluation:** Humans rate whether the text is easy to read.  \n- **Error Rate:** Fewer grammatical or semantic errors indicate higher readability.\n\n---\n\n\ud83d\udca1 **In short:** LLM readability is about **how easy it is for humans to read the model\u2019s output or for the model to accurately process the input**. Improving it usually means making language clear, concise, and logically structured.  \n\nIf you want, I can give a **practical example comparing high vs low LLM readability text** so you can see the difference immediately. Do you want me to do that?",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

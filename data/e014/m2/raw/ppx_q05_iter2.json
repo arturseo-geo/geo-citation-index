@@ -1,0 +1,87 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "5.9644 sec.",
+  "cost": 0.01458,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241421-1516-0612-0000-988ae155a939",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "5.9174 sec.",
+      "cost": 0.01458,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "How does the GEO Stack work?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 15,
+          "output_tokens": 529,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.01398,
+          "datetime": "2026-04-24 14:21:53 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**The GEO Stack is a five-layer framework for optimizing content visibility in AI-driven search systems (Generative Engine Optimization, or GEO), ensuring pages are retrieved, extracted, and cited by tools like Perplexity or ChatGPT.** Developed by Artur Ferreira at The GEO Lab, it builds sequentially from foundational retrieval to higher-level authority signals, but only applies after a prerequisite \"Stage 0\" where content must be indexed and rank in the top 30 organic search results[1].\n\n### Prerequisite: Stage 0 (Entry Gate)\nContent must first be discoverable via traditional search engines.\n- Pages not indexed or ranking below position 30 are invisible to AI systems, as they form the candidate pool for AI retrieval[1].\n\n### The Five Layers (Bottom-Up Dependency)\nEach layer relies on the one below; weaknesses lower down block higher optimizations[1]:\n- **Layer 1: Retrieval Probability** \u2013 Determines if content is pulled from the candidate pool. Key factors: semantic alignment with queries, explicit entity mentions, clean structure (e.g., declarative openings, single-topic sections), and contextual support from linked content[1].\n- **Layer 2: Extractability** \u2013 Ensures retrieved content can be standalone for AI answers. Focus: Opening sentences state main claims clearly for easy parsing[1].\n- **Layer 3: Entity Reinforcement** \u2013 Strengthens recognition of key entities (e.g., people, products) via canonical naming and definitions[1].\n- **Layer 4: Structural Authority** \u2013 Builds site-wide credibility through hub-and-spoke architecture (pillar pages linking to clusters), bidirectional internal links with entity-rich anchor text, and clear topical boundaries[1].\n- **Layer 5: System Memory** \u2013 Accumulates long-term signals for sustained AI recall, leveraging prior layers[1].\n\n### How Layers Interact\nOptimization is sequential: Failure in Retrieval (Layer 1) prevents Extractability or higher layers from mattering, as content isn't selected[1]. Structured data (e.g., schema) boosts performance, with studies showing 58% click-through for rich results vs. 41% for standard ones[1].\n\n**Note on variants:** Related concepts include a 4-layer GEO stack (Content Format \u2192 Entities \u2192 Metadata \u2192 AI Retrievability) emphasizing semantic layers and schema for efficiency up to 90%[4], but the primary GEO Stack from The GEO Lab uses five layers[1]. Other \"GEO Stack\" references (e.g., seismic data processing[2] or Blender tools[5]) are unrelated to AI optimization.",
+                  "annotations": [
+                    {
+                      "title": "The GEO Stack \u2014 A Framework for AI Visibility",
+                      "url": "https://thegeolab.net/geo-stack/"
+                    },
+                    {
+                      "title": "Stacking Technical Note \u2013 \u2013 Software \u2013 Geometrics Forum",
+                      "url": "https://www.geometrics.com/community/geode-software/stacking-technical-note/"
+                    },
+                    {
+                      "title": "The GEO Stack I Teach to My Private Clients - eSEOspace",
+                      "url": "https://eseospace.com/geo-stack-i-teach-my-clients/"
+                    },
+                    {
+                      "title": "GEO Optimization Stack | Hashmeta",
+                      "url": "https://hashmeta.com/insights/infographic/geo-optimization-stack-geo"
+                    },
+                    {
+                      "title": "GeoStacker for Blender Stack Anything in Seconds - YouTube",
+                      "url": "https://www.youtube.com/watch?v=fN1qt8-Ygtc"
+                    },
+                    {
+                      "title": "Okay, I'm an idiot, I have no clue on how Geo Blocks and Panels work.",
+                      "url": "https://gamefaqs.gamespot.com/boards/995078-disgaea-4-a-promise-unforgotten/60335007?page=1"
+                    },
+                    {
+                      "title": "The GeoStack Project | A Self-Study Beginner Course in Open ...",
+                      "url": "https://the-geostack-project.github.io"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

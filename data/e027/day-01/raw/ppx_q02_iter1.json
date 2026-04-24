@@ -1,0 +1,87 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "6.6167 sec.",
+  "cost": 0.011766,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241419-1516-0612-0000-52db51f2e095",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "6.5661 sec.",
+      "cost": 0.011766,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "What is Retrieval Probability in AI search?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 17,
+          "output_tokens": 341,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.011166,
+          "datetime": "2026-04-24 14:20:01 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**Retrieval Probability** is the estimated likelihood that a specific content section gets selected by an AI system during its search phase when generating answers[1]. It represents the foundational layer of Generative Engine Optimisation (GEO), determining whether your content enters the candidate pool that systems like Google AI Overviews, Perplexity, and ChatGPT draw from[1].\n\nIf a section is not retrieved, it cannot be cited regardless of its quality or ranking position[1]. This means ranking #1 on Google does not guarantee retrieval, since AI systems select individual sections rather than full pages[1].\n\n## Five Variables That Control Retrieval Probability\n\nRetrieval Probability is influenced by five key factors[1]:\n\n- **Semantic alignment** \u2014 how closely a section matches the semantic representation of the query\n- **Entity match strength** \u2014 the prominence and consistency of entities in the content\n- **Structural clarity** \u2014 the organization and coherence of the content\n- **Topical isolation** \u2014 maintaining a single-subject focus\n- **Contextual reinforcement** \u2014 support from related content clusters\n\nThese weights are internal to each AI system and differ across platforms, so Retrieval Probability cannot be computed as a precise formula[1]. Instead, it functions as a diagnostic framework to identify which variable is most likely limiting retrieval for any given content block[1].\n\n## Why It Matters\n\nRetrieval Probability operates as **Layer 1 of the GEO Stack**[1]. Once content is retrieved, it moves to Layer 2 (Extractability), which determines whether it can actually be used in the generated answer[1]. Without successful retrieval at Layer 1, higher optimization layers become irrelevant[1].",
+                  "annotations": [
+                    {
+                      "title": "Retrieval Probability \u2014 The Core Variable of GEO",
+                      "url": "https://thegeolab.net/retrieval-probability/"
+                    },
+                    {
+                      "title": "What Is Information Retrieval? A Modern Overview for AI | Unstructured",
+                      "url": "https://unstructured.io/insights/what-is-information-retrieval-for-ai-applications"
+                    },
+                    {
+                      "title": "What is Retrieval? | AI Search Glossary - GRRO",
+                      "url": "https://grro.io/glossary/retrieval"
+                    },
+                    {
+                      "title": "AI Search: How Generative Engine Optimization Reshapes SEO",
+                      "url": "https://ipullrank.com/probability-ai-search"
+                    },
+                    {
+                      "title": "Why AI search is probabilistic (volatility & hallucinations explained)",
+                      "url": "https://www.buriedagency.com/post/why-ai-search-is-probabalistic"
+                    },
+                    {
+                      "title": "Lecture 19 \u2014 Probabilistic Retrieval Model Basic Idea | UIUC",
+                      "url": "https://www.youtube.com/watch?v=TaboD-gmHPo"
+                    },
+                    {
+                      "title": "From Retrieval to Selection: How AI Chooses Content",
+                      "url": "https://www.womenintechseo.com/knowledge/how-ai-chooses-content/"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

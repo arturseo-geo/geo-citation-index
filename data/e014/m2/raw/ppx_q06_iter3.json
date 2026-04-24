@@ -1,0 +1,95 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "4.8199 sec.",
+  "cost": 0.01236,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241423-1516-0612-0000-e3d589182bbb",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "4.7894 sec.",
+      "cost": 0.01236,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "What is Extractability in GEO?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 15,
+          "output_tokens": 381,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.01176,
+          "datetime": "2026-04-24 14:23:22 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**Extractability in GEO (Generative Engine Optimization) measures how cleanly AI systems can parse, isolate, and reuse a specific content section without losing its core meaning.** It is Layer 2 of the GEO Stack, positioned after Retrieval Probability and before Entity Reinforcement, determining if retrieved content survives compression into AI-generated answers like those from ChatGPT, Perplexity, or Google AI Overviews.[1][2]\n\n### Key Characteristics\nHigh extractability requires:\n- **Answer-first structure**: Content starts with direct answers, using TL;DR summary boxes or key takeaways in the first 300 words to boost citation rates by up to 40%.[1][5]\n- **Section independence**: Each section stands alone, readable out of context without phrases like \"as we saw above,\" so AI can extract passages via retrieval-augmented generation (RAG).[1][4]\n- **Explicit entity anchoring**: Clear definitions of concepts, relationships, and sources (e.g., linking to authoritative data or first-party studies).[1][3]\n- **Compression resistance**: Formatting for machine parsing, including H2/H3 headings, bullets, tables, short paragraphs (<120 words), and numbered lists.[3][4]\n\n### Why It Matters\nContent may rank highly (Layer 1: Retrieval Probability) but fail to be cited if not extractable, as AI prioritizes standalone, scannable passages over full pages.[1][2][3] GEO emphasizes quality, recency, and extractability over traditional SEO signals, leveling the field for precise citation in generative responses.[6]\n\n### Best Practices\n- Design sections to answer specific questions independently.[2][4]\n- Use summary boxes, bullets, and tables for quick AI pulls.[5][7]\n- Test by copying sections into a blank document\u2014if they make sense alone, they are extractable.[4]",
+                  "annotations": [
+                    {
+                      "title": "Extractability \u2014 Content for Machine Retrieval - The GEO Lab",
+                      "url": "https://thegeolab.net/extractability/"
+                    },
+                    {
+                      "title": "SEO vs. GEO: Two Coins, or Two Sides of the Same Coin?",
+                      "url": "https://www.mandr-group.com/seo-vs-geo-two-coins-or-two-sides-of-the-same-coin/"
+                    },
+                    {
+                      "title": "A Guide to Generative Engine Optimization (GEO) Best Practices",
+                      "url": "https://directiveconsulting.com/blog/a-guide-to-generative-engine-optimization-geo-best-practices/"
+                    },
+                    {
+                      "title": "How to Structure Content for LLM Extraction: A GEO Guide for 2026",
+                      "url": "https://kime.ai/blog/how-to-structure-content-for-llm-extraction-geo-guide-2026"
+                    },
+                    {
+                      "title": "Summary Boxes for AI Extractability: Why They Work + Template ...",
+                      "url": "https://seenos.ai/geo-core-organization/tldr-summary-boxes"
+                    },
+                    {
+                      "title": "The Complete Guide to Generative Engine Optimization (GEO)",
+                      "url": "https://guptadeepak.com/the-complete-guide-to-generative-engine-optimization-what-b2b-saas-companies-need-to-know-in-2026/"
+                    },
+                    {
+                      "title": "How to Create Extractable Snippets for AI Tools & GEO - eSEOspace",
+                      "url": "https://eseospace.com/blog/how-to-create-extractable-snippets-for-ai-tools/"
+                    },
+                    {
+                      "title": "Generative Engine Optimization (GEO): Complete Guide 2026",
+                      "url": "https://mdazizurrahman.com.bd/what-is-geo/"
+                    },
+                    {
+                      "title": "GEO for Clinics: Win Visibility in AI Answers in 2026 - WebToMed",
+                      "url": "https://www.webtomed.com/blog/geo-generative-engine-optimization-healthcare-marketing.html"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

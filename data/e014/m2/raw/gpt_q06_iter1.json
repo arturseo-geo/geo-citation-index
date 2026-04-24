@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "37.9075 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241425-1516-0629-0000-dd05929fb41f",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "37.8609 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "What is Extractability in GEO?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "What is Extractability in GEO?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=What%20is%20Extractability%20in%20GEO%3F&hints=search",
+          "datetime": "2026-04-24 11:26:24 +00:00",
+          "markdown": "Could you clarify whether you mean **GEO** as in **Gene Expression Omnibus (a genomics database)** or **GEO** in a **geospatial/geological context**? The meaning of *extractability* can differ depending on the field.  \n\nIf you mean the **Gene Expression Omnibus (GEO)**, then I can explain it in terms of data: \u201cextractability\u201d usually refers to **how easily data can be retrieved, processed, or parsed from GEO datasets** for downstream analysis, like extracting gene expression matrices, metadata, or sample information.\n\nIf it\u2019s **geospatial or geological**, \u201cextractability\u201d often refers to **the feasibility of extracting a resource** (like minerals, oil, or soil samples) from a given location, considering economic, technical, and environmental constraints.  \n\nWhich GEO context are you asking about?",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Could you clarify whether you mean **GEO** as in **Gene Expression Omnibus (a genomics database)** or **GEO** in a **geospatial/geological context**? The meaning of *extractability* can differ depending on the field.  \n\nIf you mean the **Gene Expression Omnibus (GEO)**, then I can explain it in terms of data: \u201cextractability\u201d usually refers to **how easily data can be retrieved, processed, or parsed from GEO datasets** for downstream analysis, like extracting gene expression matrices, metadata, or sample information.\n\nIf it\u2019s **geospatial or geological**, \u201cextractability\u201d often refers to **the feasibility of extracting a resource** (like minerals, oil, or soil samples) from a given location, considering economic, technical, and environmental constraints.  \n\nWhich GEO context are you asking about?",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "12.0663 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241433-1516-0629-0000-d902e71ab528",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "12.0349 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "How do AI search engines select content to cite?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "How do AI search engines select content to cite?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=How%20do%20AI%20search%20engines%20select%20content%20to%20cite%3F&hints=search",
+          "datetime": "2026-04-24 11:33:20 +00:00",
+          "markdown": "AI search engines, or AI-based systems like the one you're interacting with, typically use a mix of algorithms, machine learning, and ranking systems to select and cite content. The process involves multiple factors to ensure the most relevant and authoritative content is chosen. Here's a simplified breakdown of how they do this:\n\n### 1. **Content Relevance**  \nAI first evaluates the relevance of the content based on the query. It uses algorithms that analyze the search intent, keywords, and context of the query. This helps the AI understand what type of content (articles, papers, websites, etc.) is likely to provide the best answer.\n\n### 2. **Textual Analysis**  \nAI models analyze the actual content of web pages and documents. Natural language processing (NLP) is used to understand the structure of the text, including:\n   - **Keywords**: The most frequently mentioned and contextually important words.\n   - **Semantics**: Understanding the meaning behind the words and how they relate to each other.\n   - **Entities**: Recognizing people, places, dates, and other factual data that are relevant to the query.\n\n### 3. **Authority and Credibility**  \nThe AI system often favors content from authoritative, trustworthy, and well-established sources. This could be based on factors like:\n   - **Domain Authority**: Websites with a high reputation in the subject area.\n   - **Citations**: Whether other reputable sources cite the content.\n   - **Publisher Reputation**: Academic journals, well-known media outlets, and established organizations tend to be ranked higher for factual queries.\n\n### 4. **User Behavior and Engagement**  \nAI search engines might also consider how users have interacted with certain content. For example:\n   - **Click-Through Rate (CTR)**: If many users click on a specific result when a similar query is searched, it could indicate that the content is useful.\n   - **Bounce Rate**: If users quickly leave a page, that might signal that the content isn't providing the right information.\n\n### 5. **Recency and Freshness**  \nFor certain topics (e.g., current events or technology), AI will prioritize the most recent content. This ensures that the search results reflect the latest developments.\n\n### 6. **Multimodal Analysis (Images, Videos, etc.)**  \nSome AI search engines also consider non-textual content such as images or videos. For example, if you\u2019re looking for something like a tutorial or a visual diagram, the AI may highlight content that includes images or videos.\n\n### 7. **Ranking Signals**  \nAlgorithms like **PageRank** (used by Google) rank content based on backlinks and other external signals. The more external sites link to a particular page (especially high-authority sites), the higher the likelihood that the content is relevant and authoritative.\n\n### 8. **Content Variety**  \nIn some cases, an AI might choose a variety of sources to give a more comprehensive answer. For example, it might pull together content from both highly authoritative websites and from social media or user-generated content if that source provides important or unique perspectives.\n\n### 9. **Bias and Ethical Considerations**  \nAI systems also attempt to filter out biased or harmful content. Many modern AI systems use ethical guidelines to avoid citing or promoting content that spreads misinformation, hate speech, or discriminatory views.\n\n### 10. **Algorithms\u2019 Constant Improvement**  \nSearch engines regularly refine their algorithms based on user feedback, new research in AI, and changes in the web ecosystem. This means the criteria for selecting content to cite evolve over time.\n\nIn essence, the AI aims to offer content that best matches your query, balancing factors like relevance, authority, freshness, and user behavior to create a curated list of the most useful information.",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "AI search engines, or AI-based systems like the one you're interacting with, typically use a mix of algorithms, machine learning, and ranking systems to select and cite content. The process involves multiple factors to ensure the most relevant and authoritative content is chosen. Here's a simplified breakdown of how they do this:\n\n### 1. **Content Relevance**  \nAI first evaluates the relevance of the content based on the query. It uses algorithms that analyze the search intent, keywords, and context of the query. This helps the AI understand what type of content (articles, papers, websites, etc.) is likely to provide the best answer.\n\n### 2. **Textual Analysis**  \nAI models analyze the actual content of web pages and documents. Natural language processing (NLP) is used to understand the structure of the text, including:\n   - **Keywords**: The most frequently mentioned and contextually important words.\n   - **Semantics**: Understanding the meaning behind the words and how they relate to each other.\n   - **Entities**: Recognizing people, places, dates, and other factual data that are relevant to the query.\n\n### 3. **Authority and Credibility**  \nThe AI system often favors content from authoritative, trustworthy, and well-established sources. This could be based on factors like:\n   - **Domain Authority**: Websites with a high reputation in the subject area.\n   - **Citations**: Whether other reputable sources cite the content.\n   - **Publisher Reputation**: Academic journals, well-known media outlets, and established organizations tend to be ranked higher for factual queries.\n\n### 4. **User Behavior and Engagement**  \nAI search engines might also consider how users have interacted with certain content. For example:\n   - **Click-Through Rate (CTR)**: If many users click on a specific result when a similar query is searched, it could indicate that the content is useful.\n   - **Bounce Rate**: If users quickly leave a page, that might signal that the content isn't providing the right information.\n\n### 5. **Recency and Freshness**  \nFor certain topics (e.g., current events or technology), AI will prioritize the most recent content. This ensures that the search results reflect the latest developments.\n\n### 6. **Multimodal Analysis (Images, Videos, etc.)**  \nSome AI search engines also consider non-textual content such as images or videos. For example, if you\u2019re looking for something like a tutorial or a visual diagram, the AI may highlight content that includes images or videos.\n\n### 7. **Ranking Signals**  \nAlgorithms like **PageRank** (used by Google) rank content based on backlinks and other external signals. The more external sites link to a particular page (especially high-authority sites), the higher the likelihood that the content is relevant and authoritative.\n\n### 8. **Content Variety**  \nIn some cases, an AI might choose a variety of sources to give a more comprehensive answer. For example, it might pull together content from both highly authoritative websites and from social media or user-generated content if that source provides important or unique perspectives.\n\n### 9. **Bias and Ethical Considerations**  \nAI systems also attempt to filter out biased or harmful content. Many modern AI systems use ethical guidelines to avoid citing or promoting content that spreads misinformation, hate speech, or discriminatory views.\n\n### 10. **Algorithms\u2019 Constant Improvement**  \nSearch engines regularly refine their algorithms based on user feedback, new research in AI, and changes in the web ecosystem. This means the criteria for selecting content to cite evolve over time.\n\nIn essence, the AI aims to offer content that best matches your query, balancing factors like relevance, authority, freshness, and user behavior to create a curated list of the most useful information.",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

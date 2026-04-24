@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "16.1021 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241425-1516-0629-0000-a5f0333f3db2",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "16.0729 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "GEO vs traditional SEO \u2014 what changed?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "GEO vs traditional SEO \u2014 what changed?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=GEO%20vs%20traditional%20SEO%20%E2%80%94%20what%20changed%3F&hints=search",
+          "datetime": "2026-04-24 11:25:26 +00:00",
+          "markdown": "Great question! The shift from traditional SEO to **GEO SEO** (also known as **local SEO**) is largely driven by the increasing importance of local search and the way search engines have evolved, especially with mobile use and location-based queries becoming more dominant. Here\u2019s a breakdown of the changes:\n\n### Traditional SEO:\nTraditional SEO primarily focuses on **ranking websites for general, non-location-specific queries**. It\u2019s about improving a website\u2019s visibility and performance for broader searches, such as:\n- **Keyword optimization**\n- **Content quality**\n- **Backlink building**\n- **Technical SEO** (site speed, mobile optimization, etc.)\n- **On-page factors** (title tags, meta descriptions, headers, etc.)\n\n### GEO SEO (Local SEO):\nGEO SEO, or local SEO, specifically focuses on **optimizing for local search results**\u2014that is, when someone searches for something nearby or location-specific. For example, if you search \u201cbest pizza near me\u201d or \u201cplumbers in New York,\u201d that\u2019s where local SEO comes into play. Key differences in this approach include:\n\n1. **Google My Business (GMB) & Local Listings**:\n   - **Traditional SEO** doesn't focus on GMB or local directories as much. \n   - **Local SEO** heavily optimizes business profiles on platforms like **Google My Business**, **Apple Maps**, **Bing Places**, and others. You want to ensure your business shows up in local pack results (those map-based results you see on Google search).\n\n2. **Local Keywords**:\n   - **Traditional SEO** focuses on general keywords (e.g., \u201crestaurants,\u201d \u201cfitness trainers\u201d).\n   - **Local SEO** uses **location-based keywords** (e.g., \u201cpizza in Brooklyn,\u201d \u201cfitness trainer in LA\u201d). It\u2019s important to focus on keywords that include cities, neighborhoods, or even zip codes.\n\n3. **NAP Consistency**:\n   - **Traditional SEO** doesn\u2019t deal with NAP (Name, Address, Phone Number) consistency as much, though it\u2019s still important for citation building.\n   - **Local SEO** requires **consistent NAP information** across all platforms, directories, and websites. Inconsistent details can hurt rankings.\n\n4. **Local Reviews**:\n   - **Traditional SEO** may consider reviews, but the **focus is on overall site authority and link-building**.\n   - **Local SEO** places significant importance on **customer reviews and ratings** for local businesses, particularly on **Google Reviews**. A business with more positive reviews will often rank higher in local search results.\n\n5. **Mobile-Friendliness & Location Signals**:\n   - **Traditional SEO**: Mobile optimization is important but doesn't always take location-based intent into account.\n   - **Local SEO** is all about **mobile-friendliness** because people often search on the go. Additionally, **location-based signals** (like GPS and IP addresses) influence rankings, and Google uses these signals to show the most relevant local results.\n\n6. **Local Link Building**:\n   - **Traditional SEO**: Links from any high-authority site are great.\n   - **Local SEO**: Focuses more on getting links from **local businesses, community organizations**, and **local blogs** to build credibility within your specific geographic area.\n\n7. **Rankings & Algorithm Changes**:\n   - **Traditional SEO**: The primary ranking signals include domain authority, backlinks, keyword relevance, etc.\n   - **Local SEO**: It includes **local algorithm factors**, such as proximity to the searcher, the prominence of the business, and relevance to the query. Google\u2019s **Pigeon update** (2014) was a major shift that integrated more local signals into the ranking system.\n\n### Why the Shift to GEO SEO?\n- **Mobile-first**: More users are searching on mobile devices with location-based queries.\n- **Google\u2019s Evolving Algorithms**: Google\u2019s focus on serving the most relevant, local results has increased.\n- **Increased Competition**: Businesses want to stand out in their local markets, especially with rising digital competition.\n\n### The Bottom Line:\nThe key difference is that **traditional SEO** is more focused on general search visibility, while **GEO SEO** is more specialized for **local visibility**. As search behaviors have become more localized, **local SEO** strategies have become crucial for businesses targeting specific geographic areas.\n\nWould you like to dive deeper into any of these aspects, or perhaps explore how to start optimizing for GEO SEO?",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Great question! The shift from traditional SEO to **GEO SEO** (also known as **local SEO**) is largely driven by the increasing importance of local search and the way search engines have evolved, especially with mobile use and location-based queries becoming more dominant. Here\u2019s a breakdown of the changes:\n\n### Traditional SEO:\nTraditional SEO primarily focuses on **ranking websites for general, non-location-specific queries**. It\u2019s about improving a website\u2019s visibility and performance for broader searches, such as:\n- **Keyword optimization**\n- **Content quality**\n- **Backlink building**\n- **Technical SEO** (site speed, mobile optimization, etc.)\n- **On-page factors** (title tags, meta descriptions, headers, etc.)\n\n### GEO SEO (Local SEO):\nGEO SEO, or local SEO, specifically focuses on **optimizing for local search results**\u2014that is, when someone searches for something nearby or location-specific. For example, if you search \u201cbest pizza near me\u201d or \u201cplumbers in New York,\u201d that\u2019s where local SEO comes into play. Key differences in this approach include:\n\n1. **Google My Business (GMB) & Local Listings**:\n   - **Traditional SEO** doesn't focus on GMB or local directories as much. \n   - **Local SEO** heavily optimizes business profiles on platforms like **Google My Business**, **Apple Maps**, **Bing Places**, and others. You want to ensure your business shows up in local pack results (those map-based results you see on Google search).\n\n2. **Local Keywords**:\n   - **Traditional SEO** focuses on general keywords (e.g., \u201crestaurants,\u201d \u201cfitness trainers\u201d).\n   - **Local SEO** uses **location-based keywords** (e.g., \u201cpizza in Brooklyn,\u201d \u201cfitness trainer in LA\u201d). It\u2019s important to focus on keywords that include cities, neighborhoods, or even zip codes.\n\n3. **NAP Consistency**:\n   - **Traditional SEO** doesn\u2019t deal with NAP (Name, Address, Phone Number) consistency as much, though it\u2019s still important for citation building.\n   - **Local SEO** requires **consistent NAP information** across all platforms, directories, and websites. Inconsistent details can hurt rankings.\n\n4. **Local Reviews**:\n   - **Traditional SEO** may consider reviews, but the **focus is on overall site authority and link-building**.\n   - **Local SEO** places significant importance on **customer reviews and ratings** for local businesses, particularly on **Google Reviews**. A business with more positive reviews will often rank higher in local search results.\n\n5. **Mobile-Friendliness & Location Signals**:\n   - **Traditional SEO**: Mobile optimization is important but doesn't always take location-based intent into account.\n   - **Local SEO** is all about **mobile-friendliness** because people often search on the go. Additionally, **location-based signals** (like GPS and IP addresses) influence rankings, and Google uses these signals to show the most relevant local results.\n\n6. **Local Link Building**:\n   - **Traditional SEO**: Links from any high-authority site are great.\n   - **Local SEO**: Focuses more on getting links from **local businesses, community organizations**, and **local blogs** to build credibility within your specific geographic area.\n\n7. **Rankings & Algorithm Changes**:\n   - **Traditional SEO**: The primary ranking signals include domain authority, backlinks, keyword relevance, etc.\n   - **Local SEO**: It includes **local algorithm factors**, such as proximity to the searcher, the prominence of the business, and relevance to the query. Google\u2019s **Pigeon update** (2014) was a major shift that integrated more local signals into the ranking system.\n\n### Why the Shift to GEO SEO?\n- **Mobile-first**: More users are searching on mobile devices with location-based queries.\n- **Google\u2019s Evolving Algorithms**: Google\u2019s focus on serving the most relevant, local results has increased.\n- **Increased Competition**: Businesses want to stand out in their local markets, especially with rising digital competition.\n\n### The Bottom Line:\nThe key difference is that **traditional SEO** is more focused on general search visibility, while **GEO SEO** is more specialized for **local visibility**. As search behaviors have become more localized, **local SEO** strategies have become crucial for businesses targeting specific geographic areas.\n\nWould you like to dive deeper into any of these aspects, or perhaps explore how to start optimizing for GEO SEO?",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

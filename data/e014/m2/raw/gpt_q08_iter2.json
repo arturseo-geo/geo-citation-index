@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "13.5882 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241429-1516-0629-0000-44556c33e10e",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "13.5325 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "How to measure AI citation rate?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "How to measure AI citation rate?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=How%20to%20measure%20AI%20citation%20rate%3F&hints=search",
+          "datetime": "2026-04-24 11:29:52 +00:00",
+          "markdown": "Measuring the \"AI citation rate\" typically refers to tracking how often academic papers, research articles, or other scholarly works related to AI (artificial intelligence) are cited in academic publications. It's important for understanding the impact, relevance, and influence of a particular work or AI technology within the research community. Here's how to measure it:\n\n### 1. **Use Citation Databases**\nThe most common way to measure citation rates is through academic citation databases. Here are some widely used ones:\n- **Google Scholar**: You can search for specific papers or authors and see how often they have been cited by other academic works. It also allows tracking citations over time.\n- **Scopus**: A comprehensive citation database for academic research, providing detailed citation metrics, including citation counts, h-index, and impact factor.\n- **Web of Science**: Another popular citation indexing service that tracks how often specific works are cited in scholarly literature.\n\nThese databases often provide citation counts along with other metrics like h-index (a measure of an academic's productivity and citation impact), which can give you a sense of the influence of AI-related works.\n\n### 2. **Track Citation Metrics**\nFor a more detailed view, you can look at several citation metrics:\n- **Total Citations**: This is simply the total number of times a paper has been cited by other papers.\n- **h-index**: This measures both the productivity and citation impact of a scholar or researcher's work. It\u2019s often used to measure the impact of AI researchers.\n- **i10-index**: Specifically used by Google Scholar, it tracks the number of papers an author has that have been cited at least 10 times.\n- **Impact Factor**: This metric is often used for journals rather than individual papers but can help measure the influence of a journal publishing AI research.\n  \n### 3. **AI-Specific Repositories**\n- **arXiv**: Many AI researchers share preprints of their papers here. You can track how often these preprints are cited once published and later indexed in other databases like Google Scholar or Scopus.\n- **Semantic Scholar**: This tool provides citation counts along with AI-specific filters that allow you to measure the impact of AI research.\n\n### 4. **Citation Networks and AI Conference Metrics**\nIn AI, the impact of certain research areas is often determined by citations in specific AI-focused conferences and journals:\n- **Top AI Conferences**: Many AI conferences (like NeurIPS, ICML, CVPR, and ACL) publish proceedings where papers are cited within the community. You can track citations in these proceedings to get a sense of how impactful a paper or topic is within the AI field.\n- **Citations in Major AI Journals**: Journals like *Artificial Intelligence*, *Journal of Machine Learning Research (JMLR)*, and *IEEE Transactions on Neural Networks and Learning Systems* are key sources for AI citations.\n\n### 5. **Citation Management Tools**\n- **Zotero** or **Mendeley**: These tools can track citations and manage references, but they also allow for monitoring how often specific papers have been cited in both AI and broader contexts.\n  \n### 6. **AI Citation Analytics Services**\n- **Publish or Perish**: This is a software tool that can gather citation data from Google Scholar and display various citation metrics.\n- **Altmetric**: This tool provides a broader picture, tracking social media mentions, news coverage, and other non-academic references to AI research.\n\n### 7. **Automated Citation Tracking Systems**\nIn some cases, you can set up an automated system using APIs (e.g., from Google Scholar or Scopus) to track citations for specific works or topics in AI over time. You could also create a custom dashboard for visualizing the citation trends of various AI papers.\n\n### 8. **Research Impact Analysis**\nIn the broader sense, citation rate can also be an indicator of research impact. AI researchers and institutions sometimes use these metrics to evaluate the success of research projects or the adoption of specific technologies or theories within the AI community.\n\n### 9. **Metrics Specific to AI Technology**\nFor AI technologies or models (e.g., GPT, BERT, etc.), citation rates can be tracked by looking at how often they appear in the literature. Tools like Google Scholar can show how frequently a specific AI model or algorithm is cited in related research papers.\n\n---\n\nBy combining these methods, you can create a robust picture of the AI citation rate, including how frequently a specific paper, author, or topic in AI is being referenced and how influential it is within the academic and scientific community. \n\nWould you like more details about a specific method or tool?",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Measuring the \"AI citation rate\" typically refers to tracking how often academic papers, research articles, or other scholarly works related to AI (artificial intelligence) are cited in academic publications. It's important for understanding the impact, relevance, and influence of a particular work or AI technology within the research community. Here's how to measure it:\n\n### 1. **Use Citation Databases**\nThe most common way to measure citation rates is through academic citation databases. Here are some widely used ones:\n- **Google Scholar**: You can search for specific papers or authors and see how often they have been cited by other academic works. It also allows tracking citations over time.\n- **Scopus**: A comprehensive citation database for academic research, providing detailed citation metrics, including citation counts, h-index, and impact factor.\n- **Web of Science**: Another popular citation indexing service that tracks how often specific works are cited in scholarly literature.\n\nThese databases often provide citation counts along with other metrics like h-index (a measure of an academic's productivity and citation impact), which can give you a sense of the influence of AI-related works.\n\n### 2. **Track Citation Metrics**\nFor a more detailed view, you can look at several citation metrics:\n- **Total Citations**: This is simply the total number of times a paper has been cited by other papers.\n- **h-index**: This measures both the productivity and citation impact of a scholar or researcher's work. It\u2019s often used to measure the impact of AI researchers.\n- **i10-index**: Specifically used by Google Scholar, it tracks the number of papers an author has that have been cited at least 10 times.\n- **Impact Factor**: This metric is often used for journals rather than individual papers but can help measure the influence of a journal publishing AI research.\n  \n### 3. **AI-Specific Repositories**\n- **arXiv**: Many AI researchers share preprints of their papers here. You can track how often these preprints are cited once published and later indexed in other databases like Google Scholar or Scopus.\n- **Semantic Scholar**: This tool provides citation counts along with AI-specific filters that allow you to measure the impact of AI research.\n\n### 4. **Citation Networks and AI Conference Metrics**\nIn AI, the impact of certain research areas is often determined by citations in specific AI-focused conferences and journals:\n- **Top AI Conferences**: Many AI conferences (like NeurIPS, ICML, CVPR, and ACL) publish proceedings where papers are cited within the community. You can track citations in these proceedings to get a sense of how impactful a paper or topic is within the AI field.\n- **Citations in Major AI Journals**: Journals like *Artificial Intelligence*, *Journal of Machine Learning Research (JMLR)*, and *IEEE Transactions on Neural Networks and Learning Systems* are key sources for AI citations.\n\n### 5. **Citation Management Tools**\n- **Zotero** or **Mendeley**: These tools can track citations and manage references, but they also allow for monitoring how often specific papers have been cited in both AI and broader contexts.\n  \n### 6. **AI Citation Analytics Services**\n- **Publish or Perish**: This is a software tool that can gather citation data from Google Scholar and display various citation metrics.\n- **Altmetric**: This tool provides a broader picture, tracking social media mentions, news coverage, and other non-academic references to AI research.\n\n### 7. **Automated Citation Tracking Systems**\nIn some cases, you can set up an automated system using APIs (e.g., from Google Scholar or Scopus) to track citations for specific works or topics in AI over time. You could also create a custom dashboard for visualizing the citation trends of various AI papers.\n\n### 8. **Research Impact Analysis**\nIn the broader sense, citation rate can also be an indicator of research impact. AI researchers and institutions sometimes use these metrics to evaluate the success of research projects or the adoption of specific technologies or theories within the AI community.\n\n### 9. **Metrics Specific to AI Technology**\nFor AI technologies or models (e.g., GPT, BERT, etc.), citation rates can be tracked by looking at how often they appear in the literature. Tools like Google Scholar can show how frequently a specific AI model or algorithm is cited in related research papers.\n\n---\n\nBy combining these methods, you can create a robust picture of the AI citation rate, including how frequently a specific paper, author, or topic in AI is being referenced and how influential it is within the academic and scientific community. \n\nWould you like more details about a specific method or tool?",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

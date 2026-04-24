@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "10.4916 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241428-1516-0629-0000-1263ac95a0f4",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "10.4155 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "What is Retrieval Probability in AI search?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "What is Retrieval Probability in AI search?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=What%20is%20Retrieval%20Probability%20in%20AI%20search%3F&hints=search",
+          "datetime": "2026-04-24 11:28:14 +00:00",
+          "markdown": "In AI search, **retrieval probability** refers to the likelihood that a given search or retrieval system will successfully return relevant results based on a query or a set of conditions. It\u2019s often used to measure how effectively a model or algorithm identifies and ranks relevant documents, data points, or information based on a user\u2019s input.\n\nRetrieval probability can be influenced by various factors:\n\n1. **Query Relevance**: The more closely a query matches relevant items in the system\u2019s knowledge base or database, the higher the retrieval probability will be.\n   \n2. **Model Precision and Recall**: \n   - **Precision** is the percentage of retrieved documents that are relevant.\n   - **Recall** is the percentage of relevant documents that were successfully retrieved.\n   Retrieval probability combines these measures, where higher precision and recall typically indicate a better retrieval probability.\n\n3. **Ranking Algorithms**: The effectiveness of algorithms (such as BM25, TF-IDF, or more complex neural-based approaches) also impacts retrieval probability. These algorithms are designed to score and rank documents in order of their relevance to a query.\n\n4. **Indexing and Preprocessing**: How data is indexed (such as vector embeddings or traditional keyword indexing) can impact the probability of retrieving the right results, especially when considering large datasets or complex searches.\n\nIn practice, retrieval probability might be used to:\n- **Evaluate search engine quality**, i.e., the likelihood that a user finds the most relevant results at the top of their search.\n- **Optimize AI-driven recommendation systems**, ensuring that the system suggests the most likely relevant items based on user behavior or input.\n- **Measure model effectiveness** in retrieving relevant information for tasks such as information retrieval, question-answering, or document search.\n\nIn summary, retrieval probability is a quantitative measure of how likely it is that a search system will return relevant results when a query is input. Higher retrieval probability implies that the system is good at finding and ranking the most relevant information.",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "In AI search, **retrieval probability** refers to the likelihood that a given search or retrieval system will successfully return relevant results based on a query or a set of conditions. It\u2019s often used to measure how effectively a model or algorithm identifies and ranks relevant documents, data points, or information based on a user\u2019s input.\n\nRetrieval probability can be influenced by various factors:\n\n1. **Query Relevance**: The more closely a query matches relevant items in the system\u2019s knowledge base or database, the higher the retrieval probability will be.\n   \n2. **Model Precision and Recall**: \n   - **Precision** is the percentage of retrieved documents that are relevant.\n   - **Recall** is the percentage of relevant documents that were successfully retrieved.\n   Retrieval probability combines these measures, where higher precision and recall typically indicate a better retrieval probability.\n\n3. **Ranking Algorithms**: The effectiveness of algorithms (such as BM25, TF-IDF, or more complex neural-based approaches) also impacts retrieval probability. These algorithms are designed to score and rank documents in order of their relevance to a query.\n\n4. **Indexing and Preprocessing**: How data is indexed (such as vector embeddings or traditional keyword indexing) can impact the probability of retrieving the right results, especially when considering large datasets or complex searches.\n\nIn practice, retrieval probability might be used to:\n- **Evaluate search engine quality**, i.e., the likelihood that a user finds the most relevant results at the top of their search.\n- **Optimize AI-driven recommendation systems**, ensuring that the system suggests the most likely relevant items based on user behavior or input.\n- **Measure model effectiveness** in retrieving relevant information for tasks such as information retrieval, question-answering, or document search.\n\nIn summary, retrieval probability is a quantitative measure of how likely it is that a search system will return relevant results when a query is input. Higher retrieval probability implies that the system is good at finding and ranking the most relevant information.",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

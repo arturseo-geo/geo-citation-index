@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "9.6015 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241427-1516-0629-0000-ab76b749e9d0",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "9.5713 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "What is System Memory in GEO?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "What is System Memory in GEO?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=What%20is%20System%20Memory%20in%20GEO%3F&hints=search",
+          "datetime": "2026-04-24 11:27:23 +00:00",
+          "markdown": "Could you clarify what you mean by **GEO**? Are you referring to:  \n\n1. **Geography or Earth observation systems** (like satellites, GIS, or Earth monitoring platforms)?  \n2. **GEO Group** or a specific software/system named GEO?  \n3. Something else entirely, like a technical term in computing called \u201cGEO\u201d?  \n\nThis will help me give a precise explanation of **System Memory** in that context.",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Could you clarify what you mean by **GEO**? Are you referring to:  \n\n1. **Geography or Earth observation systems** (like satellites, GIS, or Earth monitoring platforms)?  \n2. **GEO Group** or a specific software/system named GEO?  \n3. Something else entirely, like a technical term in computing called \u201cGEO\u201d?  \n\nThis will help me give a precise explanation of **System Memory** in that context.",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

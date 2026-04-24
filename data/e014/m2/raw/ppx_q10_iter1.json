@@ -1,0 +1,83 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "9.7427 sec.",
+  "cost": 0.014949,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241421-1516-0612-0000-b8a14f80e317",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "9.6815 sec.",
+      "cost": 0.014949,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "How do AI search engines select content to cite?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 18,
+          "output_tokens": 553,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.014349,
+          "datetime": "2026-04-24 14:21:11 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "AI search engines select content to cite based on a set of criteria that differs from traditional search ranking signals. **Citing a source is a stricter decision than simply including it in search results**[1], and the process emphasizes content quality, structure, and verifiability over domain authority alone.\n\n## Key Citation Criteria\n\n**Relevance and Focus**\nPages that answer one clear concept or question without mixed intent are far easier for AI systems to reuse safely[1]. AI evaluates whether a page closely matches the specific question being answered, rather than just addressing the general topic[3].\n\n**Clarity and Structure**\nAI systems favor content organized with short paragraphs, headings, FAQs, and definition-first sections[1]. Clear H2 and H3 heading chains that follow a natural reasoning flow\u2014such as \"What is [topic]?\", \"Why [topic] matters,\" and \"How [topic] works\"\u2014help AI systems map pieces of content to specific questions[1]. Strong structure improves consistency during retrieval and makes it easier for AI to extract information without misinterpretation[3].\n\n**Verifiability**\nPages presenting clear facts, definitions, or explanations that can be checked against other reliable sources are more likely to be cited[3]. AI systems are conservative about what they quote as fact, preferring fact snippets that are explicitly attributed (for example, \"According to a 2024 report...\"), numerical or clearly measurable, and aligned with other trusted sources[1].\n\n**Neutrality**\nAI systems avoid pages that are overly persuasive, opinion-heavy, or promotional because they are harder to reuse safely across different contexts[3]. Opinion-heavy statements, vague claims, and unsourced statistics get filtered out by what researchers describe as a \"trust bottleneck\"[1].\n\n**Freshness and Recency**\nUpdated, date-stamped pages are safer and more likely to be included in the retrieval pool[1]. AI systems prefer pages aligned with current understanding, especially for fast-changing topics[3].\n\n## Important Distinctions\n\n**Page-Level, Not Domain-Level Decisions**\nCitation decisions happen at the page level, not the brand level[1]. Even a strong domain will only see specific, well-structured pages cited, while broad or opinion-heavy posts are skipped[1].\n\n**Platform Variation**\nEach AI platform has distinct citation preferences. For example, ChatGPT cites Wikipedia at 7.8% of total citations, while Perplexity cites Reddit at 6.6%, and Google AI Overviews distributes citations more evenly across multiple source types[2].\n\n**Brand Visibility Factor**\nAnalysis of over 7,000 citations found that brand search volume and AI mentions have a correlation of 0.334, making brand popularity the strongest predictor of citation frequency[2].",
+                  "annotations": [
+                    {
+                      "title": "How AI Search Engines Decide What Content to Cite",
+                      "url": "https://www.upfront-ai.com/post/how-ai-search-engines-decide-what-content-to-cite"
+                    },
+                    {
+                      "title": "How AI Systems Choose Which Brands to Cite in Search Results",
+                      "url": "https://www.evertune.ai/resources/insights-on-ai/how-ai-systems-choose-which-brands-to-cite-in-search-results"
+                    },
+                    {
+                      "title": "How AI Selects Sites To Cite in SEO - Wellows (2026 Guide)",
+                      "url": "https://wellows.com/blog/how-ai-selects-sites-to-cite/"
+                    },
+                    {
+                      "title": "How AI Engines Select Websites for Citations - Three29",
+                      "url": "https://three29.com/how-ai-engines-select-websites-for-citations/"
+                    },
+                    {
+                      "title": "The Rise of Citable Content: How AI Search Engines Choose Sources",
+                      "url": "https://thinkdmg.com/the-rise-of-citable-content-how-to-build-pages-ai-search-engines-quote/"
+                    },
+                    {
+                      "title": "What sources do AI Search Engines cite? Analysis of 40k responses ...",
+                      "url": "https://www.xfunnel.ai/blog/what-sources-do-ai-search-engines-choose"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

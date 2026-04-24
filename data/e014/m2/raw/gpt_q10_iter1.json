@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "19.0682 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241427-1516-0629-0000-7ddc5438c932",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "19.0546 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "How do AI search engines select content to cite?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "How do AI search engines select content to cite?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=How%20do%20AI%20search%20engines%20select%20content%20to%20cite%3F&hints=search",
+          "datetime": "2026-04-24 11:27:45 +00:00",
+          "markdown": "AI search engines\u2014or AI-powered tools that summarize or answer queries using web content\u2014have a fairly structured approach to selecting what to cite, though it\u2019s more nuanced than traditional search engines. Here\u2019s a breakdown:  \n\n---\n\n### **1. Crawling and Indexing**\nJust like standard search engines, AI systems first scan the web to create an internal index of content. This involves:\n- **Websites**: Popular, authoritative, or frequently updated sites are prioritized.\n- **Content type**: Text-heavy sources like articles, papers, blogs, and forums.\n- **Structured data**: Schema.org metadata, PDFs, and academic databases.\n\n---\n\n### **2. Ranking by Relevance**\nWhen a user queries something, the AI evaluates which documents are **most likely to answer the query accurately**. Factors include:\n- **Keyword matching**: How closely the content aligns with the query terms.\n- **Semantic similarity**: AI models understand context, so even if exact words aren\u2019t used, the meaning is matched.\n- **Authority signals**: Domain reputation, backlinks, citations, or trustworthiness.\n\n---\n\n### **3. Selecting Citations**\nWhen generating answers, the AI decides which sources to cite based on:\n- **Direct relevance**: Content that directly supports the answer.\n- **Recency**: For rapidly changing topics (e.g., tech or medicine), newer sources are favored.\n- **Credibility**: Peer-reviewed journals, official websites, and reputable news sites often get priority.\n- **Coverage**: If multiple sources support the same fact, the AI might pick the clearest or most authoritative one.\n\n---\n\n### **4. Formatting and Presenting**\nAI search engines may:\n- Provide a **direct link** to the source.\n- Include a **quote or paraphrase** with the source cited.\n- Rank sources in a **\u201ctop result\u201d style** or **footnote format**, depending on the platform.\n\n---\n\n### **5. Limitations and Biases**\n- **Not all sources are cited**: Some answers may be synthesized from multiple sources without directly attributing each one.\n- **Authority bias**: Well-known domains might be favored even if a smaller source has more accurate data.\n- **Dynamic content**: Content that changes frequently (like wikis) can lead to inconsistent citations.\n\n---\n\n\ud83d\udca1 **In short:** AI search engines select content to cite by evaluating relevance, credibility, and recency, then choosing sources that best support the user\u2019s query while balancing authority and accessibility.  \n\nIf you want, I can make a **step-by-step diagram showing exactly how AI picks citations from thousands of documents**, which makes it visually clear. Do you want me to do that?",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "AI search engines\u2014or AI-powered tools that summarize or answer queries using web content\u2014have a fairly structured approach to selecting what to cite, though it\u2019s more nuanced than traditional search engines. Here\u2019s a breakdown:  \n\n---\n\n### **1. Crawling and Indexing**\nJust like standard search engines, AI systems first scan the web to create an internal index of content. This involves:\n- **Websites**: Popular, authoritative, or frequently updated sites are prioritized.\n- **Content type**: Text-heavy sources like articles, papers, blogs, and forums.\n- **Structured data**: Schema.org metadata, PDFs, and academic databases.\n\n---\n\n### **2. Ranking by Relevance**\nWhen a user queries something, the AI evaluates which documents are **most likely to answer the query accurately**. Factors include:\n- **Keyword matching**: How closely the content aligns with the query terms.\n- **Semantic similarity**: AI models understand context, so even if exact words aren\u2019t used, the meaning is matched.\n- **Authority signals**: Domain reputation, backlinks, citations, or trustworthiness.\n\n---\n\n### **3. Selecting Citations**\nWhen generating answers, the AI decides which sources to cite based on:\n- **Direct relevance**: Content that directly supports the answer.\n- **Recency**: For rapidly changing topics (e.g., tech or medicine), newer sources are favored.\n- **Credibility**: Peer-reviewed journals, official websites, and reputable news sites often get priority.\n- **Coverage**: If multiple sources support the same fact, the AI might pick the clearest or most authoritative one.\n\n---\n\n### **4. Formatting and Presenting**\nAI search engines may:\n- Provide a **direct link** to the source.\n- Include a **quote or paraphrase** with the source cited.\n- Rank sources in a **\u201ctop result\u201d style** or **footnote format**, depending on the platform.\n\n---\n\n### **5. Limitations and Biases**\n- **Not all sources are cited**: Some answers may be synthesized from multiple sources without directly attributing each one.\n- **Authority bias**: Well-known domains might be favored even if a smaller source has more accurate data.\n- **Dynamic content**: Content that changes frequently (like wikis) can lead to inconsistent citations.\n\n---\n\n\ud83d\udca1 **In short:** AI search engines select content to cite by evaluating relevance, credibility, and recency, then choosing sources that best support the user\u2019s query while balancing authority and accessibility.  \n\nIf you want, I can make a **step-by-step diagram showing exactly how AI picks citations from thousands of documents**, which makes it visually clear. Do you want me to do that?",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "12.0830 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241429-1516-0629-0000-f66eead0625d",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "12.0466 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "What is Extractability in GEO?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "What is Extractability in GEO?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=What%20is%20Extractability%20in%20GEO%3F&hints=search",
+          "datetime": "2026-04-24 11:29:20 +00:00",
+          "markdown": "In the context of **GEO** (Geospatial data or Geographic Information Systems), **extractability** typically refers to the ability to retrieve or extract specific data from a geospatial database, system, or dataset. This can encompass a range of concepts depending on the specific application, but it generally involves:\n\n1. **Accessing Data from Databases or Repositories**: \n   - Extractability refers to how easily data can be pulled from a geospatial data store, such as a **spatial database** or an **open data repository**. This could involve simple queries or more complex extraction methods, like extracting particular geographical features (e.g., roads, rivers, land use areas) based on specific criteria (e.g., region, time, etc.).\n\n2. **Data Formats and Tools**: \n   - The ease with which geospatial data can be extracted depends on the format in which the data is stored (e.g., GeoJSON, Shapefile, KML, or databases like PostGIS) and the tools or APIs available to access that data. Data in open, standardized formats is typically more \"extractable\" since it can be accessed with a wide variety of tools and software.\n\n3. **Quality and Granularity of Data**:\n   - **Extractability** can also refer to how easily detailed or granular data can be retrieved. This means that not only should the data be accessible, but it should be possible to extract fine-grained data points or layers that are useful for analysis or decision-making (e.g., elevation data, satellite imagery).\n\n4. **Data Extraction Performance**:\n   - This aspect addresses the technical side, including how efficient the data extraction process is. For large-scale geospatial datasets, **extractability** might involve optimizations like spatial indexing, caching, or using parallel processing to speed up retrieval.\n\n5. **Legality and Permissions**:\n   - In some cases, **extractability** can also involve legal or policy constraints on how data can be accessed. For instance, some data might be **open** (freely extractable), while others may require specific permissions or licenses.\n\nIf you're referring to **GEO** in another specific context (e.g., a specific platform or field), feel free to clarify!",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "In the context of **GEO** (Geospatial data or Geographic Information Systems), **extractability** typically refers to the ability to retrieve or extract specific data from a geospatial database, system, or dataset. This can encompass a range of concepts depending on the specific application, but it generally involves:\n\n1. **Accessing Data from Databases or Repositories**: \n   - Extractability refers to how easily data can be pulled from a geospatial data store, such as a **spatial database** or an **open data repository**. This could involve simple queries or more complex extraction methods, like extracting particular geographical features (e.g., roads, rivers, land use areas) based on specific criteria (e.g., region, time, etc.).\n\n2. **Data Formats and Tools**: \n   - The ease with which geospatial data can be extracted depends on the format in which the data is stored (e.g., GeoJSON, Shapefile, KML, or databases like PostGIS) and the tools or APIs available to access that data. Data in open, standardized formats is typically more \"extractable\" since it can be accessed with a wide variety of tools and software.\n\n3. **Quality and Granularity of Data**:\n   - **Extractability** can also refer to how easily detailed or granular data can be retrieved. This means that not only should the data be accessible, but it should be possible to extract fine-grained data points or layers that are useful for analysis or decision-making (e.g., elevation data, satellite imagery).\n\n4. **Data Extraction Performance**:\n   - This aspect addresses the technical side, including how efficient the data extraction process is. For large-scale geospatial datasets, **extractability** might involve optimizations like spatial indexing, caching, or using parallel processing to speed up retrieval.\n\n5. **Legality and Permissions**:\n   - In some cases, **extractability** can also involve legal or policy constraints on how data can be accessed. For instance, some data might be **open** (freely extractable), while others may require specific permissions or licenses.\n\nIf you're referring to **GEO** in another specific context (e.g., a specific platform or field), feel free to clarify!",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

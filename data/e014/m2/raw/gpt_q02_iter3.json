@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "14.0447 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241430-1516-0629-0000-50aa27edaa3f",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "14.0321 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "What is Retrieval Probability in AI search?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "What is Retrieval Probability in AI search?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=What%20is%20Retrieval%20Probability%20in%20AI%20search%3F&hints=search",
+          "datetime": "2026-04-24 11:30:57 +00:00",
+          "markdown": "**Retrieval Probability** in the context of AI search refers to the likelihood that a given piece of information, document, or data will be retrieved in response to a query. It's particularly relevant in **information retrieval systems** (such as search engines or recommender systems) that rely on ranking and matching methods to find the most relevant results.\n\nHere's a breakdown of how it works:\n\n1. **Query Matching**: When you input a query, the system searches through a large collection of documents, data, or information to find matches based on keywords, semantic meaning, or context.\n\n2. **Ranking Relevance**: The retrieval probability helps determine how likely it is that a specific document or piece of data will match the query. This is often a probabilistic estimate, such as the **likelihood of relevance** of each document to the user's query.\n\n3. **Factors Influencing Retrieval Probability**:\n   - **Term Frequency**: How often a query term appears in a document. The more times a query term appears, the higher the likelihood that the document will be relevant.\n   - **Inverse Document Frequency (IDF)**: How rare or common a term is across the entire document collection. Terms that are more unique are often weighted more heavily.\n   - **Contextual Relevance**: In more advanced systems (e.g., those using machine learning or neural networks), the relevance of a document might also depend on deeper semantic understanding or contextual matching (e.g., meaning of words or sentence structure).\n\n4. **Probabilistic Models**: \n   - In **probabilistic information retrieval models** (like the **BM25 algorithm**), retrieval probability is modeled based on the probability that a document is relevant given the query. This is done using a formula that combines the term frequency and document frequency, along with other factors like document length and query terms' significance.\n   - **Bayesian models** might also be used, where the system estimates the probability of a document being relevant given prior information (like the frequency of terms or user preferences).\n\n### Example in Search:\nLet\u2019s say you search for \u201cbest AI tools.\u201d The retrieval probability is the likelihood that each document or webpage in the database is relevant to the query based on the occurrence of the terms \u201cbest,\u201d \u201cAI,\u201d and \u201ctools.\u201d If a page contains those keywords in a contextually relevant way (e.g., an AI tool comparison guide), it will have a higher retrieval probability and thus rank higher in search results.\n\nIn essence, retrieval probability is the backbone of determining how well a system\u2019s results match what you're looking for based on data-driven estimations.",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "**Retrieval Probability** in the context of AI search refers to the likelihood that a given piece of information, document, or data will be retrieved in response to a query. It's particularly relevant in **information retrieval systems** (such as search engines or recommender systems) that rely on ranking and matching methods to find the most relevant results.\n\nHere's a breakdown of how it works:\n\n1. **Query Matching**: When you input a query, the system searches through a large collection of documents, data, or information to find matches based on keywords, semantic meaning, or context.\n\n2. **Ranking Relevance**: The retrieval probability helps determine how likely it is that a specific document or piece of data will match the query. This is often a probabilistic estimate, such as the **likelihood of relevance** of each document to the user's query.\n\n3. **Factors Influencing Retrieval Probability**:\n   - **Term Frequency**: How often a query term appears in a document. The more times a query term appears, the higher the likelihood that the document will be relevant.\n   - **Inverse Document Frequency (IDF)**: How rare or common a term is across the entire document collection. Terms that are more unique are often weighted more heavily.\n   - **Contextual Relevance**: In more advanced systems (e.g., those using machine learning or neural networks), the relevance of a document might also depend on deeper semantic understanding or contextual matching (e.g., meaning of words or sentence structure).\n\n4. **Probabilistic Models**: \n   - In **probabilistic information retrieval models** (like the **BM25 algorithm**), retrieval probability is modeled based on the probability that a document is relevant given the query. This is done using a formula that combines the term frequency and document frequency, along with other factors like document length and query terms' significance.\n   - **Bayesian models** might also be used, where the system estimates the probability of a document being relevant given prior information (like the frequency of terms or user preferences).\n\n### Example in Search:\nLet\u2019s say you search for \u201cbest AI tools.\u201d The retrieval probability is the likelihood that each document or webpage in the database is relevant to the query based on the occurrence of the terms \u201cbest,\u201d \u201cAI,\u201d and \u201ctools.\u201d If a page contains those keywords in a contextually relevant way (e.g., an AI tool comparison guide), it will have a higher retrieval probability and thus rank higher in search results.\n\nIn essence, retrieval probability is the backbone of determining how well a system\u2019s results match what you're looking for based on data-driven estimations.",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "16.6529 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241426-1516-0629-0000-9544be19b8c2",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "16.6213 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "Does GEO actually work?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "Does GEO actually work?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=Does%20GEO%20actually%20work%3F&hints=search",
+          "datetime": "2026-04-24 11:26:43 +00:00",
+          "markdown": "Could you clarify what you mean by **GEO**? Are you referring to:\n\n- **GEO** as in **Geolocation/Geo-tracking tools**?  \n- **GEO** in a scientific context, like **Gene Expression Omnibus (GEO database)**?  \n- Or some product, service, or method called **GEO**?  \n\nEach has a very different answer.",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Could you clarify what you mean by **GEO**? Are you referring to:\n\n- **GEO** as in **Geolocation/Geo-tracking tools**?  \n- **GEO** in a scientific context, like **Gene Expression Omnibus (GEO database)**?  \n- Or some product, service, or method called **GEO**?  \n\nEach has a very different answer.",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

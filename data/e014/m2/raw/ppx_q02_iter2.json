@@ -1,0 +1,91 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "4.9655 sec.",
+  "cost": 0.011376,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241421-1516-0612-0000-ce80cd2254a9",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "4.9539 sec.",
+      "cost": 0.011376,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "What is Retrieval Probability in AI search?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 17,
+          "output_tokens": 315,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.010776,
+          "datetime": "2026-04-24 14:21:30 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**Retrieval Probability is the estimated likelihood that a specific content chunk or section is selected by an AI search system during its retrieval phase, serving as Layer 1 of the GEO (Generative Engine Optimization) Stack.**[1]\n\nThis foundational metric determines if content enters the candidate pool for systems like Google AI Overviews, Perplexity, or ChatGPT, where failure to retrieve renders it invisible regardless of Google ranking or quality.[1][2] It operates sequentially before higher layers like Extractability, which assesses usability once retrieved.[1]\n\n### Key Influencing Variables\nRetrieval Probability depends on five core factors, though exact weights vary by AI platform and cannot be precisely computed:[1]\n- **Semantic alignment**: Closeness of query-to-content vector distance.\n- **Entity match strength**: Prominence and consistency of relevant entities.\n- **Structural clarity**: Logical organization and coherence for easy parsing.\n- **Topical isolation**: Focus on a single subject without dilution.\n- **Contextual reinforcement**: Support from surrounding content clusters.\n\n### Broader Context in AI Search\nIn AI-powered retrieval (often via Retrieval-Augmented Generation or RAG), systems probabilistically score and rank content chunks for relevance, treating retrieval as a ranking problem under uncertainty\u2014distinct from deterministic traditional search.[3][4][6] This probabilistic nature arises from models like BM25 or vector embeddings, balancing factors like term frequency and document length.[3] Optimization prioritizes direct answers, clean structure, and verifiable facts to boost retrieval chances.[2]",
+                  "annotations": [
+                    {
+                      "title": "Retrieval Probability \u2014 The Core Variable of GEO",
+                      "url": "https://thegeolab.net/retrieval-probability/"
+                    },
+                    {
+                      "title": "AI Retrieval Layer Explained: How AI Finds and Chooses Content",
+                      "url": "https://www.useomnia.com/knowledge-base/%20ai-retrieval-layer"
+                    },
+                    {
+                      "title": "What Is Information Retrieval? A Modern Overview for AI | Unstructured",
+                      "url": "https://unstructured.io/insights/what-is-information-retrieval-for-ai-applications"
+                    },
+                    {
+                      "title": "AI Search: How Generative Engine Optimization Reshapes SEO",
+                      "url": "https://ipullrank.com/probability-ai-search"
+                    },
+                    {
+                      "title": "What is Retrieval? | AI Search Glossary - GRRO",
+                      "url": "https://grro.io/glossary/retrieval"
+                    },
+                    {
+                      "title": "Information Retrieval & Intelligence: How It Works for AI - Splunk",
+                      "url": "https://www.splunk.com/en_us/blog/learn/information-retrieval.html"
+                    },
+                    {
+                      "title": "Why AI search is probabilistic (volatility & hallucinations explained)",
+                      "url": "https://www.buriedagency.com/post/why-ai-search-is-probabalistic"
+                    },
+                    {
+                      "title": "Lecture 19 \u2014 Probabilistic Retrieval Model Basic Idea | UIUC",
+                      "url": "https://www.youtube.com/watch?v=TaboD-gmHPo"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

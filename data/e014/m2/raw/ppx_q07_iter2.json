@@ -1,0 +1,87 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "7.7037 sec.",
+  "cost": 0.011994,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241422-1516-0612-0000-541d1d24d8f1",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "7.6393 sec.",
+      "cost": 0.011994,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "Does GEO actually work?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 13,
+          "output_tokens": 357,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.011394,
+          "datetime": "2026-04-24 14:22:10 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**GEO (Generative Engine Optimization) can work, but its effectiveness depends on your existing SEO foundation and business model.** GEO builds on strong SEO fundamentals rather than replacing them\u2014approximately 80 percent of GEO is good, fundamental SEO[1]. If your content already ranks well in traditional search, GEO can extend your visibility into AI-generated answers where your brand gets cited or recommended[4].\n\nThe value of GEO varies by context. It works best for **SaaS products with long, multi-stakeholder sales cycles** where buyers conduct extensive research, and in markets where customers actively seek comparison content and \"how to choose\" topics[4]. In these scenarios, GEO drives exposure to actively researching buyers, generating traffic that converts at rates higher than most other channels[4].\n\nHowever, GEO faces real limitations. Search results show significant **volatility** across AI platforms\u2014when tracking 2,500 prompts across Google AI Mode and ChatGPT, researchers noticed unstable citation patterns[3]. Additionally, the value exchange differs from traditional SEO: while SEO primarily drives referral traffic, AI search functions as a branding channel due to limited traffic it sends to other sites[1].\n\nThe fundamentals that matter for GEO success are the same as SEO: clear content structure, authoritative sources, topical expertise, brand mentions across platforms, and compliance with search spam policies[1]. The technical aspects of GEO\u2014particularly retrieval-augmented generation (RAG) for LLM queries\u2014represent genuinely new territory requiring additional expertise[1].\n\n**Early adoption may offer competitive advantage.** Brands embracing GEO early can capture attention and leads before competitors, similar to early adoption of other emerging channels[4]. However, GEO is worth serious investment primarily if you've already established strong SEO and acquisition channels[4].",
+                  "annotations": [
+                    {
+                      "title": "GEO hype busted: How it differs (and how it doesn't) from SEO",
+                      "url": "https://digiday.com/media/geo-hype-busted-experts-call-it-more-seo-than-new-discipline/"
+                    },
+                    {
+                      "title": "The Tech Marketer's Guide to GEO: Optimize Content for AI Discovery",
+                      "url": "https://iamondemand.com/blog/the-tech-marketers-guide-to-generative-engine-optimization-geo/"
+                    },
+                    {
+                      "title": "Generative engine optimization (GEO): How to win AI mentions",
+                      "url": "https://searchengineland.com/what-is-generative-engine-optimization-geo-444418"
+                    },
+                    {
+                      "title": "Is Generative Engine Optimization (GEO) Worth It?",
+                      "url": "https://singularity.digital/insights/is-geo-worth-it/"
+                    },
+                    {
+                      "title": "What Is Generative Engine Optimization (GEO) & How Does It ...",
+                      "url": "https://www.seerinteractive.com/insights/what-is-generative-engine-optimization-geo"
+                    },
+                    {
+                      "title": "How Generative Engine Optimization (GEO) Rewrites the Rules of ...",
+                      "url": "https://a16z.com/geo-over-seo/"
+                    },
+                    {
+                      "title": "Is GEO/AEO Worth the Hype? AI Search Expert Reveals the Truth",
+                      "url": "https://www.youtube.com/watch?v=NtbbRvggW4c"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

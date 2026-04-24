@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "20.7427 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241426-1516-0629-0000-8258e0d5e1ac",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "20.7291 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "How to measure AI citation rate?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "How to measure AI citation rate?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=How%20to%20measure%20AI%20citation%20rate%3F&hints=search",
+          "datetime": "2026-04-24 11:27:11 +00:00",
+          "markdown": "Measuring an AI citation rate depends on what exactly you mean by \u201cAI citation rate.\u201d Typically, this refers to how often AI-related research papers, models, or publications are cited in other academic works. Here\u2019s a structured approach to measure it:\n\n---\n\n### **1. Define the Scope**\nYou need to clarify what you want to measure:\n- **AI publications:** Do you mean all papers on AI, or a subset (e.g., deep learning, NLP, computer vision)?\n- **Time frame:** Recent years, the last decade, or all time?\n- **Citation type:** Only scholarly papers, or also patents, conference proceedings, and preprints?\n\n---\n\n### **2. Identify Data Sources**\nCommon sources for citation data include:\n- **Google Scholar:** Broad coverage, including journals, conference papers, and preprints.\n- **Scopus / Web of Science:** More curated, higher reliability for peer-reviewed literature.\n- **Microsoft Academic (now defunct, but archived datasets exist)**\n- **Semantic Scholar:** Especially strong for AI/CS fields; supports citation counts and semantic search.\n- **arXiv:** Preprints often cited in AI; can be tracked for citations using APIs or services like Semantic Scholar.\n\n---\n\n### **3. Collect Citation Data**\nSteps:\n1. **List target papers or authors**: For example, all papers from major AI conferences (NeurIPS, ICML, CVPR, AAAI).\n2. **Query citation databases**: Extract citation counts per paper.\n3. **Automate if necessary**: APIs (Semantic Scholar, Scopus) can help gather large datasets.\n\n---\n\n### **4. Calculate Citation Rate**\nDepending on your goal:\n\n#### **Per Paper**\n\\[\n\\text{Citation Rate per Year} = \\frac{\\text{Total citations}}{\\text{Years since publication}}\n\\]\n\n#### **For a Group of Papers**\n\\[\n\\text{Average Citation Rate} = \\frac{\\sum \\text{Citations of all papers}}{\\text{Number of papers}}\n\\]\n\n#### **Field-Normalized Citation Rate**\n- Compare AI papers to the average citations in the broader computer science field.\n\\[\n\\text{Normalized Rate} = \\frac{\\text{Average AI citations}}{\\text{Average CS citations}}\n\\]\n\n---\n\n### **5. Consider Limitations**\n- Citation lag: Newer papers may be under-cited.\n- Source bias: Google Scholar may over-count; Scopus may under-count.\n- Field differences: Some AI subfields (e.g., NLP) may have higher citation norms.\n\n---\n\n### **6. Optional: Visualize Trends**\n- Use citation curves over years.\n- Compare citation rates by subfield or conference.\n- Track highly cited papers separately (\u201ctop 10% AI papers\u201d).\n\n---\n\nIf you want, I can **draft a step-by-step workflow with example queries and formulas specifically for AI papers**, so you could start calculating citation rates immediately.  \n\nDo you want me to do that?",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Measuring an AI citation rate depends on what exactly you mean by \u201cAI citation rate.\u201d Typically, this refers to how often AI-related research papers, models, or publications are cited in other academic works. Here\u2019s a structured approach to measure it:\n\n---\n\n### **1. Define the Scope**\nYou need to clarify what you want to measure:\n- **AI publications:** Do you mean all papers on AI, or a subset (e.g., deep learning, NLP, computer vision)?\n- **Time frame:** Recent years, the last decade, or all time?\n- **Citation type:** Only scholarly papers, or also patents, conference proceedings, and preprints?\n\n---\n\n### **2. Identify Data Sources**\nCommon sources for citation data include:\n- **Google Scholar:** Broad coverage, including journals, conference papers, and preprints.\n- **Scopus / Web of Science:** More curated, higher reliability for peer-reviewed literature.\n- **Microsoft Academic (now defunct, but archived datasets exist)**\n- **Semantic Scholar:** Especially strong for AI/CS fields; supports citation counts and semantic search.\n- **arXiv:** Preprints often cited in AI; can be tracked for citations using APIs or services like Semantic Scholar.\n\n---\n\n### **3. Collect Citation Data**\nSteps:\n1. **List target papers or authors**: For example, all papers from major AI conferences (NeurIPS, ICML, CVPR, AAAI).\n2. **Query citation databases**: Extract citation counts per paper.\n3. **Automate if necessary**: APIs (Semantic Scholar, Scopus) can help gather large datasets.\n\n---\n\n### **4. Calculate Citation Rate**\nDepending on your goal:\n\n#### **Per Paper**\n\\[\n\\text{Citation Rate per Year} = \\frac{\\text{Total citations}}{\\text{Years since publication}}\n\\]\n\n#### **For a Group of Papers**\n\\[\n\\text{Average Citation Rate} = \\frac{\\sum \\text{Citations of all papers}}{\\text{Number of papers}}\n\\]\n\n#### **Field-Normalized Citation Rate**\n- Compare AI papers to the average citations in the broader computer science field.\n\\[\n\\text{Normalized Rate} = \\frac{\\text{Average AI citations}}{\\text{Average CS citations}}\n\\]\n\n---\n\n### **5. Consider Limitations**\n- Citation lag: Newer papers may be under-cited.\n- Source bias: Google Scholar may over-count; Scopus may under-count.\n- Field differences: Some AI subfields (e.g., NLP) may have higher citation norms.\n\n---\n\n### **6. Optional: Visualize Trends**\n- Use citation curves over years.\n- Compare citation rates by subfield or conference.\n- Track highly cited papers separately (\u201ctop 10% AI papers\u201d).\n\n---\n\nIf you want, I can **draft a step-by-step workflow with example queries and formulas specifically for AI papers**, so you could start calculating citation rates immediately.  \n\nDo you want me to do that?",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

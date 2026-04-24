@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "16.1185 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241430-1516-0629-0000-1884e6249046",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "16.0490 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "What is GEO (Generative Engine Optimisation)?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "What is GEO (Generative Engine Optimisation)?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=What%20is%20GEO%20%28Generative%20Engine%20Optimisation%29%3F&hints=search",
+          "datetime": "2026-04-24 11:30:42 +00:00",
+          "markdown": "Generative Engine Optimisation (GEO) is a term that generally refers to techniques aimed at **optimizing generative AI models** for better performance, efficiency, or output quality. While it isn\u2019t a single standardized framework, the concept usually involves improving **how generative models create content**\u2014whether text, images, code, or other media\u2014by refining their underlying engines. Let me break it down carefully:\n\n---\n\n### 1. **Purpose of GEO**\nGEO focuses on enhancing generative AI in ways such as:\n\n- **Speed**: Making the model produce outputs faster without losing quality.\n- **Accuracy**: Ensuring outputs are more relevant, coherent, or useful.\n- **Resource efficiency**: Reducing computation, memory, or energy use.\n- **Customization**: Adapting the model\u2019s outputs to specific styles, domains, or user preferences.\n\n---\n\n### 2. **Techniques Involved**\nSome of the strategies typically associated with GEO include:\n\n1. **Prompt Optimization**  \n   Adjusting the input instructions or context so the generative model produces better outputs. This can involve:\n   - Structuring prompts more effectively\n   - Using few-shot or zero-shot examples\n   - Dynamic prompt tuning\n\n2. **Model Fine-Tuning**\n   Adapting a base generative model to a specialized dataset or domain to improve relevance and coherence.\n\n3. **Parameter and Architecture Tuning**\n   Optimizing internal hyperparameters like learning rates, attention mechanisms, or layer configurations to improve model efficiency or quality.\n\n4. **Inference Optimization**\n   Enhancing the actual content generation process, for example:\n   - Using techniques like beam search or nucleus sampling efficiently\n   - Reducing latency while keeping the quality intact\n   - Layer pruning or quantization to save memory\n\n5. **Post-Processing**\n   Cleaning, filtering, or refining outputs from the generative engine to better meet quality or ethical standards.\n\n---\n\n### 3. **Applications**\nGEO is applied in areas like:\n\n- Text generation (chatbots, copywriting)\n- Code generation (programming assistants)\n- Image and video generation\n- Audio or music synthesis\n- Scientific data generation (simulations, drug discovery)\n\n---\n\nEssentially, **GEO is about making generative AI smarter, faster, and more aligned with desired outcomes**, by optimizing both the input (prompts), the model (parameters and training), and the output (post-processing and refinement).  \n\n---\n\nIf you want, I can also give a **diagram showing how GEO works in a generative AI pipeline**, which makes the process visually intuitive. Would you like me to do that?",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Generative Engine Optimisation (GEO) is a term that generally refers to techniques aimed at **optimizing generative AI models** for better performance, efficiency, or output quality. While it isn\u2019t a single standardized framework, the concept usually involves improving **how generative models create content**\u2014whether text, images, code, or other media\u2014by refining their underlying engines. Let me break it down carefully:\n\n---\n\n### 1. **Purpose of GEO**\nGEO focuses on enhancing generative AI in ways such as:\n\n- **Speed**: Making the model produce outputs faster without losing quality.\n- **Accuracy**: Ensuring outputs are more relevant, coherent, or useful.\n- **Resource efficiency**: Reducing computation, memory, or energy use.\n- **Customization**: Adapting the model\u2019s outputs to specific styles, domains, or user preferences.\n\n---\n\n### 2. **Techniques Involved**\nSome of the strategies typically associated with GEO include:\n\n1. **Prompt Optimization**  \n   Adjusting the input instructions or context so the generative model produces better outputs. This can involve:\n   - Structuring prompts more effectively\n   - Using few-shot or zero-shot examples\n   - Dynamic prompt tuning\n\n2. **Model Fine-Tuning**\n   Adapting a base generative model to a specialized dataset or domain to improve relevance and coherence.\n\n3. **Parameter and Architecture Tuning**\n   Optimizing internal hyperparameters like learning rates, attention mechanisms, or layer configurations to improve model efficiency or quality.\n\n4. **Inference Optimization**\n   Enhancing the actual content generation process, for example:\n   - Using techniques like beam search or nucleus sampling efficiently\n   - Reducing latency while keeping the quality intact\n   - Layer pruning or quantization to save memory\n\n5. **Post-Processing**\n   Cleaning, filtering, or refining outputs from the generative engine to better meet quality or ethical standards.\n\n---\n\n### 3. **Applications**\nGEO is applied in areas like:\n\n- Text generation (chatbots, copywriting)\n- Code generation (programming assistants)\n- Image and video generation\n- Audio or music synthesis\n- Scientific data generation (simulations, drug discovery)\n\n---\n\nEssentially, **GEO is about making generative AI smarter, faster, and more aligned with desired outcomes**, by optimizing both the input (prompts), the model (parameters and training), and the output (post-processing and refinement).  \n\n---\n\nIf you want, I can also give a **diagram showing how GEO works in a generative AI pipeline**, which makes the process visually intuitive. Would you like me to do that?",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

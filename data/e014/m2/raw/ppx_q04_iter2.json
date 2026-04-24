@@ -1,0 +1,91 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "6.8287 sec.",
+  "cost": 0.015138,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241421-1516-0612-0000-1f66fb10d626",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "6.7776 sec.",
+      "cost": 0.015138,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "GEO vs traditional SEO \u2014 what changed?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 16,
+          "output_tokens": 566,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.014538,
+          "datetime": "2026-04-24 14:21:45 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**GEO (Generative Engine Optimization) builds on traditional SEO rather than replacing it, shifting focus from ranking in search results to being cited in AI-generated answers by tools like ChatGPT, Perplexity, and Google SGE.** This evolution reflects how users increasingly ask full questions for summarized responses, prioritizing AI interpretability over clicks.[1][2][3][5]\n\n### Key Changes from SEO to GEO\nTraditional SEO optimized for search engine results pages (SERPs) via keywords and links, while GEO targets language models that synthesize and reference content directly.[1][2]\n\n| Dimension          | **Traditional SEO**                          | **GEO**                                      |\n|--------------------|----------------------------------------------|----------------------------------------------|\n| **Primary Goal**  | Rank high in SERPs and drive clicks[1][4][6] | Be cited/surfaced in AI answers[1][3][4][6] |\n| **Optimization**  | Keywords, backlinks, page speed[1][2][3]     | User intent, context, structured data[1][3][7] |\n| **Content Style** | Keyword-dense pages, long-form[1][3]         | Conversational, scannable (headings, bullets, FAQs)[1][3][7][8] |\n| **Metrics**       | Rankings, CTR, traffic[1][3][4][6]           | Citations, AI visibility, mentions[2][3][4][6] |\n| **User Journey**  | Search \u2192 click \u2192 site[6]                     | Question \u2192 AI summary (zero-click influence)[4][6] |\n| **Platforms**     | Google, Bing[4]                              | ChatGPT, Gemini, Perplexity[3][4]            |\n\nGEO emphasizes **E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)** through credible authorship and data, making content AI-friendly without abandoning technical SEO basics like mobile speed and schema markup.[1][3][8]\n\n### What Hasn't Changed\nCore foundations remain: high-quality, crawlable content; semantic structure; and site performance ensure discoverability for both humans and AI.[1][3][5][6] SEO drives traffic, while GEO amplifies influence in AI outputs\u2014use both by blending keyword precision with natural, question-answering language.[1][7]\n\n### Practical Implications\n- **Content Tips**: Prioritize short answers, tables, and entities over keyword stuffing; test visibility in AI tools.[1][3][8]\n- **Measurement Shift**: Track brand citations in AI responses alongside traditional analytics.[2][3]\n- GEO extends SEO as AI search grows, but poor basics undermine both.[5][6]",
+                  "annotations": [
+                    {
+                      "title": "SEO vs GEO: What's Changing and What Retailers Need to Know",
+                      "url": "https://www.celerant.com/blog/is-geo-replacing-seo/"
+                    },
+                    {
+                      "title": "How Generative Engine Optimization (GEO) Rewrites the Rules of ...",
+                      "url": "https://a16z.com/geo-over-seo/"
+                    },
+                    {
+                      "title": "Is GEO the New SEO? How the Search Game Is Changing - Mabbly",
+                      "url": "https://www.mabbly.com/ideas/geo-vs-seo/"
+                    },
+                    {
+                      "title": "GEO vs SEO: What's Changed and Why It Matters - Aimpakt",
+                      "url": "https://www.aimpakt.com/blog/geo-vs-seo-whats-changed-and-why-it-matters/"
+                    },
+                    {
+                      "title": "GEO vs. SEO: What's Changed, What Hasn't, and Why It Matters Now",
+                      "url": "https://www.blueswingmedia.com/geo-vs-seo-whats-changed-what-hasnt-and-why-it-matters-now"
+                    },
+                    {
+                      "title": "GEO vs SEO in 2026: What Actually Changes for Brands - Naturaily",
+                      "url": "https://naturaily.com/blog/geo-vs-seo"
+                    },
+                    {
+                      "title": "SEO vs GEO \u2013 What's Changed, What Hasn't and Why SEO Still ...",
+                      "url": "https://www.spaghettiagency.co.uk/blog/seo-vs-geo-whats-changed-what-hasnt-and-why-seo-still-matters/"
+                    },
+                    {
+                      "title": "SEO vs. GEO: Why traditional SEO is no longer enough for your ...",
+                      "url": "https://www.goodrequest.com/blog/seo-vs-geo-en"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

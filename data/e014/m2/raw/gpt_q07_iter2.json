@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "15.0733 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241429-1516-0629-0000-131c32ce2621",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "15.0516 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "Does GEO actually work?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "Does GEO actually work?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=Does%20GEO%20actually%20work%3F&hints=search",
+          "datetime": "2026-04-24 11:29:36 +00:00",
+          "markdown": "Could you clarify what you mean by \u201cGEO\u201d? Are you referring to:  \n\n- **GEO (Group Education Officer / programs in schools or workplaces)**  \n- **GEO (Global Environmental Outlook, like UNEP reports)**  \n- **GEO (a software, app, or tracking system)**  \n- Or something else entirely?  \n\nThis will help me give a precise answer about whether it \u201cworks\u201d and in what sense.",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Could you clarify what you mean by \u201cGEO\u201d? Are you referring to:  \n\n- **GEO (Group Education Officer / programs in schools or workplaces)**  \n- **GEO (Global Environmental Outlook, like UNEP reports)**  \n- **GEO (a software, app, or tracking system)**  \n- Or something else entirely?  \n\nThis will help me give a precise answer about whether it \u201cworks\u201d and in what sense.",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

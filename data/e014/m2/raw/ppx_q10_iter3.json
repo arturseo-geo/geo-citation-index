@@ -1,0 +1,83 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "5.4973 sec.",
+  "cost": 0.013374,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241423-1516-0612-0000-d72c7be2ac0a",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "5.4605 sec.",
+      "cost": 0.013374,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "How do AI search engines select content to cite?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 18,
+          "output_tokens": 448,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.012774,
+          "datetime": "2026-04-24 14:23:53 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**AI search engines select content to cite based on relevance, verifiability, clarity, structure, neutrality, freshness, and credibility signals rather than traditional search rankings.**[1][2][3] This process occurs at the page level during retrieval and grounding, prioritizing sources that minimize misinformation and hallucinations while enabling safe reuse in responses.[1][3][4]\n\n### Key Selection Criteria\n- **Relevance and Focus**: Pages addressing one clear concept or question, without mixed intent, are preferred over broad or multi-topic content.[1][3]\n- **Clarity and Structure**: Content with short paragraphs, headings (e.g., H2/H3 chains like \"What is [topic]?\" or \"How [topic] works\"), FAQs, and answer-first summaries is easier for AI to extract and quote verbatim.[1][3][5]\n- **Verifiability**: Facts with explicit attribution (e.g., \"According to a 2024 report...\"), numerical data, and alignment with other trusted sources pass \"trust bottlenecks\"; opinion-heavy or unsourced claims are filtered out.[1][3]\n- **Neutrality**: Neutral, non-promotional language reduces distortion risk, favoring factual explanations over persuasive content.[3]\n- **Freshness and Recency**: Updated, date-stamped pages aligned with current knowledge are prioritized, especially for evolving topics.[1][3]\n- **Credibility Signals**: Domain trust from history, consistent publishing, topical authority, schema (e.g., Article/FAQ), author entities, and corroboration across sources (not just backlinks) boost eligibility; academic-style precision enhances this.[3][4][5]\n- **Platform-Specific Preferences**: ChatGPT favors clear definitions and reusable concepts; Perplexity cites Reddit more (6.6%); Google AI Overviews uses even distribution; brand search volume correlates with visibility (0.334).[2][3]\n\nAI evaluates pages individually, not domains, using pattern recognition and external validation for grounding, with technical/research content (e.g., peer-reviewed) often preferred for high-confidence needs.[3] Brand popularity and structural signals like schema further predict citations across platforms.[2][5]",
+                  "annotations": [
+                    {
+                      "title": "How AI Search Engines Decide What Content to Cite",
+                      "url": "https://www.upfront-ai.com/post/how-ai-search-engines-decide-what-content-to-cite"
+                    },
+                    {
+                      "title": "How AI Systems Choose Which Brands to Cite in Search Results",
+                      "url": "https://www.evertune.ai/resources/insights-on-ai/how-ai-systems-choose-which-brands-to-cite-in-search-results"
+                    },
+                    {
+                      "title": "How AI Selects Sites To Cite in SEO - Wellows (2026 Guide)",
+                      "url": "https://wellows.com/blog/how-ai-selects-sites-to-cite/"
+                    },
+                    {
+                      "title": "How AI Engines Select Websites for Citations - Three29",
+                      "url": "https://three29.com/how-ai-engines-select-websites-for-citations/"
+                    },
+                    {
+                      "title": "The Rise of Citable Content: How AI Search Engines Choose Sources",
+                      "url": "https://thinkdmg.com/the-rise-of-citable-content-how-to-build-pages-ai-search-engines-quote/"
+                    },
+                    {
+                      "title": "What sources do AI Search Engines cite? Analysis of 40k responses ...",
+                      "url": "https://www.xfunnel.ai/blog/what-sources-do-ai-search-engines-choose"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

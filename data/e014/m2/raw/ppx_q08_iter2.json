@@ -1,0 +1,87 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "9.4212 sec.",
+  "cost": 0.017565,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241422-1516-0612-0000-b8d334a804e7",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "9.3930 sec.",
+      "cost": 0.017565,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "How to measure AI citation rate?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 15,
+          "output_tokens": 728,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.016965,
+          "datetime": "2026-04-24 14:22:22 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**AI citation rate measures the frequency with which AI platforms (e.g., ChatGPT, Perplexity, Gemini) cite or reference specific content, brands, or websites in responses to relevant queries, typically expressed as a percentage of total relevant AI responses.**[1][2][4]\n\n### Core Calculation Methods\nThe standard formula is:  \n**(Number of times your content/brand is cited) \u00f7 (Total number of relevant AI responses in your category or for tracked queries) \u00d7 100**.[2][1]  \n- For example, if your content appears in 15 out of 100 relevant responses, your citation rate is 15%.[2]\n- Track **explicit citations** (linked references in source sections) separately from **mentions** (brand name in text without links), as combined appearances are most valuable.[1]\n\n### Key Metrics to Track\nMonitor these alongside raw citation rate for comprehensive analysis:\n- **Share of voice**: (Your brand mentions \u00f7 Total market/competitor mentions) \u00d7 100, or percentage of response word count dedicated to your brand (e.g., 60/150 words = 40%). Position matters\u2014first mentions weigh more.[1]\n- **Citation quality and sentiment**: Evaluate relevance, authority, and positivity of references.[1][4]\n- **Coverage and positioning**: Percentage of responses drawing from your content vs. competitors; track if you're first-listed.[1][5]\n- **Frequency and trends**: How often cited across platforms, with week-over-week changes.[4]\n\n| Metric | Description | Example Tools |\n|--------|-------------|---------------|\n| Citation Rate | % of relevant responses citing you | Siftly, Opttab[1][2] |\n| Share of Voice | Your mentions vs. total/competitors | Siftly, Ayzeo[1][4] |\n| Positioning | Rank in AI response (e.g., #1 vs. later) | OmniSEO, Ayzeo[4][5] |\n| Composite Score | Combined visibility/sentiment score | Ayzeo[4] |\n\n### Steps to Measure Manually\n1. Identify 15-25 core customer queries (e.g., \"Best guide on [topic]\" or long-form questions).[1][3]\n2. Run queries weekly/monthly across platforms like ChatGPT, Perplexity, Gemini, Google AI Overviews.[1][3]\n3. Log results: platform, date, query, citation/mention presence, position, screenshot.[3]\n4. Benchmark against 3-5 competitors to spot patterns (e.g., favored content formats, schema markup).[1][3]\n5. Estimate impressions via Google Trends on query volume and multi-platform consistency as a proxy for machine-validated authority.[3]\n\n### Automated Tools for Scaling\nUse specialized platforms for real-time tracking without manual effort:\n- **Siftly**: Tracks mentions/citations, share of voice, sentiment; benchmarks competitors.[1]\n- **Opttab**: Calculates citation rate across categories.[2]\n- **Ayzeo**: Prompt-level analysis, trends, composite scores across ChatGPT/Claude/Gemini/Perplexity.[4]\n- **OmniSEO**: Captures cited pages, query context, competitor rankings.[5]\nThese tools handle 100+ platforms/queries, provide dashboards, and correlate metrics with content updates.[1][4][5][7]\n\nAI platforms favor fresh, authoritative content (25.7% newer than traditional search), so regular monitoring reveals optimization opportunities beyond SEO.[1]",
+                  "annotations": [
+                    {
+                      "title": "AI Citation Tracking Tools for Brands (2026 Guide)",
+                      "url": "https://siftly.ai/blog/tools-measure-citation-rates-ai-generated-content-brands-2026"
+                    },
+                    {
+                      "title": "Citation Rate - AI Dictionary - Opttab",
+                      "url": "https://opttab.com/ai-dictionary/citation-rate"
+                    },
+                    {
+                      "title": "Your Brand Is Being Cited by AI. Here's How to Measure It.",
+                      "url": "https://duaneforresterdecodes.substack.com/p/your-brand-is-being-cited-by-ai-heres"
+                    },
+                    {
+                      "title": "AI Citation Analytics - Track Brand Citations Across AI Platforms",
+                      "url": "https://ayzeo.com/features/citation-analytics"
+                    },
+                    {
+                      "title": "AI Citation Tracker | AI Content Citation Tracking Tool | OmniSEO",
+                      "url": "https://omniseo.com/solutions/ai-citation-tracker/"
+                    },
+                    {
+                      "title": "AI Platform Citation Patterns: How ChatGPT, Google AI Overviews ...",
+                      "url": "https://www.tryprofound.com/blog/ai-platform-citation-patterns"
+                    },
+                    {
+                      "title": "Best AI Citation Tracking Tools for AI Visibility (2026)",
+                      "url": "https://www.therankmasters.com/insights/ai-visibility/best-ai-visibility-tools-citation-tracking"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

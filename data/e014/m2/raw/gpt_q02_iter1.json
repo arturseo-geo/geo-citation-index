@@ -1,0 +1,225 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "40.0911 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241424-1516-0629-0000-4cd30b000044",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "40.0650 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "What is Retrieval Probability in AI search?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "What is Retrieval Probability in AI search?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=What%20is%20Retrieval%20Probability%20in%20AI%20search%3F&hints=search",
+          "datetime": "2026-04-24 11:24:47 +00:00",
+          "markdown": "**Retrieval probability** in AI search isn\u2019t always defined as a single official metric, but the idea is straightforward:\n\n> It\u2019s the **likelihood that a document, page, or piece of content will be selected (\u201cretrieved\u201d) by an AI system when answering a query.**\n\n---\n\n## \ud83e\udde0 Where it fits in AI search\nModern AI search systems (like those using **Retrieval-Augmented Generation, or RAG**) follow a pipeline:\n\n1. **Retrieve** relevant content  \n2. **Evaluate / rank** it  \n3. **Generate** an answer from it  \n\n[penfriend.ai](https://penfriend.ai/glossary/ai-search?utm_source=chatgpt.com)  \n\nRetrieval probability belongs to **step 1** \u2014 the \u201cgatekeeper\u201d stage. If your content isn\u2019t retrieved, it can\u2019t be used at all.\n\n---\n\n## \ud83d\udd0d What \u201cretrieval probability\u201d really means\nIn simple terms:\n\n- It\u2019s the **chance your content enters the candidate set** of sources considered by the AI  \n- Higher probability = your content is **frequently surfaced for relevant queries**  \n- Lower probability = your content is **rarely or never seen by the model**\n\nA closely related concept, *retrieval confidence*, describes this as how consistently content gets pulled into the system\u2019s context. [www.hendricks.ai](https://www.hendricks.ai/glossary/retrieval-confidence-score?utm_source=chatgpt.com)  \n\n---\n\n## \u2699\ufe0f What determines retrieval probability\nAI systems don\u2019t retrieve randomly. They estimate relevance using signals like:\n\n- **Semantic similarity** (does it match the *meaning* of the query, not just keywords?)  \n- **Clarity of information** (easy-to-extract answers perform better)  \n- **Topical context** (is it part of a strong, coherent topic cluster?)  \n- **Consistency with other sources**  \n- **Structure and chunking** (since content is often split into passages)\n\n[webtrek.io](https://webtrek.io/how-ai-search-works?utm_source=chatgpt.com)  \n\n---\n\n## \ud83d\udcca Why it\u2019s called \u201cprobability\u201d\nUnlike traditional search rankings (which are relatively stable), AI systems:\n\n- Use **vector similarity and probabilistic models**\n- Make **non-deterministic choices**\n- May retrieve **different sources for the same query at different times**\n\n[ipullrank.com](https://ipullrank.com/probability-ai-search?utm_source=chatgpt.com)  \n\nSo retrieval isn\u2019t guaranteed \u2014 it\u2019s **probabilistic**.\n\n---\n\n## \ud83c\udd9a Retrieval probability vs ranking\nThis distinction is key:\n\n- **Retrieval probability** \u2192 *Will the system even consider your content?*  \n- **Ranking / citation** \u2192 *Will it actually use or cite it in the final answer?*\n\nYou can:\n- Be retrieved but not used  \n- Or never retrieved at all (worst case)\n\n---\n\n## \ud83e\udde9 Simple analogy\nThink of AI search like a panel of judges:\n\n- Retrieval probability = **chance you get invited to audition**\n- Ranking = **whether you get selected for the final show**\n\n---\n\n## \u2705 One-line definition\n**Retrieval probability = the likelihood that an AI system selects a piece of content as relevant enough to consider when generating an answer.**\n\n---\n\nIf you want, I can show how to *increase* retrieval probability (useful for SEO, RAG systems, or AI products).",
+          "search_results": [
+            {
+              "type": "chatgpt_search_result",
+              "url": "https://twosquares.co.uk/blog/retrieval-augmented-generation-explained?utm_source=chatgpt.com",
+              "domain": "twosquares.co.uk",
+              "title": "Retrieval Augmented Generation Explained | TwoSquares",
+              "description": "RETRIEVAL AUGMENTED GENERATION EXPLAINED: HOW AI SEARCH ENGINES USE WEB CONTENT  2026-03-05  35 min read  Back to Articles  Kiril Ivanov  2026-03-05  35 min read  Image: Retrieval Augmented Generatio...",
+              "breadcrumb": "twosquares.co.uk"
+            },
+            {
+              "type": "chatgpt_search_result",
+              "url": "https://www.useomnia.com/knowledge-base/%20ai-retrieval-layer?utm_source=chatgpt.com",
+              "domain": "www.useomnia.com",
+              "title": "AI Retrieval Layer Explained: How AI Finds and Chooses Content | Omnia",
+              "description": "AI RETRIEVAL LAYER  AI Retrieval Layer describes the part of an AI search or chat experience that finds and ranks the best sources to pull answers from before the model writes a response.  In this ar...",
+              "breadcrumb": "useomnia.com"
+            },
+            {
+              "type": "chatgpt_search_result",
+              "url": "https://searchscore.io/how-ai-search-works?utm_source=chatgpt.com",
+              "domain": "searchscore.io",
+              "title": "How AI Search Engines Choose Sources (ChatGPT, Gemini & Perplexity) | SearchScore",
+              "description": "The Definitive Guide  HOW AI SEARCH ENGINES CHOOSE SOURCES: CHATGPT, GEMINI & PERPLEXITY EXPLAINED  AI search is reshaping how people find information online. This guide explains how AI engines like C...",
+              "breadcrumb": "searchscore.io"
+            },
+            {
+              "type": "chatgpt_search_result",
+              "url": "https://unstructured.io/insights/what-is-information-retrieval-for-ai-applications?utm_source=chatgpt.com",
+              "domain": "unstructured.io",
+              "title": "What Is Information Retrieval? A Modern Overview for AI | Unstructured",
+              "description": "What Is Information Retrieval for AI Applications?  Feb 14, 2026  Image  AUTHORS  Image: Unstructured  Unstructured  WHAT IS INFORMATION RETRIEVAL FOR AI APPLICATIONS?  This article explains how info...",
+              "breadcrumb": "unstructured.io"
+            },
+            {
+              "type": "chatgpt_search_result",
+              "url": "https://decodeiq.ai/knowledge/retrieval-confidence/?utm_source=chatgpt.com",
+              "domain": "decodeiq.ai",
+              "title": "Retrieval Confidence | DecodeIQ Knowledge Base",
+              "description": "FREQUENTLY ASKED QUESTIONS  What is retrieval confidence and how is it different from search rankings?  Retrieval confidence predicts whether AI systems will cite your content before publication, whil...",
+              "breadcrumb": "decodeiq.ai"
+            },
+            {
+              "type": "chatgpt_search_result",
+              "url": "https://airankingacademy.co.uk/what-is-ai-search/?utm_source=chatgpt.com",
+              "domain": "airankingacademy.co.uk",
+              "title": "What is AI Search? The Shift from Keywords to Answers",
+              "description": "HOW DOES RETRIEVAL DIFFER FROM TRADITIONAL INDEXING?  Retrieval in AI search selects relevant information at query time, rather than relying only on pre-ranked pages stored in an index.  Traditional s...",
+              "breadcrumb": "airankingacademy.co.uk"
+            },
+            {
+              "type": "chatgpt_search_result",
+              "url": "https://www.cow-shed.com/blog/how-ai-finds-information-retrieval-models-embeddings-and-rag-explained?utm_source=chatgpt.com",
+              "domain": "www.cow-shed.com",
+              "title": "How AI Finds Information: Retrieval Models, Embeddings and RAG Explained - Cow-Shed Startup",
+              "description": "Artificial Intelligence  \u2022  15 minutes  HOW AI FINDS INFORMATION: RETRIEVAL MODELS, EMBEDDINGS AND RAG EXPLAINED  Learn how retrieval models, embedding vectors and retrieval-augmented generation are...",
+              "breadcrumb": "cow-shed.com"
+            },
+            {
+              "type": "chatgpt_search_result",
+              "url": "https://aiwiki.ai/wiki/information_retrieval?utm_source=chatgpt.com",
+              "domain": "aiwiki.ai",
+              "title": "Information Retrieval | AI Wiki",
+              "description": "CORE CONCEPTS  DOCUMENTS, QUERIES, AND RELEVANCE  An IR system operates over a corpus (a collection of documents) and responds to user queries. Documents can be web pages, academic papers, news articl...",
+              "breadcrumb": "aiwiki.ai"
+            }
+          ],
+          "sources": [
+            {
+              "type": "chat_gpt_source",
+              "title": "What Is AI Search? - Penfriend Ai",
+              "snippet": null,
+              "domain": "penfriend.ai",
+              "url": "https://penfriend.ai/glossary/ai-search?utm_source=chatgpt.com",
+              "thumbnail": null,
+              "source_name": "penfriend.ai",
+              "publication_date": null,
+              "markdown": null
+            },
+            {
+              "type": "chat_gpt_source",
+              "title": "Retrieval Confidence Score - AI Search Visibility Glossary | Hendricks.AI",
+              "snippet": null,
+              "domain": "www.hendricks.ai",
+              "url": "https://www.hendricks.ai/glossary/retrieval-confidence-score?utm_source=chatgpt.com",
+              "thumbnail": null,
+              "source_name": "Hendricks",
+              "publication_date": null,
+              "markdown": null
+            },
+            {
+              "type": "chat_gpt_source",
+              "title": "How AI Search Works: Retrieval, Trust, and Answer Generation | WebTrek",
+              "snippet": null,
+              "domain": "webtrek.io",
+              "url": "https://webtrek.io/how-ai-search-works?utm_source=chatgpt.com",
+              "thumbnail": null,
+              "source_name": "WebTrek",
+              "publication_date": null,
+              "markdown": null
+            },
+            {
+              "type": "chat_gpt_source",
+              "title": "AI Search: How Generative Engine Optimization Reshapes SEO",
+              "snippet": null,
+              "domain": "ipullrank.com",
+              "url": "https://ipullrank.com/probability-ai-search?utm_source=chatgpt.com",
+              "thumbnail": null,
+              "source_name": "iPullRank",
+              "publication_date": "2025-10-09 00:00:00 +00:00",
+              "markdown": null
+            }
+          ],
+          "fan_out_queries": [
+            "retrieval probability AI search meaning"
+          ],
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "**Retrieval probability** in AI search isn\u2019t always defined as a single official metric, but the idea is straightforward:\n\n> It\u2019s the **likelihood that a document, page, or piece of content will be selected (\u201cretrieved\u201d) by an AI system when answering a query.**\n\n---\n\n## \ud83e\udde0 Where it fits in AI search\nModern AI search systems (like those using **Retrieval-Augmented Generation, or RAG**) follow a pipeline:\n\n1. **Retrieve** relevant content  \n2. **Evaluate / rank** it  \n3. **Generate** an answer from it  \n\n[penfriend.ai](https://penfriend.ai/glossary/ai-search?utm_source=chatgpt.com)  \n\nRetrieval probability belongs to **step 1** \u2014 the \u201cgatekeeper\u201d stage. If your content isn\u2019t retrieved, it can\u2019t be used at all.\n\n---\n\n## \ud83d\udd0d What \u201cretrieval probability\u201d really means\nIn simple terms:\n\n- It\u2019s the **chance your content enters the candidate set** of sources considered by the AI  \n- Higher probability = your content is **frequently surfaced for relevant queries**  \n- Lower probability = your content is **rarely or never seen by the model**\n\nA closely related concept, *retrieval confidence*, describes this as how consistently content gets pulled into the system\u2019s context. [www.hendricks.ai](https://www.hendricks.ai/glossary/retrieval-confidence-score?utm_source=chatgpt.com)  \n\n---\n\n## \u2699\ufe0f What determines retrieval probability\nAI systems don\u2019t retrieve randomly. They estimate relevance using signals like:\n\n- **Semantic similarity** (does it match the *meaning* of the query, not just keywords?)  \n- **Clarity of information** (easy-to-extract answers perform better)  \n- **Topical context** (is it part of a strong, coherent topic cluster?)  \n- **Consistency with other sources**  \n- **Structure and chunking** (since content is often split into passages)\n\n[webtrek.io](https://webtrek.io/how-ai-search-works?utm_source=chatgpt.com)  \n\n---\n\n## \ud83d\udcca Why it\u2019s called \u201cprobability\u201d\nUnlike traditional search rankings (which are relatively stable), AI systems:\n\n- Use **vector similarity and probabilistic models**\n- Make **non-deterministic choices**\n- May retrieve **different sources for the same query at different times**\n\n[ipullrank.com](https://ipullrank.com/probability-ai-search?utm_source=chatgpt.com)  \n\nSo retrieval isn\u2019t guaranteed \u2014 it\u2019s **probabilistic**.\n\n---\n\n## \ud83c\udd9a Retrieval probability vs ranking\nThis distinction is key:\n\n- **Retrieval probability** \u2192 *Will the system even consider your content?*  \n- **Ranking / citation** \u2192 *Will it actually use or cite it in the final answer?*\n\nYou can:\n- Be retrieved but not used  \n- Or never retrieved at all (worst case)\n\n---\n\n## \ud83e\udde9 Simple analogy\nThink of AI search like a panel of judges:\n\n- Retrieval probability = **chance you get invited to audition**\n- Ranking = **whether you get selected for the final show**\n\n---\n\n## \u2705 One-line definition\n**Retrieval probability = the likelihood that an AI system selects a piece of content as relevant enough to consider when generating an answer.**\n\n---\n\nIf you want, I can show how to *increase* retrieval probability (useful for SEO, RAG systems, or AI products).",
+              "sources": [
+                {
+                  "type": "chat_gpt_source",
+                  "title": "What Is AI Search? - Penfriend Ai",
+                  "snippet": null,
+                  "domain": "penfriend.ai",
+                  "url": "https://penfriend.ai/glossary/ai-search?utm_source=chatgpt.com",
+                  "thumbnail": null,
+                  "source_name": "penfriend.ai",
+                  "publication_date": null,
+                  "markdown": null
+                },
+                {
+                  "type": "chat_gpt_source",
+                  "title": "Retrieval Confidence Score - AI Search Visibility Glossary | Hendricks.AI",
+                  "snippet": null,
+                  "domain": "www.hendricks.ai",
+                  "url": "https://www.hendricks.ai/glossary/retrieval-confidence-score?utm_source=chatgpt.com",
+                  "thumbnail": null,
+                  "source_name": "Hendricks",
+                  "publication_date": null,
+                  "markdown": null
+                },
+                {
+                  "type": "chat_gpt_source",
+                  "title": "How AI Search Works: Retrieval, Trust, and Answer Generation | WebTrek",
+                  "snippet": null,
+                  "domain": "webtrek.io",
+                  "url": "https://webtrek.io/how-ai-search-works?utm_source=chatgpt.com",
+                  "thumbnail": null,
+                  "source_name": "WebTrek",
+                  "publication_date": null,
+                  "markdown": null
+                },
+                {
+                  "type": "chat_gpt_source",
+                  "title": "AI Search: How Generative Engine Optimization Reshapes SEO",
+                  "snippet": null,
+                  "domain": "ipullrank.com",
+                  "url": "https://ipullrank.com/probability-ai-search?utm_source=chatgpt.com",
+                  "thumbnail": null,
+                  "source_name": "iPullRank",
+                  "publication_date": "2025-10-09 00:00:00 +00:00",
+                  "markdown": null
+                }
+              ],
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

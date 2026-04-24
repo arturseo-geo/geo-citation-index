@@ -1,0 +1,91 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "7.9062 sec.",
+  "cost": 0.016143,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241422-1516-0612-0000-d8b76fc5deef",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "7.8744 sec.",
+      "cost": 0.016143,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "GEO vs traditional SEO \u2014 what changed?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 16,
+          "output_tokens": 633,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.015543,
+          "datetime": "2026-04-24 14:23:06 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**GEO (Generative Engine Optimization) complements rather than replaces traditional SEO, shifting focus from ranking in search results to being cited in AI-generated answers on platforms like ChatGPT, Gemini, and Perplexity.** This evolution responds to changing user behaviors, where queries are conversational and users seek direct summaries instead of clicking links, with Gartner predicting a 25% decline in traditional search volume by 2026.[3]\n\n### Key Changes from Traditional SEO to GEO\nTraditional SEO optimizes for search engine rankings via keywords and links, while GEO prioritizes AI interpretability through context, structure, and credibility. Here's a comparison:\n\n| Aspect              | Traditional SEO Focus                          | GEO Focus                                      |\n|---------------------|------------------------------------------------|------------------------------------------------|\n| **Primary Goal**   | Rank high in search results pages to drive clicks and traffic[1][2][3][5] | Get cited or referenced in AI summaries and responses[1][2][3][4][5][7] |\n| **Keywords & Language** | Exact-match, short-tail keywords and density[1][6] | Natural, long-tail, question-based language matching user intent[1][3][6] |\n| **Content Strategy** | Keyword-targeted pages, blogs, backlinks[1][2][4] | Structured, answer-ready content (FAQs, tables, stats) for AI synthesis[1][3][4][7] |\n| **Technical Setup** | Page speed, mobile optimization, structured data[1] | Same as SEO, plus LLM discoverability (e.g., contextual structured data)[1][3][4] |\n| **User Intent & Behavior** | Click-throughs from ranked positions[1][3] | Immediate answers in conversational search[3][5][6][7] |\n| **Metrics**        | Rankings, CTR, bounce rate, organic traffic[1][3][4][7] | Citation frequency, AI visibility, brand mentions[1][3][4][5][7] |\n| **Authority (E-E-A-T)** | Backlinks, domain authority[1]                | Author credibility, trustworthy sources for AI[1][4] |\n\n**From links to language:** SEO relied on PageRank and backlinks; GEO uses AI models that prioritize semantic understanding and entity recognition over links.[2]\n\n### What Hasn't Changed\nGEO builds on SEO foundations like high-quality content, technical optimization (crawlability, speed), and E-E-A-T, ensuring sites remain accessible to both search engines and LLMs.[1][4][5][7] Blending both\u2014using precise keywords with conversational phrasing\u2014maximizes visibility across platforms.[1]\n\n### Why It Matters Now\nAs AI tools become primary interfaces, content must compete to be \"understood and cited\" rather than just found, extending SEO to AI-driven discovery without invalidating it.[2][4][5] Retailers and brands should audit for AI extractability (e.g., statistics, clear citations) while maintaining core SEO hygiene.[1][3]",
+                  "annotations": [
+                    {
+                      "title": "SEO vs GEO: What's Changing and What Retailers Need to Know",
+                      "url": "https://www.celerant.com/blog/is-geo-replacing-seo/"
+                    },
+                    {
+                      "title": "How Generative Engine Optimization (GEO) Rewrites the Rules of ...",
+                      "url": "https://a16z.com/geo-over-seo/"
+                    },
+                    {
+                      "title": "GEO vs SEO: Understanding the Evolution of AI-Powered Search",
+                      "url": "https://www.wearetg.com/blog/geo-vs-seo/"
+                    },
+                    {
+                      "title": "Is GEO the New SEO? How the Search Game Is Changing - Mabbly",
+                      "url": "https://www.mabbly.com/ideas/geo-vs-seo/"
+                    },
+                    {
+                      "title": "GEO vs. SEO: What's Changed, What Hasn't, and Why It Matters Now",
+                      "url": "https://www.blueswingmedia.com/geo-vs-seo-whats-changed-what-hasnt-and-why-it-matters-now"
+                    },
+                    {
+                      "title": "SEO vs GEO \u2013 What's Changed, What Hasn't and Why SEO Still ...",
+                      "url": "https://www.spaghettiagency.co.uk/blog/seo-vs-geo-whats-changed-what-hasnt-and-why-seo-still-matters/"
+                    },
+                    {
+                      "title": "GEO vs SEO in 2026: What Actually Changes for Brands - Naturaily",
+                      "url": "https://naturaily.com/blog/geo-vs-seo"
+                    },
+                    {
+                      "title": "Will GEO Overtake SEO? - California Management Review",
+                      "url": "https://cmr.berkeley.edu/2025/11/will-geo-overtake-seo/"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "3.8827 sec.",
+  "cost": 0.00936,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241423-1516-0612-0000-ed4b924a2244",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "3.8326 sec.",
+      "cost": 0.00936,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "What is System Memory in GEO?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 15,
+          "output_tokens": 181,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.00876,
+          "datetime": "2026-04-24 14:23:46 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "I don't have enough information to answer your question about \"System Memory in GEO\" based on the provided search results.\n\nThe search results contain general information about system memory (RAM) in computers and a reference to Geo SCADA software's memory usage monitoring tool, but they don't explain what \"System Memory\" specifically means within the GEO system or context you're asking about.\n\nTo provide an accurate answer, I would need search results that specifically define System Memory as it relates to your particular GEO system. Could you clarify:\n\n- Are you asking about **Geo SCADA** (Schneider Electric's supervisory control software)?\n- Is GEO an acronym for a specific system, software platform, or technology?\n- Are you looking for how to monitor or manage system memory within this GEO system?\n\nWith more specific search results or clarification about which GEO system you're referring to, I can provide a more helpful answer.",
+                  "annotations": [
+                    {
+                      "title": "Memory Usage (General System Status Information)",
+                      "url": "https://tprojects.schneider-electric.com/GeoSCADAHelp/Geo%20SCADA%202021/Content/ServerStatusToolGuide/MemoryUsage.htm"
+                    },
+                    {
+                      "title": "What Is System Memory (RAM) | Dell US",
+                      "url": "https://www.dell.com/support/kbdoc/en-us/000148441/what-is-memory-ram"
+                    },
+                    {
+                      "title": "PC System Memory Basics - NeweggBusiness",
+                      "url": "https://www.neweggbusiness.com/a/pc-system-memory-basics/id-274"
+                    },
+                    {
+                      "title": "Memory geometry - Wikipedia",
+                      "url": "https://en.wikipedia.org/wiki/Memory_geometry"
+                    },
+                    {
+                      "title": "How to Check and Free Up the System Memory - YouTube",
+                      "url": "https://www.youtube.com/watch?v=QOOYaa1o1I0"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}

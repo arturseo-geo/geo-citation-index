@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "11.1004 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241431-1516-0629-0000-f29005b79d10",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "11.0421 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "How does the GEO Stack work?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "How does the GEO Stack work?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=How%20does%20the%20GEO%20Stack%20work%3F&hints=search",
+          "datetime": "2026-04-24 11:31:43 +00:00",
+          "markdown": "Can you clarify whether you\u2019re asking about the **GEO Stack in technology** (like geospatial data stacks), or the **GEO Stack in a different context** (such as marketing, advertising, or some specific product)? The term is used in multiple domains, and the workings are quite different depending on the context.",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Can you clarify whether you\u2019re asking about the **GEO Stack in technology** (like geospatial data stacks), or the **GEO Stack in a different context** (such as marketing, advertising, or some specific product)? The term is used in multiple domains, and the workings are quite different depending on the context.",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

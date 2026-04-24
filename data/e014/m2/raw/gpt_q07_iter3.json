@@ -1,0 +1,68 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "32.1529 sec.",
+  "cost": 0.004,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241431-1516-0629-0000-6c97e5dc44cd",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "32.0748 sec.",
+      "cost": 0.004,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "chat_gpt",
+        "llm_scraper",
+        "live",
+        "advanced"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_scraper",
+        "se": "chat_gpt",
+        "keyword": "Does GEO actually work?",
+        "location_name": "United Kingdom",
+        "language_code": "en",
+        "force_web_search": true,
+        "device": "desktop",
+        "os": "windows"
+      },
+      "result": [
+        {
+          "keyword": "Does GEO actually work?",
+          "location_code": 2826,
+          "language_code": "en",
+          "model": "gpt-5-3",
+          "check_url": "https://chatgpt.com/?prompt=Does%20GEO%20actually%20work%3F&hints=search",
+          "datetime": "2026-04-24 11:32:30 +00:00",
+          "markdown": "Could you clarify what you mean by \"GEO\"? Are you referring to **GEO** as in geographical targeting for ads, or something else like **GEO** in the context of a specific technology, app, or service (e.g., \"GEO fencing,\" \"GEO software,\" etc.)? \n\nIf it's about geographical targeting or something similar, I can definitely dive into that! Let me know a bit more and I\u2019ll provide some insights.",
+          "search_results": null,
+          "sources": null,
+          "fan_out_queries": null,
+          "brand_entities": null,
+          "se_results_count": 0,
+          "item_types": [
+            "chat_gpt_text"
+          ],
+          "items_count": 1,
+          "items": [
+            {
+              "type": "chat_gpt_text",
+              "rank_group": 1,
+              "rank_absolute": 1,
+              "markdown": "Could you clarify what you mean by \"GEO\"? Are you referring to **GEO** as in geographical targeting for ads, or something else like **GEO** in the context of a specific technology, app, or service (e.g., \"GEO fencing,\" \"GEO software,\" etc.)? \n\nIf it's about geographical targeting or something similar, I can definitely dive into that! Let me know a bit more and I\u2019ll provide some insights.",
+              "sources": null,
+              "brand_entities": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "version": "0.1.20260420",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "5.2321 sec.",
+  "cost": 0.011952,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+    {
+      "id": "04241420-1516-0612-0000-2ccab67344e5",
+      "status_code": 20000,
+      "status_message": "Ok.",
+      "time": "5.1537 sec.",
+      "cost": 0.011952,
+      "result_count": 1,
+      "path": [
+        "v3",
+        "ai_optimization",
+        "perplexity",
+        "llm_responses",
+        "live"
+      ],
+      "data": {
+        "api": "ai_optimization",
+        "function": "llm_responses",
+        "se": "perplexity",
+        "user_prompt": "What is LLM readability?",
+        "model_name": "sonar-pro",
+        "web_search": true
+      },
+      "result": [
+        {
+          "model_name": "sonar-pro",
+          "input_tokens": 14,
+          "output_tokens": 354,
+          "reasoning_tokens": 0,
+          "web_search": true,
+          "money_spent": 0.011352,
+          "datetime": "2026-04-24 14:20:08 +00:00",
+          "items": [
+            {
+              "type": "message",
+              "sections": [
+                {
+                  "type": "text",
+                  "text": "**LLM Readability** refers to how easily large language models (LLMs) like those in ChatGPT or Perplexity can process, parse, understand, and extract information from content, increasing the likelihood of it being cited or used by AI systems.[1][6]\n\n### Key Dimensions and Factors\nThis concept focuses on content optimization for AI consumption rather than human readers. Core factors include:\n- **Chunk Relevance**: Semantic relevance of text passages (chunks) to a query or topic.[1]\n- **Natural Language Quality**: Clarity, consistency, and specificity in language, including N-gram density for core terminology.[1]\n- **Structuring**: Use of question-based headings, short paragraphs (under 400 characters), and alignment between headings and content.[1]\n- **Information Hierarchy**: Logical organization for easy navigation.[1]\n- **Context Management**: Effective handling of context without overload.[1]\n- **User Intent Match**: Alignment with searcher needs.[1]\n\nTools like Olaf Kopp's LLM Readability Score evaluate these systematically.[1]\n\n### Distinction from Traditional Readability\nUnlike human-focused readability (e.g., Flesch Reading Ease, based on sentence length and syllables for audience grade levels[3]), LLM Readability prioritizes AI processability via tokenization, chunking, and embeddings.[5] It emphasizes structured plain text over visual elements.[4][5][7]\n\n### Practical Optimization Tips\n- Use explicit answers (numbers, data, entities).[1]\n- Implement standards like LLMs.txt for plain-text, Markdown-structured site overviews.[4]\n- Ensure crawlability for AI tools.[7]\n\nHigh LLM Readability boosts visibility in AI search results.[1][6]",
+                  "annotations": [
+                    {
+                      "title": "LLM Readability & Chunk Relevance - The most influential factors to ...",
+                      "url": "https://www.kopp-online-marketing.com/llm-readability-chunk-relevance-the-most-influential-factors-to-become-citation-worthy-by-llms"
+                    },
+                    {
+                      "title": "Measuring the \"readability\" of texts with Large Language Models",
+                      "url": "https://seantrott.substack.com/p/measuring-the-readability-of-texts"
+                    },
+                    {
+                      "title": "Readability Analysis for LLMs in English - NeuralTrust AI",
+                      "url": "https://neuraltrust.ai/blog/readability-analysis-in-english"
+                    },
+                    {
+                      "title": "LLMs.txt Explained: Boosting Your Website's AI Readability - Adsby",
+                      "url": "https://adsby.co/blog/llms-txt-explained-boosting-website-s-ai-readability/"
+                    },
+                    {
+                      "title": "GEO guide to optimize writing for LLMs - Mintlify",
+                      "url": "https://www.mintlify.com/blog/how-to-improve-llm-readability"
+                    },
+                    {
+                      "title": "What is LLM Readability? | Allmond Glossary",
+                      "url": "https://allmond.app/glossary/llm-readability"
+                    },
+                    {
+                      "title": "Can LLMs Read Your Site? A Technical Guide to 'Crawlability' in the ...",
+                      "url": "https://www.thehoth.com/blog/can-llms-read-your-site/"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fan_out_queries": null
+        }
+      ]
+    }
+  ]
+}
