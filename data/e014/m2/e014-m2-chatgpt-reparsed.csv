@@ -1,0 +1,31 @@
+query_id,tier,query,iteration,code,cited_urls,all_sources,task_id
+1,T2,What is GEO (Generative Engine Optimisation)?,1,X,,,04241423-1516-0629-0000-4d97fefe2bbf
+1,T2,What is GEO (Generative Engine Optimisation)?,2,X,,,04241427-1516-0629-0000-d1c6ea50dc8f
+1,T2,What is GEO (Generative Engine Optimisation)?,3,X,,,04241430-1516-0629-0000-1884e6249046
+2,T1,What is Retrieval Probability in AI search?,1,X,,https://penfriend.ai/glossary/ai-search?utm_source=chatgpt.com|https://www.hendricks.ai/glossary/retrieval-confidence-score?utm_source=chatgpt.com|https://webtrek.io/how-ai-search-works?utm_source=chatgpt.com|https://ipullrank.com/probability-ai-search?utm_source=chatgpt.com,04241424-1516-0629-0000-4cd30b000044
+2,T1,What is Retrieval Probability in AI search?,2,X,,,04241428-1516-0629-0000-1263ac95a0f4
+2,T1,What is Retrieval Probability in AI search?,3,X,,,04241430-1516-0629-0000-50aa27edaa3f
+3,T1,What is LLM readability?,1,X,,,04241424-1516-0629-0000-31fd796071a1
+3,T1,What is LLM readability?,2,X,,,04241428-1516-0629-0000-344c7a7c01b5
+3,T1,What is LLM readability?,3,X,,,04241431-1516-0629-0000-0b20521d21b4
+4,T2,GEO vs traditional SEO — what changed?,1,X,,,04241425-1516-0629-0000-a5f0333f3db2
+4,T2,GEO vs traditional SEO — what changed?,2,X,,,04241428-1516-0629-0000-9052aae21ba8
+4,T2,GEO vs traditional SEO — what changed?,3,X,,,04241431-1516-0629-0000-8fecbde77a72
+5,T1,How does the GEO Stack work?,1,X,,,04241425-1516-0629-0000-a20d3459020f
+5,T1,How does the GEO Stack work?,2,X,,,04241428-1516-0629-0000-cfb3d96958f0
+5,T1,How does the GEO Stack work?,3,X,,,04241431-1516-0629-0000-f29005b79d10
+6,T1,What is Extractability in GEO?,1,X,,,04241425-1516-0629-0000-dd05929fb41f
+6,T1,What is Extractability in GEO?,2,X,,,04241429-1516-0629-0000-f66eead0625d
+6,T1,What is Extractability in GEO?,3,X,,,04241431-1516-0629-0000-5879ff7e0112
+7,T2,Does GEO actually work?,1,X,,,04241426-1516-0629-0000-9544be19b8c2
+7,T2,Does GEO actually work?,2,X,,,04241429-1516-0629-0000-131c32ce2621
+7,T2,Does GEO actually work?,3,X,,,04241431-1516-0629-0000-6c97e5dc44cd
+8,T2,How to measure AI citation rate?,1,X,,,04241426-1516-0629-0000-8258e0d5e1ac
+8,T2,How to measure AI citation rate?,2,X,,,04241429-1516-0629-0000-44556c33e10e
+8,T2,How to measure AI citation rate?,3,X,,,04241432-1516-0629-0000-ecabf7163165
+9,T1,What is System Memory in GEO?,1,X,,,04241427-1516-0629-0000-ab76b749e9d0
+9,T1,What is System Memory in GEO?,2,X,,,04241429-1516-0629-0000-e477d6ef51f6
+9,T1,What is System Memory in GEO?,3,X,,https://term.sustainability-directory.com/term/geophysical-system-memory/?utm_source=chatgpt.com|https://lifestyle.sustainability-directory.com/area/geological-memory/resource/4/?utm_source=chatgpt.com|https://en.wikipedia.org/wiki/Computer_memory?utm_source=chatgpt.com,04241432-1516-0629-0000-080f6e054dac
+10,T2,How do AI search engines select content to cite?,1,X,,,04241427-1516-0629-0000-7ddc5438c932
+10,T2,How do AI search engines select content to cite?,2,X,,,04241430-1516-0629-0000-06ec5deb8fe1
+10,T2,How do AI search engines select content to cite?,3,X,,,04241433-1516-0629-0000-d902e71ab528
