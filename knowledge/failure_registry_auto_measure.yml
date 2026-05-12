@@ -1,0 +1,145 @@
+# Failure Registry — geolab-auto-measure
+# Source: /opt/geolab-auto-measure/failure_registry.yml on VPS (100.87.191.9)
+# Synced: 2026-05-13
+# Document known failure patterns and solutions
+
+failures:
+
+  - id: F001
+    name: "Notion teal colour rejected"
+    symptom: "Notion API 400: body.properties.Status.select.options[6].color should be 'default', 'gray', 'brown', 'orange'..."
+    cause: "'teal' is not a valid Notion select colour"
+    fix: "Replace 'teal' with valid colour (green, brown, etc.) in create_notion_database.js"
+    date_found: 2026-03-26
+    status: fixed
+
+  - id: F002
+    name: "Boolean checkbox receives empty string"
+    symptom: "Notion API 400: body.properties.Title rewritten by Google.checkbox should be a boolean, instead was ''"
+    cause: "JS expression `serpTitle && serpTitle !== title` returns '' (falsy string) not false when serpTitle is empty"
+    fix: "Wrap in `!!()` to cast to boolean: `!!(serpTitle && serpTitle !== title)`"
+    date_found: 2026-03-26
+    status: fixed
+
+  - id: F003
+    name: "Sitemap index not followed"
+    symptom: "weekly_link_scan.js finds 0 URLs from sitemap"
+    cause: "WordPress serves a sitemap index (<sitemapindex>) pointing to child sitemaps, not direct page URLs"
+    fix: "Detect <sitemapindex>, fetch each child sitemap, collect all <loc> URLs"
+    date_found: 2026-03-26
+    status: fixed
+
+  - id: F004
+    name: "--env-file not supported on Node 18"
+    symptom: "node: bad option: --env-file=.env"
+    cause: "--env-file flag requires Node 20+, VPS runs Node 18"
+    fix: "Use start.js wrapper that imports dotenv/config before scheduler.js"
+    date_found: 2026-03-26
+    status: fixed
+
+  - id: F005
+    name: "PM2 cluster mode fails with ESM"
+    symptom: "PM2 process shows 'waiting' with restarts, no logs"
+    cause: "ESM modules don't work with PM2 cluster mode"
+    fix: "Set exec_mode: 'fork' in ecosystem.config.cjs, use start.js wrapper"
+    date_found: 2026-03-26
+    status: fixed
+
+  - id: F006
+    name: "Google Sheets tab names have emoji prefixes"
+    symptom: "Unable to parse range: Results Log!A1:N3"
+    cause: "Sheet tabs are named with emoji prefixes (e.g. '📋 Results Log')"
+    fix: "Wrap tab names in single quotes with emoji: \"'📋 Results Log'!A:N\""
+    date_found: 2026-03-26
+    status: fixed
+
+  - id: F007
+    name: "SSH from VPS to itself fails"
+    symptom: "geo_lab_log_check.js can't read logs when running on VPS"
+    cause: "Script uses SSH to read logs, but when running locally on VPS, SSH to localhost is refused"
+    fix: "Detect if log file exists locally (existsSync), read directly instead of SSH"
+    date_found: 2026-03-28
+    status: fixed
+
+  - id: F008
+    name: "Daily log rotation gaps"
+    symptom: "geo_lab_log_check.js misses log data from previous day"
+    cause: "Nginx logrotate runs daily, access.log.1 contains yesterday's data"
+    fix: "Read both access.log and access.log.1 (delaycompress keeps .1 uncompressed)"
+    date_found: 2026-03-28
+    status: fixed
+
+  - id: F009
+    name: "WordPress post with future date shows as 'future' not 'publish'"
+    symptom: "Post created with status=publish but shows future status, returns ?p=ID instead of slug URL"
+    cause: "post_date set to tomorrow's date, WP auto-converts to 'future' status"
+    fix: "Set date to current or past timestamp when publishing immediately"
+    date_found: 2026-03-27
+    status: fixed
+
+  - id: F010
+    name: "Multiple body tags in WordPress post content"
+    symptom: "Screaming Frog reports HTML validation error on /extractability/"
+    cause: "v3 HTML file pasted with <body> tag still present — WP theme adds its own"
+    fix: "Strip DOCTYPE/html/head/body from content before WP deployment"
+    date_found: 2026-03-27
+    status: fixed
+
+  - id: F011
+    name: "Exact match Nginx location ignores trailing slash"
+    symptom: "301 redirect works for /slug but not /slug/"
+    cause: "location = /slug only matches exact path, not /slug/"
+    fix: "Use regex location: location ~ ^/slug/?$ { return 301 /target/; }"
+    date_found: 2026-03-27
+    status: fixed
+
+  - id: F012
+    name: "v3 CSS stripped during WP content prep"
+    symptom: "TL;DR, tables, stat cards render unstyled"
+    cause: "Style block was inside <head> which got removed during DOCTYPE/head/body stripping"
+    fix: "Extract <style> block separately, re-insert after JSON-LD in the wp:html wrapper"
+    date_found: 2026-03-27
+    status: fixed
+
+  - id: F013
+    name: "SVG chart Y-axis inverted"
+    symptom: "Higher percentage value appears lower on the chart"
+    cause: "SVG coordinate system: higher cy = lower on screen. March 6.7% had higher cy than Feb 3%"
+    fix: "Swap cy values so higher percentage gets lower cy (higher position on chart)"
+    date_found: 2026-03-27
+    status: fixed
+
+  - id: F014
+    name: "SCHEDULE_MEMORY_CRON_DRIFT_001 — Cron spec not updated after schedule change"
+    symptom: "Schedule decision recorded in notes/memory did not propagate to cron. E003 R1 ran 2026-05-02 per original spec (0 11 2 5 *) instead of rescheduled 2026-05-03."
+    cause: "No verification step between scheduling decision and crontab edit. Memory captures intent; crontab captures execution. Drift goes silent until log inspection."
+    fix: "(a) Add verify-cron-matches-schedule-decision step to experiment-prep checklist before each run window, OR (b) Treat memory-only schedule changes as non-binding — require explicit crontab edit before any reschedule is considered live."
+    severity: "low-this-instance; elevated-if-during-publishing-freeze-or-wrong-query-set"
+    date_found: 2026-05-02
+    first_observed: E003 R1
+    status: open
+
+  - id: F015
+    name: "GITHUB_PAT_EXPIRY_001 — GitHub MCP PAT expired without warning"
+    symptom: "GitHub MCP returning 401 Bad credentials on all calls. No prior expiry notification."
+    cause: "PAT has finite lifetime. No reminder system tracking credential expiry dates against active tool integrations."
+    fix: "(a) Set calendar reminder for PAT renewal 30 days before expiry, OR (b) Move to GitHub App authentication (no expiry), OR (c) Use fine-grained PAT with longer lifetime and expiry tracking."
+    severity: "medium; blocks Failure Registry writes, Zenodo deposit workflows, geo-citation-index updates"
+    date_found: 2026-05-10
+    first_observed: E030 deploy prep
+    status: open
+
+  - id: F016
+    name: CONCEPT_MAP_DEAD_SLUG_001
+    severity: low
+    status: resolved
+    first_observed: 2026-05-10
+    resolved: 2026-05-10
+    description: >
+      geolab-entity-graph.php concept map contained slug 'faqpage-schema-ai-retrieval'
+      which has never existed as a WordPress post. Context D never fired for the FAQ
+      experiment post. Actual slug is 'faq-retrieval-experiment'. Silent failure since
+      v1.2.0 — post existed without TechArticle/about/mentions enrichment.
+    fix: >
+      Corrected slug in geolab_post_concept_map() in v1.3.1 (2026-05-10).
+      Verified: faq-retrieval-experiment TechArticle:1 author:1 post-deploy.
