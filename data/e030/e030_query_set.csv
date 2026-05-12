@@ -1,0 +1,46 @@
+query_id,page,length_tier,word_count,query
+geostack_2_1,/geo-stack/,2-4,3,GEO Stack framework
+geostack_2_2,/geo-stack/,2-4,3,GEO Stack layers
+geostack_2_3,/geo-stack/,2-4,3,GEO Stack model
+geostack_2_4,/geo-stack/,2-4,3,GEO Stack approach
+geostack_2_5,/geo-stack/,2-4,3,GEO Stack methodology
+geostack_6_1,/geo-stack/,6-8,6,what is the GEO Stack framework
+geostack_6_2,/geo-stack/,6-8,6,what are the GEO Stack layers
+geostack_6_3,/geo-stack/,6-8,7,the GEO Stack model for AI search
+geostack_6_4,/geo-stack/,6-8,6,GEO Stack approach to AI optimisation
+geostack_6_5,/geo-stack/,6-8,6,GEO Stack methodology for citation measurement
+geostack_10_1,/geo-stack/,10-12,10,how does the GEO Stack framework structure AI search optimisation
+geostack_10_2,/geo-stack/,10-12,11,how do the five GEO Stack layers work together for citation
+geostack_10_3,/geo-stack/,10-12,11,how does the GEO Stack model differ from traditional SEO frameworks
+geostack_10_4,/geo-stack/,10-12,11,what is the GEO Stack approach to optimising for AI citation
+geostack_10_5,/geo-stack/,10-12,11,how does the GEO Stack methodology measure AI citation rates systematically
+extract_2_1,/extractability/,2-4,3,extractability AI search
+extract_2_2,/extractability/,2-4,3,content extractability GEO
+extract_2_3,/extractability/,2-4,2,passage extractability
+extract_2_4,/extractability/,2-4,2,extractability measurement
+extract_2_5,/extractability/,2-4,2,extractability score
+extract_6_1,/extractability/,6-8,6,what is extractability in AI search
+extract_6_2,/extractability/,6-8,6,content extractability in GEO Stack optimisation
+extract_6_3,/extractability/,6-8,6,passage extractability for AI search citation
+extract_6_4,/extractability/,6-8,6,extractability measurement for AI search engines
+extract_6_5,/extractability/,6-8,6,extractability score for AI search content
+extract_10_1,/extractability/,10-12,10,how does extractability affect citation rate in Perplexity AI search
+extract_10_2,/extractability/,10-12,10,how do you measure content extractability for generative engine optimisation
+extract_10_3,/extractability/,10-12,11,what makes a passage extractable enough to be cited by AI
+extract_10_4,/extractability/,10-12,11,how do you measure extractability of content for AI search engines
+extract_10_5,/extractability/,10-12,11,how is an extractability score calculated for AI search content optimisation
+retprob_2_1,/retrieval-probability/,2-4,3,retrieval probability GEO
+retprob_2_2,/retrieval-probability/,2-4,3,retrieval probability AI
+retprob_2_3,/retrieval-probability/,2-4,3,retrieval probability measure
+retprob_2_4,/retrieval-probability/,2-4,3,retrieval probability factors
+retprob_2_5,/retrieval-probability/,2-4,3,retrieval probability optimisation
+retprob_6_1,/retrieval-probability/,6-8,6,retrieval probability in GEO Stack model
+retprob_6_2,/retrieval-probability/,6-8,6,retrieval probability for AI search citation
+retprob_6_3,/retrieval-probability/,6-8,6,measuring retrieval probability for AI content
+retprob_6_4,/retrieval-probability/,6-8,7,retrieval probability factors for AI search content
+retprob_6_5,/retrieval-probability/,6-8,6,retrieval probability optimisation for AI search
+retprob_10_1,/retrieval-probability/,10-12,11,what is retrieval probability and how does it affect AI citation
+retprob_10_2,/retrieval-probability/,10-12,10,how does retrieval probability work for AI search citation outcomes
+retprob_10_3,/retrieval-probability/,10-12,11,how do you measure retrieval probability for content in AI search
+retprob_10_4,/retrieval-probability/,10-12,10,what factors influence retrieval probability for AI search citation rates
+retprob_10_5,/retrieval-probability/,10-12,11,how do you optimise retrieval probability for AI search citation rates
