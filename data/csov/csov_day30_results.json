@@ -1,0 +1,142 @@
+{
+  "experiment": "CSOV",
+  "measurement": "Day-30 (delayed \u2014 executed 2026-05-13)",
+  "due_date": "2026-05-01",
+  "run_date": "2026-05-13T11:57:13Z",
+  "queries": [
+    {
+      "id": 1,
+      "text": "What is citation share of voice in GEO"
+    },
+    {
+      "id": 2,
+      "text": "How to calculate C-SOV AI search"
+    },
+    {
+      "id": 3,
+      "text": "Citation share of voice vs citation rate"
+    },
+    {
+      "id": 4,
+      "text": "C-SOV GEO measurement"
+    },
+    {
+      "id": 5,
+      "text": "How to measure competitive AI citation presence"
+    }
+  ],
+  "results": {
+    "perplexity": {
+      "A": 1,
+      "B": 1,
+      "details": [
+        {
+          "q": 1,
+          "A": true,
+          "B": true,
+          "urls": [
+            "https://thegeolab.net/what-is-citation-share-of-voice/",
+            "https://thegeolab.net/citation-share-of-voice-guide/"
+          ]
+        },
+        {
+          "q": 2,
+          "A": false,
+          "B": false,
+          "urls": []
+        },
+        {
+          "q": 3,
+          "A": false,
+          "B": false,
+          "urls": []
+        },
+        {
+          "q": 4,
+          "A": false,
+          "B": false,
+          "urls": []
+        },
+        {
+          "q": 5,
+          "A": false,
+          "B": false,
+          "urls": []
+        }
+      ]
+    },
+    "chatgpt": {
+      "A": 0,
+      "B": 0,
+      "details": [
+        {
+          "q": 1,
+          "A": false,
+          "B": false,
+          "urls": []
+        },
+        {
+          "q": 2,
+          "A": false,
+          "B": false,
+          "urls": []
+        },
+        {
+          "q": 3,
+          "A": false,
+          "B": false,
+          "urls": []
+        },
+        {
+          "q": 4,
+          "A": false,
+          "B": false,
+          "urls": []
+        },
+        {
+          "q": 5,
+          "A": false,
+          "B": false,
+          "urls": []
+        }
+      ]
+    },
+    "google_aio": {
+      "A": 2,
+      "B": 2,
+      "aio_boxes": 5,
+      "details": [
+        {
+          "q": 1,
+          "A": true,
+          "B": true,
+          "aio": true
+        },
+        {
+          "q": 2,
+          "A": false,
+          "B": false,
+          "aio": true
+        },
+        {
+          "q": 3,
+          "A": false,
+          "B": false,
+          "aio": true
+        },
+        {
+          "q": 4,
+          "A": true,
+          "B": true,
+          "aio": true
+        },
+        {
+          "q": 5,
+          "A": false,
+          "B": false,
+          "aio": true
+        }
+      ]
+    }
+  }
+}
