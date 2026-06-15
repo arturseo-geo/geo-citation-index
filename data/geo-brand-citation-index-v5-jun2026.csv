@@ -1,0 +1,93 @@
+run_id,run_date,index_month,entity_name,entity_slug,platform,vertical,rank,score,chatgpt_score,perplexity_score,gemini_score,perplexity_vs_chatgpt_delta,trend,delta_rank,archetype,archetype_label
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Ahrefs,ahrefs,chatgpt,seo-marketing,1,100.0,100.0,90.91,89.47,-9.09,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Ahrefs,ahrefs,gemini,seo-marketing,2,89.47,100.0,90.91,89.47,-9.09,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Ahrefs,ahrefs,perplexity,seo-marketing,2,90.91,100.0,90.91,89.47,-9.09,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,ChatGPT,chatgpt,chatgpt,ai-llm-tools,1,100.0,100.0,100.0,100.0,0.0,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,ChatGPT,chatgpt,gemini,ai-llm-tools,1,100.0,100.0,100.0,100.0,0.0,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,ChatGPT,chatgpt,perplexity,ai-llm-tools,1,100.0,100.0,100.0,100.0,0.0,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Claude,claude,chatgpt,ai-llm-tools,6,16.67,16.67,88.89,43.48,72.22,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Claude,claude,gemini,ai-llm-tools,4,43.48,16.67,88.89,43.48,72.22,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Claude,claude,perplexity,ai-llm-tools,2,88.89,16.67,88.89,43.48,72.22,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Clearscope,clearscope,gemini,seo-marketing,13,10.53,0.0,13.64,10.53,13.64,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Clearscope,clearscope,perplexity,seo-marketing,7,13.64,0.0,13.64,10.53,13.64,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Close CRM,close-crm,gemini,crm-sales,24,3.85,0.0,4.35,3.85,4.35,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Close CRM,close-crm,perplexity,crm-sales,12,4.35,0.0,4.35,3.85,4.35,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Copilot,copilot,chatgpt,ai-llm-tools,4,27.78,27.78,44.44,56.52,16.66,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Copilot,copilot,gemini,ai-llm-tools,2,56.52,27.78,44.44,56.52,16.66,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Copilot,copilot,perplexity,ai-llm-tools,3,44.44,27.78,44.44,56.52,16.66,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Copy.ai,copy-ai,chatgpt,ai-llm-tools,3,33.33,33.33,22.22,13.04,-11.11,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Copy.ai,copy-ai,gemini,ai-llm-tools,7,13.04,33.33,22.22,13.04,-11.11,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Copy.ai,copy-ai,perplexity,ai-llm-tools,6,22.22,33.33,22.22,13.04,-11.11,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Cursor,cursor,perplexity,ai-llm-tools,7,16.67,0.0,16.67,0.0,16.67,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Freshsales,freshsales,chatgpt,crm-sales,5,18.52,18.52,4.35,7.69,-14.17,stable,,ghost,🫥 Fading Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Freshsales,freshsales,gemini,crm-sales,8,7.69,18.52,4.35,7.69,-14.17,stable,,ghost,🫥 Fading Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Freshsales,freshsales,perplexity,crm-sales,10,4.35,18.52,4.35,7.69,-14.17,stable,,ghost,🫥 Fading Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Gemini,gemini,gemini,ai-llm-tools,3,52.17,0.0,38.89,52.17,38.89,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Gemini,gemini,perplexity,ai-llm-tools,4,38.89,0.0,38.89,52.17,38.89,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Google Search Console,google-search-console,chatgpt,seo-marketing,4,39.13,39.13,68.18,73.68,29.05,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Google Search Console,google-search-console,gemini,seo-marketing,3,73.68,39.13,68.18,73.68,29.05,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Google Search Console,google-search-console,perplexity,seo-marketing,3,68.18,39.13,68.18,73.68,29.05,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Grammarly,grammarly,chatgpt,ai-llm-tools,5,16.67,16.67,11.11,4.35,-5.56,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Grammarly,grammarly,gemini,ai-llm-tools,11,4.35,16.67,11.11,4.35,-5.56,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Grammarly,grammarly,perplexity,ai-llm-tools,9,11.11,16.67,11.11,4.35,-5.56,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,HubSpot,hubspot,chatgpt,crm-sales,2,74.07,74.07,60.87,65.38,-13.2,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,HubSpot,hubspot,gemini,crm-sales,2,65.38,74.07,60.87,65.38,-13.2,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,HubSpot,hubspot,perplexity,crm-sales,2,60.87,74.07,60.87,65.38,-13.2,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Insightly,insightly,chatgpt,crm-sales,7,11.11,11.11,8.7,3.85,-2.41,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Insightly,insightly,gemini,crm-sales,25,3.85,11.11,8.7,3.85,-2.41,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Insightly,insightly,perplexity,crm-sales,6,8.7,11.11,8.7,3.85,-2.41,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Jasper,jasper,chatgpt,ai-llm-tools,2,61.11,61.11,33.33,13.04,-27.78,stable,,training_dependent,🧠 AI Memory Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Jasper,jasper,gemini,ai-llm-tools,6,13.04,61.11,33.33,13.04,-27.78,stable,,training_dependent,🧠 AI Memory Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Jasper,jasper,perplexity,ai-llm-tools,5,33.33,61.11,33.33,13.04,-27.78,stable,,training_dependent,🧠 AI Memory Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Keap,keap,chatgpt,crm-sales,8,11.11,11.11,4.35,3.85,-6.76,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Keap,keap,gemini,crm-sales,26,3.85,11.11,4.35,3.85,-6.76,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Keap,keap,perplexity,crm-sales,9,4.35,11.11,4.35,3.85,-6.76,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Majestic,majestic,chatgpt,seo-marketing,8,13.04,13.04,0.0,0.0,-13.04,stable,,ghost,🫥 Fading Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Mangools,mangools,chatgpt,seo-marketing,11,4.35,4.35,4.55,10.53,0.2,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Mangools,mangools,gemini,seo-marketing,11,10.53,4.35,4.55,10.53,0.2,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Mangools,mangools,perplexity,seo-marketing,15,4.55,4.35,4.55,10.53,0.2,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Midjourney,midjourney,gemini,ai-llm-tools,5,17.39,0.0,0.0,17.39,0.0,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Monday.com,monday-crm,gemini,crm-sales,28,3.85,0.0,4.35,3.85,4.35,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Monday.com,monday-crm,perplexity,crm-sales,11,4.35,0.0,4.35,3.85,4.35,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Moz,moz,chatgpt,seo-marketing,3,47.83,47.83,9.09,52.63,-38.74,stable,,training_dependent,🧠 AI Memory Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Moz,moz,gemini,seo-marketing,4,52.63,47.83,9.09,52.63,-38.74,stable,,training_dependent,🧠 AI Memory Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Moz,moz,perplexity,seo-marketing,9,9.09,47.83,9.09,52.63,-38.74,stable,,training_dependent,🧠 AI Memory Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Notion AI,notion-ai,gemini,ai-llm-tools,9,4.35,0.0,5.56,4.35,5.56,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Notion AI,notion-ai,perplexity,ai-llm-tools,12,5.56,0.0,5.56,4.35,5.56,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Perplexity,perplexity,perplexity,ai-llm-tools,8,11.11,0.0,11.11,0.0,11.11,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Pipedrive,pipedrive,chatgpt,crm-sales,4,18.52,18.52,52.17,15.38,33.65,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Pipedrive,pipedrive,gemini,crm-sales,4,15.38,18.52,52.17,15.38,33.65,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Pipedrive,pipedrive,perplexity,crm-sales,4,52.17,18.52,52.17,15.38,33.65,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Rank Math,rank-math,chatgpt,seo-marketing,10,13.04,13.04,9.09,10.53,-3.95,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Rank Math,rank-math,gemini,seo-marketing,10,10.53,13.04,9.09,10.53,-3.95,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Rank Math,rank-math,perplexity,seo-marketing,10,9.09,13.04,9.09,10.53,-3.95,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Runway,runway,perplexity,ai-llm-tools,13,5.56,0.0,5.56,0.0,5.56,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,SE Ranking,se-ranking,chatgpt,seo-marketing,12,4.35,4.35,18.18,5.26,13.83,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,SE Ranking,se-ranking,gemini,seo-marketing,24,5.26,4.35,18.18,5.26,13.83,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,SE Ranking,se-ranking,perplexity,seo-marketing,4,18.18,4.35,18.18,5.26,13.83,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Salesforce,salesforce,chatgpt,crm-sales,1,100.0,100.0,100.0,100.0,0.0,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Salesforce,salesforce,gemini,crm-sales,1,100.0,100.0,100.0,100.0,0.0,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Salesforce,salesforce,perplexity,crm-sales,1,100.0,100.0,100.0,100.0,0.0,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Screaming Frog,screaming-frog,chatgpt,seo-marketing,5,17.39,17.39,18.18,21.05,0.79,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Screaming Frog,screaming-frog,gemini,seo-marketing,5,21.05,17.39,18.18,21.05,0.79,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Screaming Frog,screaming-frog,perplexity,seo-marketing,5,18.18,17.39,18.18,21.05,0.79,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Semrush,semrush,chatgpt,seo-marketing,2,95.65,95.65,100.0,100.0,4.35,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Semrush,semrush,gemini,seo-marketing,1,100.0,95.65,100.0,100.0,4.35,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Semrush,semrush,perplexity,seo-marketing,1,100.0,95.65,100.0,100.0,4.35,stable,,consensus_dominant,👑 Dominant Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,SugarCRM,sugarcrm,chatgpt,crm-sales,6,11.11,11.11,0.0,3.85,-11.11,stable,,ghost,🫥 Fading Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,SugarCRM,sugarcrm,gemini,crm-sales,27,3.85,11.11,0.0,3.85,-11.11,stable,,ghost,🫥 Fading Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Surfer SEO,surfer-seo,chatgpt,seo-marketing,9,13.04,13.04,13.64,10.53,0.6,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Surfer SEO,surfer-seo,gemini,seo-marketing,12,10.53,13.04,13.64,10.53,0.6,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Surfer SEO,surfer-seo,perplexity,seo-marketing,6,13.64,13.04,13.64,10.53,0.6,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Ubersuggest,ubersuggest,chatgpt,seo-marketing,6,17.39,17.39,4.55,10.53,-12.84,stable,,ghost,🫥 Fading Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Ubersuggest,ubersuggest,gemini,seo-marketing,8,10.53,17.39,4.55,10.53,-12.84,stable,,ghost,🫥 Fading Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Ubersuggest,ubersuggest,perplexity,seo-marketing,16,4.55,17.39,4.55,10.53,-12.84,stable,,ghost,🫥 Fading Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Writesonic,writesonic,chatgpt,ai-llm-tools,9,11.11,11.11,11.11,4.35,0.0,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Writesonic,writesonic,gemini,ai-llm-tools,10,4.35,11.11,11.11,4.35,0.0,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Writesonic,writesonic,perplexity,ai-llm-tools,10,11.11,11.11,11.11,4.35,0.0,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Yoast SEO,yoast-seo,chatgpt,seo-marketing,7,17.39,17.39,9.09,10.53,-8.3,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Yoast SEO,yoast-seo,gemini,seo-marketing,9,10.53,17.39,9.09,10.53,-8.3,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Yoast SEO,yoast-seo,perplexity,seo-marketing,11,9.09,17.39,9.09,10.53,-8.3,stable,,unclassified,—
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Zoho CRM,zoho-crm,chatgpt,crm-sales,3,40.74,40.74,60.87,34.62,20.13,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Zoho CRM,zoho-crm,gemini,crm-sales,3,34.62,40.74,60.87,34.62,20.13,stable,,retrieval_driven,🔍 Live Search Brand
+c4fe67bc-4ae4-4836-9d48-7cbfe3fc3ead,2026-06-15 12:08:31.664130,2026-06,Zoho CRM,zoho-crm,perplexity,crm-sales,3,60.87,40.74,60.87,34.62,20.13,stable,,retrieval_driven,🔍 Live Search Brand
