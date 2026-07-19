@@ -231,6 +231,22 @@ class QueryRun(Base):
     archetype_threshold_version  = Column(String(20), nullable=True)
 
     run_notes   = Column(Text, nullable=True)
+
+    # ── Run-time provenance (added for instrument traceability) ────────
+    git_commit               = Column(String(40), nullable=True)
+    git_dirty                = Column(Boolean, nullable=True)
+    provenance_json          = Column(JSON, nullable=True)
+    # provenance_json schema:
+    # {
+    #   "arms": {
+    #     "chatgpt":    {"endpoint_url": str, "model_string": str, "retrieval_enabled": bool},
+    #     "gemini":     {"endpoint_url": str, "model_string": str, "retrieval_enabled": bool},
+    #     "perplexity": {"endpoint_url": str, "model_string": str, "retrieval_enabled": bool},
+    #   },
+    #   "scoring_config": {"position_weights": dict, "url_bonus": int},
+    #   "captured_at": str (ISO 8601 UTC),
+    # }
+
     created_at  = Column(DateTime, default=_now)
     updated_at  = Column(DateTime, default=_now, onupdate=_now)
 

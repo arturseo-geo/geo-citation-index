@@ -234,3 +234,27 @@ def export_index_json(run: QueryRun, db: Session, output_dir: str = OUTPUTS_DIR)
     out_path.write_text(json.dumps(data, indent=2, default=str))
     log.info(f"Index JSON exported: {out_path}")
     return out_path
+
+
+def export_provenance_json(run: "QueryRun", output_dir: str = OUTPUTS_DIR) -> Path:
+    """
+    Write a provenance.json sidecar for the run.
+    Contains git state, instrument config, and scoring parameters.
+    Does NOT change the CSV schema (Zenodo format-stable).
+    """
+    run_month = run.run_date.strftime("%Y-%m") if run.run_date else "unknown"
+    out_dir = Path(output_dir) / run_month
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / "provenance.json"
+
+    data = {
+        "run_id": run.id,
+        "run_date": run.run_date.isoformat() if run.run_date else None,
+        "git_commit": run.git_commit,
+        "git_dirty": run.git_dirty,
+        "provenance": run.provenance_json,
+    }
+
+    out_path.write_text(json.dumps(data, indent=2, default=str))
+    log.info(f"Provenance JSON exported: {out_path}")
+    return out_path

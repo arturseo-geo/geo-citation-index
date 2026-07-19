@@ -39,6 +39,109 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 
+
+def capture_provenance():
+    """Capture git state + instrument config at run time."""
+    import subprocess
+    from app.core.config import (
+        OPENAI_MODEL, GEMINI_MODEL, PERPLEXITY_MODEL,
+        POSITION_WEIGHTS, POSITION_WEIGHT_DEFAULT, URL_CITED_BONUS,
+    )
+
+    # Git state
+    try:
+        git_commit = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], text=True, stderr=subprocess.DEVNULL
+        ).strip()
+    except Exception:
+        git_commit = None
+
+    # Code-file dirtiness: only app/ and run_monthly.py count as "dirty"
+    # for instrument-provenance purposes. Knowledge/data file changes do
+    # not affect the pipeline's behaviour.
+    # Let git do the pathspec filtering rather than manual offset parsing.
+    git_dirty = None
+    dirty_detail = None
+    try:
+        # Pathspec-filtered: dirty only if pipeline code is modified
+        code_porcelain = subprocess.check_output(
+            ["git", "status", "--porcelain", "--", "app/", "run_monthly.py"],
+            text=True, stderr=subprocess.DEVNULL
+        ).strip()
+        git_dirty = bool(code_porcelain)
+
+        # Build path lists from NUL-separated output (handles renames,
+        # spaces in paths, and quoted filenames without manual offset parsing).
+        def _parse_porcelain_z(*pathspec):
+            cmd = ["git", "status", "--porcelain", "-z"]
+            if pathspec:
+                cmd += ["--"] + list(pathspec)
+            raw = subprocess.check_output(
+                cmd, text=True, stderr=subprocess.DEVNULL
+            )
+            paths = set()
+            entries = raw.split("\0")
+            i = 0
+            while i < len(entries):
+                e = entries[i]
+                if not e:
+                    i += 1
+                    continue
+                status = e[:2]
+                p = e[3:]
+                paths.add(p)
+                # Renames (R/C) have a second NUL-separated entry for the old name
+                if status[0] in ("R", "C"):
+                    i += 1
+                    if i < len(entries) and entries[i]:
+                        paths.add(entries[i])
+                i += 1
+            return paths
+
+        code_paths = _parse_porcelain_z("app/", "run_monthly.py")
+        all_paths = _parse_porcelain_z()
+        non_code_paths = sorted(all_paths - code_paths)
+
+        dirty_detail = {
+            "code_files_dirty": git_dirty,
+            "code_files": sorted(code_paths),
+            "non_code_dirty_paths": non_code_paths,
+        }
+    except Exception:
+        git_dirty = None
+        dirty_detail = {"error": "git status failed; dirtiness undetermined"}
+
+    provenance = {
+        "arms": {
+            "chatgpt": {
+                "endpoint": "openai Python SDK (client.chat.completions.create)",
+                "model_string": OPENAI_MODEL,
+                "retrieval_enabled": False,
+            },
+            "gemini": {
+                "endpoint": "google-generativeai SDK (genai.GenerativeModel.generate_content)",
+                "model_string": GEMINI_MODEL,
+                "retrieval_enabled": False,
+            },
+            "perplexity": {
+                "endpoint": "https://api.perplexity.ai/chat/completions",
+                "model_string": PERPLEXITY_MODEL,
+                "retrieval_enabled": True,
+            },
+        },
+        "scoring_config": {
+            "position_weights": POSITION_WEIGHTS,
+            "position_weight_default": POSITION_WEIGHT_DEFAULT,
+            "url_bonus": URL_CITED_BONUS,
+        },
+        "captured_at": datetime.utcnow().isoformat() + "Z",
+    }
+
+    if dirty_detail:
+        provenance["git_dirty_detail"] = dirty_detail
+
+    return git_commit, git_dirty, provenance
+
 def parse_args():
     p = argparse.ArgumentParser(description="GEO Citation Index monthly pipeline")
     p.add_argument("--dry-run",      action="store_true", help="Validate config only")
@@ -203,7 +306,7 @@ def run_full_pipeline(args):
     from app.services.query_runner import run_server_side_queries
     from app.core.brand_extractor import extract_brands_from_run
     from app.core.citation_scorer import compute_brand_scores
-    from app.core.index_builder import build_citation_index, export_index_json
+    from app.core.index_builder import build_citation_index, export_index_json, export_provenance_json
     from app.core.content_generator import generate_monthly_report
     from app.services.report_writer import generate_pdf_report
     from app.core.config import ARCHETYPE_THRESHOLD_VERSION
@@ -232,9 +335,17 @@ def run_full_pipeline(args):
             total_queries=query_count * 3,  # 3 platforms
             archetype_threshold_version=ARCHETYPE_THRESHOLD_VERSION,
         )
+        # Capture provenance before any queries fire
+        git_commit, git_dirty, provenance = capture_provenance()
+        if git_commit is None:
+            log.error("Provenance capture failed: no git HEAD. Aborting.")
+            sys.exit(1)
+        run.git_commit = git_commit
+        run.git_dirty = git_dirty
+        run.provenance_json = provenance
         db.add(run)
         db.commit()
-        log.info(f"Run created: {run.id}")
+        log.info(f"Run created: {run.id} (commit: {git_commit[:8] if git_commit else 'unknown'}, dirty: {git_dirty})")
 
         # Step 1: Run all queries via API (ChatGPT + Gemini + Perplexity)
         log.info("=" * 50)
@@ -266,6 +377,9 @@ def run_full_pipeline(args):
         log.info("STEP 5/6: Exporting index JSON...")
         json_path = export_index_json(run, db)
         log.info(f"JSON: {json_path}")
+
+        prov_path = export_provenance_json(run)
+        log.info(f"Provenance: {prov_path}")
 
         # Step 6: Content generation
         log.info("=" * 50)
